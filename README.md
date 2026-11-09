@@ -39,7 +39,7 @@ sudo apt update && sudo apt install -y build-essential valgrind binutils python3
 python3 -m venv venv && . venv/bin/activate && pip install -r requirements.txt
 make all workloads && make test      # builds the simulator and runs all tests
 ```
-To look at the results without running anything: open `web_simulation/index.html` in a browser.
+To look at the results without running anything, open the web simulation online: https://shivanshbtr.github.io/learned-cache-replacement/ (or open `web_simulation/index.html` in a browser after cloning).
 
 ## Setup (Ubuntu 22.04 / WSL2)
 ```
