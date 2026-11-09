@@ -1,0 +1,34 @@
+{
+ "kind": "lstm",
+ "workload": "conv",
+ "drivers": [
+  "lru",
+  "belady"
+ ],
+ "hist": 16,
+ "hidden": 32,
+ "emb": 4,
+ "dpos": 4,
+ "dc": 32,
+ "dh": 32,
+ "aux": 0.1,
+ "vocab": 6,
+ "seed": 1,
+ "params": 9363,
+ "train_files": [
+  "train__conv_640_3_8_1.belady.npz",
+  "train__conv_640_3_8_1.lru.npz",
+  "train__conv_704_3_8_1.belady.npz",
+  "train__conv_704_3_8_1.lru.npz",
+  "train__conv_768_3_8_1.belady.npz",
+  "train__conv_768_3_8_1.lru.npz"
+ ],
+ "val_files": [
+  "val__conv_672_3_8_1.belady.npz",
+  "val__conv_672_3_8_1.lru.npz"
+ ],
+ "train_top1": 0.9998166561126709,
+ "val_top1": 1.0,
+ "bytes": 37540,
+ "seconds": 923.9
+}

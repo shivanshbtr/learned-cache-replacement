@@ -1,0 +1,79 @@
+=== hash: LSTM+attention
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 6 files, 240000 decisions; val: 2 files, 80000 decisions; vocab 6 PCs; 16 ways; history 16
+epoch  1  train loss 2.1702  val loss 2.1456  val top-1 0.2492  (78s)
+epoch  2  train loss 2.1467  val loss 2.1431  val top-1 0.2497  (110s)
+epoch  3  train loss 2.1447  val loss 2.1437  val top-1 0.2537  (145s)
+epoch  4  train loss 2.1442  val loss 2.1408  val top-1 0.2515  (178s)
+epoch  5  train loss 2.1435  val loss 2.1443  val top-1 0.2510  (214s)
+epoch  6  train loss 2.1433  val loss 2.1402  val top-1 0.2535  (247s)
+epoch  7  train loss 2.1427  val loss 2.1398  val top-1 0.2525  (280s)
+epoch  8  train loss 2.1427  val loss 2.1484  val top-1 0.2481  (314s)
+export self-check: max |torch - numpy| score difference 1.01e-06
+saved /home/kiit/appcache_b/appcache/models/hash_lstm.lstm (9363 params, 36.7 KB): train top-1 0.256, val top-1 0.254
+=== graph: LSTM+attention
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 6 files, 240000 decisions; val: 2 files, 80000 decisions; vocab 64 PCs; 16 ways; history 16
+epoch  1  train loss 1.8594  val loss 1.8241  val top-1 0.3387  (83s)
+epoch  2  train loss 1.8247  val loss 1.8253  val top-1 0.3371  (127s)
+epoch  3  train loss 1.8217  val loss 1.8187  val top-1 0.3419  (166s)
+epoch  4  train loss 1.8196  val loss 1.8159  val top-1 0.3409  (199s)
+epoch  5  train loss 1.8166  val loss 1.8120  val top-1 0.3416  (234s)
+epoch  6  train loss 1.8141  val loss 1.8117  val top-1 0.3429  (265s)
+epoch  7  train loss 1.8130  val loss 1.8094  val top-1 0.3397  (303s)
+epoch  8  train loss 1.8119  val loss 1.8087  val top-1 0.3422  (337s)
+epoch  9  train loss 1.8111  val loss 1.8085  val top-1 0.3438  (376s)
+epoch 10  train loss 1.8105  val loss 1.8077  val top-1 0.3447  (437s)
+epoch 11  train loss 1.8100  val loss 1.8093  val top-1 0.3416  (487s)
+epoch 12  train loss 1.8093  val loss 1.8072  val top-1 0.3429  (537s)
+export self-check: max |torch - numpy| score difference 4.77e-06
+saved /home/kiit/appcache_b/appcache/models/graph_lstm.lstm (9595 params, 38.0 KB): train top-1 0.345, val top-1 0.345
+=== matrix: LSTM+attention
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 6 files, 190003 decisions; val: 2 files, 80000 decisions; vocab 5 PCs; 16 ways; history 16
+epoch  1  train loss 0.1161  val loss 0.0013  val top-1 1.0000  (98s)
+epoch  2  train loss 0.0156  val loss 0.0007  val top-1 1.0000  (132s)
+epoch  3  train loss 0.0153  val loss 0.0014  val top-1 1.0000  (174s)
+epoch  4  train loss 0.0153  val loss 0.0008  val top-1 1.0000  (212s)
+epoch  5  train loss 0.0151  val loss 0.0010  val top-1 1.0000  (246s)
+epoch  6  train loss 0.0150  val loss 0.0007  val top-1 1.0000  (272s)
+export self-check: max |torch - numpy| score difference 5.72e-06
+saved /home/kiit/appcache_b/appcache/models/matrix_lstm.lstm (9359 params, 36.6 KB): train top-1 0.996, val top-1 1.000
+=== conv: LSTM+attention
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 6 files, 240000 decisions; val: 2 files, 80000 decisions; vocab 6 PCs; 16 ways; history 16
+epoch  1  train loss 0.0308  val loss 0.0002  val top-1 1.0000  (51s)
+epoch  2  train loss 0.0005  val loss 0.0004  val top-1 1.0000  (81s)
+epoch  3  train loss 0.0002  val loss 0.0002  val top-1 1.0000  (326s)
+epoch  4  train loss 0.0002  val loss 0.0001  val top-1 1.0000  (543s)
+epoch  5  train loss 0.0002  val loss 0.0001  val top-1 1.0000  (749s)
+epoch  6  train loss 0.0002  val loss 0.0000  val top-1 1.0000  (891s)
+export self-check: max |torch - numpy| score difference 4.77e-06
+saved /home/kiit/appcache_b/appcache/models/conv_lstm.lstm (9363 params, 36.7 KB): train top-1 1.000, val top-1 1.000
+=== all: LSTM+attention
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 24 files, 910003 decisions; val: 8 files, 320000 decisions; vocab 64 PCs; 16 ways; history 16
+epoch  1  train loss 1.0743  val loss 0.9895  val top-1 0.6495  (755s)
+epoch  2  train loss 1.0513  val loss 0.9893  val top-1 0.6491  (1018s)
+epoch  3  train loss 1.0494  val loss 0.9878  val top-1 0.6495  (1269s)
+epoch  4  train loss 1.0485  val loss 0.9904  val top-1 0.6490  (1399s)
+epoch  5  train loss 1.0475  val loss 0.9865  val top-1 0.6497  (1537s)
+epoch  6  train loss 1.0469  val loss 0.9858  val top-1 0.6513  (1702s)
+epoch  7  train loss 1.0464  val loss 0.9863  val top-1 0.6508  (2192s)
+epoch  8  train loss 1.0462  val loss 0.9844  val top-1 0.6516  (2704s)
+epoch  9  train loss 1.0458  val loss 0.9847  val top-1 0.6517  (2846s)
+epoch 10  train loss 1.0456  val loss 0.9859  val top-1 0.6507  (2961s)
+epoch 11  train loss 1.0454  val loss 0.9842  val top-1 0.6509  (3083s)
+epoch 12  train loss 1.0452  val loss 0.9852  val top-1 0.6506  (3187s)
+export self-check: max |torch - numpy| score difference 1.91e-05
+saved /home/kiit/appcache_b/appcache/models/all_lstm.lstm (9595 params, 38.0 KB): train top-1 0.630, val top-1 0.652

@@ -1,0 +1,8 @@
+apps: hash(2196367 acc, 60503795 instr) graph(2810621 acc, 40022237 instr) matrix(2506240 acc, 140128666 instr) conv(518563 acc, 359670674 instr)
+merged accesses=5725558 (warm-up 572555), slice=10000 instr, slices=15990, switches=15989, until=first, config hash=59d2554a4ce6bd29
+lru                        misses=1347085   MPKI=7.428   | hash 337045 (9.40) graph 390365 (10.89) matrix 562411 (8.05) conv 57264 (1.44)  [0.5s]
+srrip                      misses=1012781   MPKI=5.585   | hash 266486 (7.43) graph 385741 (10.76) matrix 303290 (4.34) conv 57264 (1.44)  [0.5s]
+drrip                      misses=798702    MPKI=4.404   | hash 240684 (6.71) graph 328403 (9.16) matrix 172351 (2.47) conv 57264 (1.44)  [0.5s]
+bip                        misses=760486    MPKI=4.194   | hash 241168 (6.72) graph 360200 (10.05) matrix 101854 (1.46) conv 57264 (1.44)  [0.6s]
+mru                        misses=2232970   MPKI=12.313  | hash 600455 (16.74) graph 1009595 (28.17) matrix 565656 (8.10) conv 57264 (1.44)  [0.5s]
+belady                     misses=464480    MPKI=2.561   | hash 158052 (4.41) graph 228198 (6.37) matrix 20966 (0.30) conv 57264 (1.44)  [0.4s]

@@ -1,0 +1,34 @@
+{
+ "kind": "mlp",
+ "workload": "matrix",
+ "drivers": [
+  "lru",
+  "belady",
+  "dag1mlp"
+ ],
+ "hidden": "32,32",
+ "emb": 4,
+ "vocab": 5,
+ "seed": 3,
+ "params": 1731,
+ "train_files": [
+  "train__matrix_500_0_1.belady.npz",
+  "train__matrix_500_0_1.dag1mlp.npz",
+  "train__matrix_500_0_1.lru.npz",
+  "train__matrix_550_0_1.belady.npz",
+  "train__matrix_550_0_1.dag1mlp.npz",
+  "train__matrix_550_0_1.lru.npz",
+  "train__matrix_600_0_1.belady.npz",
+  "train__matrix_600_0_1.dag1mlp.npz",
+  "train__matrix_600_0_1.lru.npz"
+ ],
+ "val_files": [
+  "val__matrix_650_0_1.belady.npz",
+  "val__matrix_650_0_1.dag1mlp.npz",
+  "val__matrix_650_0_1.lru.npz"
+ ],
+ "train_top1": 0.9980326294898987,
+ "val_top1": 0.9999611377716064,
+ "bytes": 7004,
+ "seconds": 336.2
+}

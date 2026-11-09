@@ -1,0 +1,44 @@
+{
+ "kind": "mlp",
+ "workload": "graph",
+ "drivers": [
+  "lru",
+  "belady",
+  "dag1mlp",
+  "mixreq1mlp",
+  "mixown1mlp"
+ ],
+ "hidden": "32,32",
+ "emb": 4,
+ "vocab": 64,
+ "seed": 1,
+ "params": 2203,
+ "train_files": [
+  "train__graph_100000_8_0_1_4.belady.npz",
+  "train__graph_100000_8_0_1_4.dag1mlp.npz",
+  "train__graph_100000_8_0_1_4.lru.npz",
+  "train__graph_100000_8_0_2_4.belady.npz",
+  "train__graph_100000_8_0_2_4.dag1mlp.npz",
+  "train__graph_100000_8_0_2_4.lru.npz",
+  "train__graph_100000_8_0_3_4.belady.npz",
+  "train__graph_100000_8_0_3_4.dag1mlp.npz",
+  "train__graph_100000_8_0_3_4.lru.npz",
+  "train__mix0s10000.mixown1mlp.npz",
+  "train__mix0s10000.mixreq1mlp.npz",
+  "train__mix1s10000.mixown1mlp.npz",
+  "train__mix1s10000.mixreq1mlp.npz",
+  "train__mix2s10000.mixown1mlp.npz",
+  "train__mix2s10000.mixreq1mlp.npz"
+ ],
+ "val_files": [
+  "val__graph_100000_8_0_4_4.belady.npz",
+  "val__graph_100000_8_0_4_4.dag1mlp.npz",
+  "val__graph_100000_8_0_4_4.lru.npz",
+  "val__mix0s10000.mixown1mlp.npz",
+  "val__mix0s10000.mixreq1mlp.npz"
+ ],
+ "train_top1": 0.45298445224761963,
+ "val_top1": 0.45232000946998596,
+ "bytes": 9364,
+ "seconds": 1057.7
+}

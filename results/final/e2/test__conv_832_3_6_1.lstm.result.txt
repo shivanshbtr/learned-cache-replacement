@@ -1,0 +1,9 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__conv_832_3_6_1.llc.trace
+LLC accesses=518563 (warm-up 51856, measured 466707), unique lines=302238 (18889.9 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru            466707     0.0000     1.442        0.0%     13072925
+belady         312335     0.3308     0.965      100.0%     13200418
+lstm:conv_lstm       312350     0.3307     0.965      100.0%         5109
+lstm:all_lstm       322590     0.3088     0.996       93.4%         5085
+  model lstm:conv_lstm: {"kind":"lstm","params":9363,"model_bytes":37540,"ops_per_decision":325632,"decisions":331438,"lat_mean_ns":305502,"lat_p50_ns":311621,"lat_p99_ns":635976}
+  model lstm:all_lstm: {"kind":"lstm","params":9595,"model_bytes":38932,"ops_per_decision":325632,"decisions":341678,"lat_mean_ns":297870,"lat_p50_ns":304852,"lat_p99_ns":569107}

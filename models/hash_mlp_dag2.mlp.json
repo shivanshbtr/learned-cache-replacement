@@ -1,0 +1,39 @@
+{
+ "kind": "mlp",
+ "workload": "hash",
+ "drivers": [
+  "lru",
+  "belady",
+  "dag1mlp",
+  "dag2mlp"
+ ],
+ "hidden": "32,32",
+ "emb": 4,
+ "vocab": 6,
+ "seed": 1,
+ "params": 1739,
+ "train_files": [
+  "train__hash_18_100000_1500000_1_1.belady.npz",
+  "train__hash_18_100000_1500000_1_1.dag1mlp.npz",
+  "train__hash_18_100000_1500000_1_1.dag2mlp.npz",
+  "train__hash_18_100000_1500000_1_1.lru.npz",
+  "train__hash_18_100000_1500000_1_2.belady.npz",
+  "train__hash_18_100000_1500000_1_2.dag1mlp.npz",
+  "train__hash_18_100000_1500000_1_2.dag2mlp.npz",
+  "train__hash_18_100000_1500000_1_2.lru.npz",
+  "train__hash_18_100000_1500000_1_3.belady.npz",
+  "train__hash_18_100000_1500000_1_3.dag1mlp.npz",
+  "train__hash_18_100000_1500000_1_3.dag2mlp.npz",
+  "train__hash_18_100000_1500000_1_3.lru.npz"
+ ],
+ "val_files": [
+  "val__hash_18_100000_1500000_1_4.belady.npz",
+  "val__hash_18_100000_1500000_1_4.dag1mlp.npz",
+  "val__hash_18_100000_1500000_1_4.dag2mlp.npz",
+  "val__hash_18_100000_1500000_1_4.lru.npz"
+ ],
+ "train_top1": 0.26981666684150696,
+ "val_top1": 0.27033331990242004,
+ "bytes": 7044,
+ "seconds": 132.4
+}

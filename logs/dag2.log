@@ -1,0 +1,49 @@
+nohup: ignoring input
+DAgger round 2 (mlp): 32 labeling jobs, 3 in parallel
+done  train__conv_640_3_8_1.dag2allmlp
+done  train__conv_640_3_8_1.dag2mlp
+done  train__conv_704_3_8_1.dag2mlp
+done  train__conv_704_3_8_1.dag2allmlp
+done  train__conv_768_3_8_1.dag2mlp
+done  train__conv_768_3_8_1.dag2allmlp
+done  train__graph_100000_8_0_1_4.dag2mlp
+done  train__graph_100000_8_0_1_4.dag2allmlp
+done  train__graph_100000_8_0_2_4.dag2mlp
+done  train__graph_100000_8_0_2_4.dag2allmlp
+done  train__graph_100000_8_0_3_4.dag2mlp
+done  train__graph_100000_8_0_3_4.dag2allmlp
+done  train__hash_18_100000_1500000_1_1.dag2mlp
+done  train__hash_18_100000_1500000_1_1.dag2allmlp
+done  train__hash_18_100000_1500000_1_2.dag2mlp
+done  train__hash_18_100000_1500000_1_2.dag2allmlp
+done  train__matrix_500_0_1.dag2mlp
+done  train__hash_18_100000_1500000_1_3.dag2allmlp
+done  train__hash_18_100000_1500000_1_3.dag2mlp
+done  train__matrix_500_0_1.dag2allmlp
+done  train__matrix_550_0_1.dag2allmlp
+done  train__matrix_550_0_1.dag2mlp
+done  val__conv_672_3_8_1.dag2mlp
+done  train__matrix_600_0_1.dag2mlp
+done  val__conv_672_3_8_1.dag2allmlp
+done  train__matrix_600_0_1.dag2allmlp
+done  val__graph_100000_8_0_4_4.dag2mlp
+done  val__graph_100000_8_0_4_4.dag2allmlp
+done  val__hash_18_100000_1500000_1_4.dag2mlp
+done  val__hash_18_100000_1500000_1_4.dag2allmlp
+done  val__matrix_650_0_1.dag2mlp
+done  val__matrix_650_0_1.dag2allmlp
+=== retrain hash (mlp) on drivers lru,belady,dag1mlp,dag2mlp
+epoch  7  train loss 2.0886  val loss 2.0869  val top-1 0.2695
+saved /home/kiit/appcache_b/appcache/models/hash_mlp_dag2.mlp (1739 params, 6.9 KB): train top-1 0.270, val top-1 0.270
+=== retrain graph (mlp) on drivers lru,belady,dag1mlp,dag2mlp
+epoch 14  train loss 1.8834  val loss 1.8831  val top-1 0.3112
+saved /home/kiit/appcache_b/appcache/models/graph_mlp_dag2.mlp (2203 params, 9.1 KB): train top-1 0.311, val top-1 0.312
+=== retrain matrix (mlp) on drivers lru,belady,dag1mlp,dag2mlp
+epoch  7  train loss 0.0058  val loss 0.0042  val top-1 0.9962
+saved /home/kiit/appcache_b/appcache/models/matrix_mlp_dag2.mlp (1731 params, 6.8 KB): train top-1 0.999, val top-1 1.000
+=== retrain conv (mlp) on drivers lru,belady,dag1mlp,dag2mlp
+epoch  7  train loss 0.0000  val loss 0.0000  val top-1 1.0000
+saved /home/kiit/appcache_b/appcache/models/conv_mlp_dag2.mlp (1739 params, 6.9 KB): train top-1 1.000, val top-1 1.000
+=== retrain all (mlp) on drivers lru,belady,dag1mlp,dag1allmlp,dag2mlp,dag2allmlp
+epoch  8  train loss 1.0714  val loss 0.9932  val top-1 0.6416
+saved /home/kiit/appcache_b/appcache/models/all_mlp_dag2.mlp (2203 params, 9.1 KB): train top-1 0.614, val top-1 0.642

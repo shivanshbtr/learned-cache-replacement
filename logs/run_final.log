@@ -1,0 +1,89 @@
+nohup: ignoring input
+  mlp   variant base   mean gap closed on val (4 workloads x specialized+generic): 0.6528
+  mlp   variant _dag1  mean gap closed on val (4 workloads x specialized+generic): 0.7262
+  mlp   variant _dag2  mean gap closed on val (4 workloads x specialized+generic): 0.7271
+=> mlp: _dag1
+  gbdt  variant base   mean gap closed on val (4 workloads x specialized+generic): 0.5480
+  gbdt  variant _dag1  mean gap closed on val (4 workloads x specialized+generic): 0.7117
+=> gbdt: _dag1
+  lstm  variant base   mean gap closed on val (4 workloads x specialized+generic): 0.6757
+=> lstm: base
+frozen: /home/kiit/appcache_b/appcache/results/final/model_set.json
+E1-E5 (test split): 56 jobs, 4 in parallel
+done   test__conv_720_5_3_1.base.result.json
+done   test__conv_720_5_3_1.core.result.json
+done   test__conv_720_5_3_1.gbdt.result.json
+done   test__conv_720_5_3_1.core.result.json
+done   test__conv_832_3_6_1.base.result.json
+done   test__conv_720_5_3_1.core.result.json
+done   test__conv_832_3_6_1.gbdt.result.json
+done   test__conv_720_5_3_1.lstm.result.json
+done   test__conv_720_5_3_1.mlp.result.json
+done   test__conv_832_3_6_1.core.result.json
+done   test__conv_832_3_6_1.core.result.json
+done   test__graph_100000_8_0_5_4.base.result.json
+done   test__conv_832_3_6_1.core.result.json
+done   test__conv_832_3_6_1.mlp.result.json
+done   test__conv_832_3_6_1.lstm.result.json
+done   test__graph_100000_8_0_5_4.gbdt.result.json
+done   test__graph_100000_8_0_5_4.core.result.json
+done   test__graph_100000_8_0_5_4.core.result.json
+done   test__graph_100000_8_1_5_4.base.result.json
+done   test__graph_100000_8_0_5_4.core.result.json
+done   test__graph_100000_8_0_5_4.mlp.result.json
+done   test__graph_100000_8_1_5_4.gbdt.result.json
+done   test__graph_100000_8_1_5_4.core.result.json
+done   test__graph_100000_8_1_5_4.core.result.json
+done   test__graph_100000_8_0_5_4.lstm.result.json
+done   test__hash_18_100000_1500000_0_5.base.result.json
+done   test__graph_100000_8_1_5_4.core.result.json
+done   test__graph_100000_8_1_5_4.mlp.result.json
+done   test__graph_100000_8_1_5_4.lstm.result.json
+done   test__hash_18_100000_1500000_0_5.core.result.json
+done   test__hash_18_100000_1500000_0_5.core.result.json
+done   test__hash_18_100000_1500000_0_5.core.result.json
+done   test__hash_18_100000_1500000_1_5.base.result.json
+done   test__hash_18_100000_1500000_0_5.gbdt.result.json
+done   test__hash_18_100000_1500000_0_5.lstm.result.json
+done   test__hash_18_100000_1500000_0_5.mlp.result.json
+done   test__hash_18_100000_1500000_1_5.gbdt.result.json
+done   test__hash_18_100000_1500000_1_5.core.result.json
+done   test__hash_18_100000_1500000_1_5.core.result.json
+done   test__matrix_700_0_1.base.result.json
+done   test__hash_18_100000_1500000_1_5.mlp.result.json
+done   test__hash_18_100000_1500000_1_5.core.result.json
+done   test__hash_18_100000_1500000_1_5.lstm.result.json
+done   test__matrix_700_0_1.gbdt.result.json
+done   test__matrix_700_0_1.core.result.json
+done   test__matrix_700_0_1.core.result.json
+done   test__matrix_800_0_1.base.result.json
+done   test__matrix_700_0_1.core.result.json
+done   test__matrix_800_0_1.gbdt.result.json
+done   test__matrix_700_0_1.lstm.result.json
+done   test__matrix_700_0_1.mlp.result.json
+done   test__matrix_800_0_1.core.result.json
+done   test__matrix_800_0_1.core.result.json
+done   test__matrix_800_0_1.core.result.json
+done   test__matrix_800_0_1.mlp.result.json
+done   test__matrix_800_0_1.lstm.result.json
+applications: --app hash=/home/kiit/appcache_b/appcache/results/traces/test/test__hash_18_100000_1500000_1_5.llc.trace --app graph=/home/kiit/appcache_b/appcache/results/traces/test/test__graph_100000_8_0_5_4.llc.trace --app matrix=/home/kiit/appcache_b/appcache/results/traces/test/test__matrix_700_0_1.llc.trace --app conv=/home/kiit/appcache_b/appcache/results/traces/test/test__conv_832_3_6_1.llc.trace
+shortest trace: 40022237 instructions
+E7/E8: 18 jobs, 3 in parallel
+done   e7_s40022.base.json
+done   e7_s400222.base.json
+done   e7_s400222.mlp.json
+done   e7_s40022.mlp.json
+done   e7_s4002223.base.json
+done   e7_s40022.gbdt.json
+done   e7_s4002223.mlp.json
+done   e7_s10005559.base.json
+done   e7_s10005559.mlp.json
+done   e7_s400222.gbdt.json
+done   e8_default_s10000.base.json
+done   e7_s4002223.gbdt.json
+done   e8_default_s10000.mlp.json
+done   e8_llc8m_16w_s10000.base.json
+done   e8_llc8m_16w_s10000.mlp.json
+done   e7_s10005559.gbdt.json
+done   e8_llc8m_16w_s10000.gbdt.json
+done   e8_default_s10000.gbdt.json

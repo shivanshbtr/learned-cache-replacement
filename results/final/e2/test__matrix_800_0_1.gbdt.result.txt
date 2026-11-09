@@ -1,0 +1,9 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__matrix_800_0_1.llc.trace
+LLC accesses=2505589 (warm-up 250558, measured 2255031), unique lines=86328 (5395.5 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru           2255031     0.0000    17.880        0.0%     12254999
+belady        1374912     0.3903    10.902      100.0%     15282402
+gbdt:matrix_lgbm_dag1      1374921     0.3903    10.902      100.0%        44792
+gbdt:all_lgbm_dag1      1374918     0.3903    10.902      100.0%        17225
+  model gbdt:matrix_lgbm_dag1: {"kind":"gbdt","params":3050,"model_bytes":179814,"ops_per_decision":5488.47,"decisions":1517580,"lat_mean_ns":36412.3,"lat_p50_ns":33618,"lat_p99_ns":95939}
+  model gbdt:all_lgbm_dag1: {"kind":"gbdt","params":7869,"model_bytes":471637,"ops_per_decision":12363.6,"decisions":1517576,"lat_mean_ns":95299.8,"lat_p50_ns":94132,"lat_p99_ns":217564}

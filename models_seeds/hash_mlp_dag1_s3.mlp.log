@@ -1,0 +1,28 @@
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 9 files, 540000 decisions; val: 3 files, 180000 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 2.1248  val loss 2.0972  val top-1 0.2605
+epoch  2  train loss 2.0977  val loss 2.0951  val top-1 0.2652
+epoch  3  train loss 2.0953  val loss 2.0905  val top-1 0.2673
+epoch  4  train loss 2.0943  val loss 2.0906  val top-1 0.2670
+epoch  5  train loss 2.0934  val loss 2.0912  val top-1 0.2688
+epoch  6  train loss 2.0930  val loss 2.0883  val top-1 0.2693
+epoch  7  train loss 2.0925  val loss 2.0881  val top-1 0.2692
+epoch  8  train loss 2.0922  val loss 2.0882  val top-1 0.2690
+epoch  9  train loss 2.0919  val loss 2.0887  val top-1 0.2688
+epoch 10  train loss 2.0915  val loss 2.0875  val top-1 0.2689
+epoch 11  train loss 2.0910  val loss 2.0874  val top-1 0.2695
+epoch 12  train loss 2.0909  val loss 2.0875  val top-1 0.2692
+epoch 13  train loss 2.0908  val loss 2.0879  val top-1 0.2685
+epoch 14  train loss 2.0904  val loss 2.0863  val top-1 0.2685
+epoch 15  train loss 2.0904  val loss 2.0873  val top-1 0.2684
+epoch 16  train loss 2.0902  val loss 2.0862  val top-1 0.2700
+epoch 17  train loss 2.0900  val loss 2.0869  val top-1 0.2704
+epoch 18  train loss 2.0900  val loss 2.0877  val top-1 0.2699
+epoch 19  train loss 2.0900  val loss 2.0868  val top-1 0.2688
+epoch 20  train loss 2.0897  val loss 2.0863  val top-1 0.2692
+epoch 21  train loss 2.0898  val loss 2.0873  val top-1 0.2704
+epoch 22  train loss 2.0896  val loss 2.0875  val top-1 0.2681
+epoch 23  train loss 2.0898  val loss 2.0864  val top-1 0.2692
+saved /home/kiit/appcache_b/appcache/models_seeds/hash_mlp_dag1_s3.mlp (1739 params, 6.9 KB): train top-1 0.271, val top-1 0.270

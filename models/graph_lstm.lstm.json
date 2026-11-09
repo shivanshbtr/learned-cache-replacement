@@ -1,0 +1,34 @@
+{
+ "kind": "lstm",
+ "workload": "graph",
+ "drivers": [
+  "lru",
+  "belady"
+ ],
+ "hist": 16,
+ "hidden": 32,
+ "emb": 4,
+ "dpos": 4,
+ "dc": 32,
+ "dh": 32,
+ "aux": 0.1,
+ "vocab": 64,
+ "seed": 1,
+ "params": 9595,
+ "train_files": [
+  "train__graph_100000_8_0_1_4.belady.npz",
+  "train__graph_100000_8_0_1_4.lru.npz",
+  "train__graph_100000_8_0_2_4.belady.npz",
+  "train__graph_100000_8_0_2_4.lru.npz",
+  "train__graph_100000_8_0_3_4.belady.npz",
+  "train__graph_100000_8_0_3_4.lru.npz"
+ ],
+ "val_files": [
+  "val__graph_100000_8_0_4_4.belady.npz",
+  "val__graph_100000_8_0_4_4.lru.npz"
+ ],
+ "train_top1": 0.34497082233428955,
+ "val_top1": 0.344650000333786,
+ "bytes": 38932,
+ "seconds": 548.3
+}

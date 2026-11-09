@@ -1,0 +1,5 @@
+numpy>=1.24
+lightgbm>=4.0
+# CPU-only PyTorch (smaller download):  pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.0
+matplotlib

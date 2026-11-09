@@ -1,0 +1,35 @@
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 9 files, 540000 decisions; val: 3 files, 180000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.9096  val loss 1.8716  val top-1 0.3183
+epoch  2  train loss 1.8708  val loss 1.8640  val top-1 0.3214
+epoch  3  train loss 1.8665  val loss 1.8593  val top-1 0.3233
+epoch  4  train loss 1.8635  val loss 1.8587  val top-1 0.3230
+epoch  5  train loss 1.8616  val loss 1.8606  val top-1 0.3212
+epoch  6  train loss 1.8607  val loss 1.8562  val top-1 0.3257
+epoch  7  train loss 1.8598  val loss 1.8559  val top-1 0.3230
+epoch  8  train loss 1.8588  val loss 1.8545  val top-1 0.3262
+epoch  9  train loss 1.8584  val loss 1.8546  val top-1 0.3244
+epoch 10  train loss 1.8579  val loss 1.8544  val top-1 0.3263
+epoch 11  train loss 1.8572  val loss 1.8533  val top-1 0.3250
+epoch 12  train loss 1.8571  val loss 1.8533  val top-1 0.3242
+epoch 13  train loss 1.8564  val loss 1.8516  val top-1 0.3265
+epoch 14  train loss 1.8563  val loss 1.8509  val top-1 0.3271
+epoch 15  train loss 1.8556  val loss 1.8521  val top-1 0.3272
+epoch 16  train loss 1.8557  val loss 1.8503  val top-1 0.3266
+epoch 17  train loss 1.8552  val loss 1.8510  val top-1 0.3260
+epoch 18  train loss 1.8550  val loss 1.8517  val top-1 0.3268
+epoch 19  train loss 1.8547  val loss 1.8525  val top-1 0.3271
+epoch 20  train loss 1.8545  val loss 1.8517  val top-1 0.3275
+epoch 21  train loss 1.8543  val loss 1.8506  val top-1 0.3260
+epoch 22  train loss 1.8542  val loss 1.8505  val top-1 0.3274
+epoch 23  train loss 1.8540  val loss 1.8521  val top-1 0.3253
+epoch 24  train loss 1.8537  val loss 1.8521  val top-1 0.3271
+epoch 25  train loss 1.8536  val loss 1.8518  val top-1 0.3255
+epoch 26  train loss 1.8536  val loss 1.8498  val top-1 0.3286
+epoch 27  train loss 1.8533  val loss 1.8506  val top-1 0.3281
+epoch 28  train loss 1.8532  val loss 1.8502  val top-1 0.3266
+epoch 29  train loss 1.8530  val loss 1.8506  val top-1 0.3256
+epoch 30  train loss 1.8529  val loss 1.8500  val top-1 0.3244
+saved /home/kiit/appcache_b/appcache/models_seeds/graph_mlp_dag1_s3.mlp (2203 params, 9.1 KB): train top-1 0.326, val top-1 0.329

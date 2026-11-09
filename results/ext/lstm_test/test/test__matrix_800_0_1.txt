@@ -1,0 +1,21 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__matrix_800_0_1.llc.trace
+LLC accesses=2505589 (warm-up 250558, measured 2255031), unique lines=86328 (5395.5 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru           2255031     0.0000    17.880        0.0%      4879953
+srrip         2255031     0.0000    17.880        0.0%      7963698
+drrip         1401123     0.3787    11.110       97.0%      5977826
+bip           1427471     0.3670    11.319       94.0%      3322347
+mru           1429927     0.3659    11.338       93.7%      7309157
+belady        1374912     0.3903    10.902      100.0%      5935902
+mlp:matrix_mlp_dag1      1374912     0.3903    10.902      100.0%        27261
+mlp:all_mlp_dag1      1374912     0.3903    10.902      100.0%        28010
+lstm:matrix_lstm      1374941     0.3903    10.902      100.0%         3991
+lstm:matrix_lstm_dag1      1374912     0.3903    10.902      100.0%         4006
+lstm:all_lstm      1374941     0.3903    10.902      100.0%         9487
+lstm:all_lstm_dag1      1374940     0.3903    10.902      100.0%         9369
+  model mlp:matrix_mlp_dag1: {"kind":"mlp","params":1731,"model_bytes":7004,"ops_per_decision":52528,"decisions":1517568,"lat_mean_ns":59647.7,"lat_p50_ns":58246,"lat_p99_ns":218194}
+  model mlp:all_mlp_dag1: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":1517568,"lat_mean_ns":58135.4,"lat_p50_ns":57063,"lat_p99_ns":208329}
+  model lstm:matrix_lstm: {"kind":"lstm","params":9359,"model_bytes":37516,"ops_per_decision":325632,"decisions":1517599,"lat_mean_ns":412246,"lat_p50_ns":372443,"lat_p99_ns":951651}
+  model lstm:matrix_lstm_dag1: {"kind":"lstm","params":9359,"model_bytes":37516,"ops_per_decision":325632,"decisions":1517568,"lat_mean_ns":410649,"lat_p50_ns":304233,"lat_p99_ns":1.05768e+06}
+  model lstm:all_lstm: {"kind":"lstm","params":9595,"model_bytes":38932,"ops_per_decision":325632,"decisions":1517599,"lat_mean_ns":173609,"lat_p50_ns":148643,"lat_p99_ns":510508}
+  model lstm:all_lstm_dag1: {"kind":"lstm","params":9595,"model_bytes":38932,"ops_per_decision":325632,"decisions":1517596,"lat_mean_ns":175811,"lat_p50_ns":151407,"lat_p99_ns":524653}

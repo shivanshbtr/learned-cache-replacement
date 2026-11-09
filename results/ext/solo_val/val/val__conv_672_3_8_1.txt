@@ -1,0 +1,15 @@
+trace: results/traces/val/val__conv_672_3_8_1.llc.trace
+LLC accesses=450936 (warm-up 45093, measured 405843), unique lines=253361 (15835.1 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru            405843     0.0000     1.443        0.0%     31557263
+fifo           405843     0.0000     1.443        0.0%     38229546
+random         361466     0.1093     1.285       22.5%     45785608
+srrip          405843     0.0000     1.443        0.0%     68610919
+drrip          295172     0.2727     1.049       56.0%     40264508
+bip            288870     0.2882     1.027       59.2%     19839884
+mru            389723     0.0397     1.386        8.2%     35655334
+mlp:conv_mlp_mix1       208268     0.4868     0.740      100.0%       153785
+mlp:all_mlp_mix1       208268     0.4868     0.740      100.0%        54344
+belady         208268     0.4868     0.740      100.0%     18821938
+  model mlp:conv_mlp_mix1: {"kind":"mlp","params":1739,"model_bytes":7044,"ops_per_decision":52528,"decisions":220593,"lat_mean_ns":13175.9,"lat_p50_ns":8815,"lat_p99_ns":45264}
+  model mlp:all_mlp_mix1: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":220593,"lat_mean_ns":37323.7,"lat_p50_ns":26956,"lat_p99_ns":122894}

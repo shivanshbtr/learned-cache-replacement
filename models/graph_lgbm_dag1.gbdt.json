@@ -1,0 +1,33 @@
+{
+ "kind": "gbdt",
+ "workload": "graph",
+ "drivers": [
+  "lru",
+  "belady",
+  "dag1lgbm"
+ ],
+ "leaves": 31,
+ "trees": 217,
+ "vocab": 64,
+ "seed": 1,
+ "train_files": [
+  "train__graph_100000_8_0_1_4.belady.npz",
+  "train__graph_100000_8_0_1_4.dag1lgbm.npz",
+  "train__graph_100000_8_0_1_4.lru.npz",
+  "train__graph_100000_8_0_2_4.belady.npz",
+  "train__graph_100000_8_0_2_4.dag1lgbm.npz",
+  "train__graph_100000_8_0_2_4.lru.npz",
+  "train__graph_100000_8_0_3_4.belady.npz",
+  "train__graph_100000_8_0_3_4.dag1lgbm.npz",
+  "train__graph_100000_8_0_3_4.lru.npz"
+ ],
+ "val_files": [
+  "val__graph_100000_8_0_4_4.belady.npz",
+  "val__graph_100000_8_0_4_4.dag1lgbm.npz",
+  "val__graph_100000_8_0_4_4.lru.npz"
+ ],
+ "train_top1": 0.31373703703703704,
+ "val_top1": 0.31238333333333335,
+ "seconds": 693.2,
+ "bytes": 769533
+}

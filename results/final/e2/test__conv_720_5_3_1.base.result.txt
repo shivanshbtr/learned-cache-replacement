@@ -1,0 +1,11 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__conv_720_5_3_1.llc.trace
+LLC accesses=193875 (warm-up 19387, measured 174488), unique lines=129073 (8067.1 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru            174488     0.0000     0.639        0.0%     26419272
+fifo           174488     0.0000     0.639        0.0%     19796775
+random         162686     0.0676     0.596       19.1%     55335293
+srrip          174488     0.0000     0.639        0.0%     40330893
+drrip          144592     0.1713     0.530       48.4%     20199927
+bip            142582     0.1829     0.522       51.6%     12274762
+mru            158161     0.0936     0.580       26.4%     18392084
+belady         112690     0.3542     0.413      100.0%     16329605

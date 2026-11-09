@@ -1,0 +1,17 @@
+apps: hash(2196367 acc, 60503795 instr) graph(2810621 acc, 40022237 instr) matrix(2506240 acc, 140128666 instr) conv(518563 acc, 359670674 instr)
+merged accesses=5725558 (warm-up 572555), slice=10000 instr, slices=15990, switches=15989, until=first, config hash=aad10428c2aa096c
+lru                        misses=3229206   MPKI=17.807  | hash 1039753 (28.99) graph 882969 (24.64) matrix 1249220 (17.88) conv 57264 (1.44)  [0.2s]
+srrip                      misses=2978663   MPKI=16.425  | hash 937860 (26.15) graph 734319 (20.49) matrix 1249220 (17.88) conv 57264 (1.44)  [0.2s]
+drrip                      misses=2633063   MPKI=14.520  | hash 823707 (22.96) graph 675558 (18.85) matrix 1076534 (15.41) conv 57264 (1.44)  [0.2s]
+bip                        misses=2717589   MPKI=14.986  | hash 865703 (24.13) graph 740063 (20.65) matrix 1054559 (15.09) conv 57264 (1.44)  [0.4s]
+mru                        misses=4499277   MPKI=24.811  | hash 1134910 (31.64) graph 2217113 (61.87) matrix 1089990 (15.60) conv 57264 (1.44)  [0.2s]
+belady                     misses=2157901   MPKI=11.899  | hash 448446 (12.50) graph 470352 (13.13) matrix 1181839 (16.91) conv 57264 (1.44)  [0.2s]
+req:spec_mlp               misses=3738607   MPKI=20.616  | hash 1188882 (33.14) graph 1243241 (34.69) matrix 1249220 (17.88) conv 57264 (1.44)  [45.8s]
+own:spec_mlp               misses=3041762   MPKI=16.773  | hash 952911 (26.56) graph 911403 (25.43) matrix 1120184 (16.03) conv 57264 (1.44)  [10.7s]
+gen:all_mlp                misses=3024787   MPKI=16.680  | hash 1302040 (36.30) graph 816204 (22.78) matrix 849279 (12.16) conv 57264 (1.44)  [39.0s]
+req:mix1spec_mlp           misses=3379720   MPKI=18.637  | hash 1204059 (33.57) graph 869177 (24.25) matrix 1249220 (17.88) conv 57264 (1.44)  [48.5s]
+own:mix1spec_mlp           misses=3191674   MPKI=17.600  | hash 975550 (27.20) graph 911998 (25.45) matrix 1246862 (17.85) conv 57264 (1.44)  [12.4s]
+gen:mix1all_mlp            misses=2617728   MPKI=14.435  | hash 840501 (23.43) graph 681060 (19.01) matrix 1038903 (14.87) conv 57264 (1.44)  [31.9s]
+req:mix1bspec_mlp          misses=2542974   MPKI=14.023  | hash 704652 (19.64) graph 597198 (16.66) matrix 1183860 (16.94) conv 57264 (1.44)  [31.2s]
+own:mix1bspec_mlp          misses=3144919   MPKI=17.342  | hash 948036 (26.43) graph 911203 (25.43) matrix 1228416 (17.58) conv 57264 (1.44)  [12.5s]
+gen:mix1ball_mlp           misses=2466003   MPKI=13.598  | hash 671333 (18.72) graph 565424 (15.78) matrix 1171982 (16.77) conv 57264 (1.44)  [28.4s]

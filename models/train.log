@@ -1,0 +1,85 @@
+=== hash: LightGBM
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models/hash_lgbm.gbdt (196 trees, 676.0 KB): train top-1 0.246, val top-1 0.241 (informative measured decisions)
+=== hash: MLP
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 2.1767  val loss 2.1459  val top-1 0.2504
+epoch  2  train loss 2.1450  val loss 2.1421  val top-1 0.2540
+epoch  3  train loss 2.1429  val loss 2.1433  val top-1 0.2532
+epoch  4  train loss 2.1423  val loss 2.1424  val top-1 0.2511
+epoch  5  train loss 2.1422  val loss 2.1413  val top-1 0.2517
+epoch  6  train loss 2.1416  val loss 2.1425  val top-1 0.2500
+epoch  7  train loss 2.1415  val loss 2.1405  val top-1 0.2508
+epoch  8  train loss 2.1413  val loss 2.1458  val top-1 0.2535
+saved /home/kiit/appcache_b/appcache/models/hash_mlp.mlp (1739 params, 6.9 KB): train top-1 0.254, val top-1 0.254
+=== graph: LightGBM
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models/graph_lgbm.gbdt (297 trees, 1019.6 KB): train top-1 0.346, val top-1 0.342 (informative measured decisions)
+=== graph: MLP
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.8629  val loss 1.8225  val top-1 0.3407
+epoch  2  train loss 1.8217  val loss 1.8223  val top-1 0.3363
+epoch  3  train loss 1.8195  val loss 1.8169  val top-1 0.3441
+epoch  4  train loss 1.8181  val loss 1.8158  val top-1 0.3411
+epoch  5  train loss 1.8169  val loss 1.8154  val top-1 0.3435
+epoch  6  train loss 1.8162  val loss 1.8175  val top-1 0.3429
+epoch  7  train loss 1.8157  val loss 1.8143  val top-1 0.3398
+epoch  8  train loss 1.8149  val loss 1.8168  val top-1 0.3437
+epoch  9  train loss 1.8142  val loss 1.8138  val top-1 0.3423
+saved /home/kiit/appcache_b/appcache/models/graph_mlp.mlp (2203 params, 9.1 KB): train top-1 0.347, val top-1 0.344
+=== matrix: LightGBM
+train: 6 files, 270003 decisions; val: 2 files, 120000 decisions; vocab 5 PCs
+saved /home/kiit/appcache_b/appcache/models/matrix_lgbm.gbdt (45 trees, 157.8 KB): train top-1 0.993, val top-1 0.993 (informative measured decisions)
+=== matrix: MLP
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 6 files, 270003 decisions; val: 2 files, 120000 decisions; vocab 5 PCs; 16 ways
+epoch  1  train loss 0.2024  val loss 0.0018  val top-1 1.0000
+epoch  2  train loss 0.0145  val loss 0.0011  val top-1 1.0000
+epoch  3  train loss 0.0120  val loss 0.0006  val top-1 1.0000
+epoch  4  train loss 0.0118  val loss 0.0007  val top-1 1.0000
+epoch  5  train loss 0.0114  val loss 0.0008  val top-1 1.0000
+epoch  6  train loss 0.0112  val loss 0.0010  val top-1 1.0000
+epoch  7  train loss 0.0111  val loss 0.0012  val top-1 1.0000
+saved /home/kiit/appcache_b/appcache/models/matrix_mlp.mlp (1731 params, 6.8 KB): train top-1 0.997, val top-1 1.000
+=== conv: LightGBM
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models/conv_lgbm.gbdt (44 trees, 154.9 KB): train top-1 1.000, val top-1 1.000 (informative measured decisions)
+=== conv: MLP
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 0.0346  val loss 0.0018  val top-1 1.0000
+epoch  2  train loss 0.0003  val loss 0.0011  val top-1 1.0000
+epoch  3  train loss 0.0001  val loss 0.0009  val top-1 1.0000
+epoch  4  train loss 0.0001  val loss 0.0007  val top-1 1.0000
+epoch  5  train loss 0.0000  val loss 0.0006  val top-1 1.0000
+epoch  6  train loss 0.0000  val loss 0.0005  val top-1 1.0000
+epoch  7  train loss 0.0000  val loss 0.0003  val top-1 1.0000
+saved /home/kiit/appcache_b/appcache/models/conv_mlp.mlp (1739 params, 6.9 KB): train top-1 1.000, val top-1 1.000
+=== all: LightGBM
+train: 24 files, 1350003 decisions; val: 8 files, 480000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models/all_lgbm.gbdt (90 trees, 320.3 KB): train top-1 0.618, val top-1 0.644 (informative measured decisions)
+=== all: MLP
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 24 files, 1350003 decisions; val: 8 files, 480000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.0897  val loss 0.9910  val top-1 0.6486
+epoch  2  train loss 1.0607  val loss 0.9894  val top-1 0.6499
+epoch  3  train loss 1.0591  val loss 0.9880  val top-1 0.6501
+epoch  4  train loss 1.0583  val loss 0.9884  val top-1 0.6501
+epoch  5  train loss 1.0579  val loss 0.9876  val top-1 0.6491
+epoch  6  train loss 1.0573  val loss 0.9906  val top-1 0.6490
+epoch  7  train loss 1.0571  val loss 0.9880  val top-1 0.6495
+epoch  8  train loss 1.0569  val loss 0.9952  val top-1 0.6489
+epoch  9  train loss 1.0568  val loss 1.0168  val top-1 0.6465
+saved /home/kiit/appcache_b/appcache/models/all_mlp.mlp (2203 params, 9.1 KB): train top-1 0.625, val top-1 0.650

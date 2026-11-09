@@ -1,0 +1,434 @@
+nohup: ignoring input
+48 labeling jobs, 4 in parallel
+done  test__conv_720_5_3_1.belady
+done  test__conv_720_5_3_1.lru
+done  test__conv_832_3_6_1.belady
+done  test__conv_832_3_6_1.lru
+done  test__graph_100000_8_0_5_4.belady
+done  test__graph_100000_8_1_5_4.belady
+done  test__graph_100000_8_0_5_4.lru
+done  test__graph_100000_8_1_5_4.lru
+done  test__hash_18_100000_1500000_1_5.belady
+done  test__hash_18_100000_1500000_0_5.belady
+done  test__hash_18_100000_1500000_1_5.lru
+done  test__hash_18_100000_1500000_0_5.lru
+done  test__matrix_700_0_1.belady
+done  test__matrix_800_0_1.belady
+done  train__conv_640_3_8_1.lru
+done  train__conv_640_3_8_1.belady
+done  train__conv_704_3_8_1.lru
+done  train__conv_704_3_8_1.belady
+done  test__matrix_800_0_1.lru
+done  train__conv_768_3_8_1.belady
+done  train__conv_768_3_8_1.lru
+done  train__graph_100000_8_0_1_4.belady
+done  test__matrix_700_0_1.lru
+done  train__graph_100000_8_0_1_4.lru
+done  train__graph_100000_8_0_2_4.lru
+done  train__graph_100000_8_0_2_4.belady
+done  train__graph_100000_8_0_3_4.belady
+done  train__graph_100000_8_0_3_4.lru
+done  train__hash_18_100000_1500000_1_1.belady
+done  train__hash_18_100000_1500000_1_1.lru
+done  train__hash_18_100000_1500000_1_2.belady
+done  train__matrix_500_0_1.lru
+done  train__hash_18_100000_1500000_1_2.lru
+done  train__matrix_500_0_1.belady
+done  train__hash_18_100000_1500000_1_3.belady
+done  train__hash_18_100000_1500000_1_3.lru
+done  train__matrix_550_0_1.belady
+done  val__conv_672_3_8_1.lru
+done  val__conv_672_3_8_1.belady
+done  train__matrix_600_0_1.belady
+done  val__graph_100000_8_0_4_4.belady
+done  val__graph_100000_8_0_4_4.lru
+done  train__matrix_600_0_1.lru
+done  val__hash_18_100000_1500000_1_4.belady
+done  train__matrix_550_0_1.lru
+done  val__hash_18_100000_1500000_1_4.lru
+done  val__matrix_650_0_1.belady
+done  val__matrix_650_0_1.lru
+/home/kiit/appcache_b/appcache/results/datasets/test/test__conv_720_5_3_1.belady.npz: 49655 decisions (49655 measured), ways=16, trace=193875 accesses, driver=belady, stride=2
+   random (expected)            0.303
+   lru (oldest last access)     0.032
+   mru (newest last access)     0.683
+   fifo (oldest insertion)      0.330
+   driver policy                1.000
+   tie fraction                 0.613
+   all-tied (no signal)         0.032
+/home/kiit/appcache_b/appcache/results/datasets/test/test__conv_720_5_3_1.lru.npz: 80554 decisions (80554 measured), ways=16, trace=193875 accesses, driver=lru, stride=2
+   random (expected)            0.647
+   lru (oldest last access)     0.691
+   mru (newest last access)     0.597
+   fifo (oldest insertion)      0.691
+   driver policy                0.691
+   tie fraction                 1.000
+   all-tied (no signal)         0.208
+/home/kiit/appcache_b/appcache/results/datasets/test/test__conv_832_3_6_1.belady.npz: 165712 decisions (156168 measured), ways=16, trace=518563 accesses, driver=belady, stride=2
+   random (expected)            0.182
+   lru (oldest last access)     0.055
+   mru (newest last access)     0.564
+   fifo (oldest insertion)      0.175
+   driver policy                1.000
+   tie fraction                 0.201
+   all-tied (no signal)         0.055
+/home/kiit/appcache_b/appcache/results/datasets/test/test__conv_832_3_6_1.lru.npz: 242898 decisions (233354 measured), ways=16, trace=518563 accesses, driver=lru, stride=2
+   random (expected)            0.574
+   lru (oldest last access)     0.617
+   mru (newest last access)     0.551
+   fifo (oldest insertion)      0.617
+   driver policy                0.617
+   tie fraction                 1.000
+   all-tied (no signal)         0.120
+/home/kiit/appcache_b/appcache/results/datasets/test/test__graph_100000_8_0_5_4.belady.npz: 125631 decisions (114620 measured), ways=16, trace=2810621 accesses, driver=belady, stride=2
+   random (expected)            0.092
+   lru (oldest last access)     0.038
+   mru (newest last access)     0.076
+   fifo (oldest insertion)      0.002
+   driver policy                1.000
+   tie fraction                 0.109
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/test/test__graph_100000_8_0_5_4.lru.npz: 231540 decisions (216019 measured), ways=16, trace=2810621 accesses, driver=lru, stride=2
+   random (expected)            0.111
+   lru (oldest last access)     0.144
+   mru (newest last access)     0.040
+   fifo (oldest insertion)      0.002
+   driver policy                0.144
+   tie fraction                 0.172
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/test/test__graph_100000_8_1_5_4.belady.npz: 95697 decisions (89460 measured), ways=16, trace=1870170 accesses, driver=belady, stride=2
+   random (expected)            0.100
+   lru (oldest last access)     0.053
+   mru (newest last access)     0.088
+   fifo (oldest insertion)      0.003
+   driver policy                1.000
+   tie fraction                 0.139
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/test/test__graph_100000_8_1_5_4.lru.npz: 177782 decisions (169098 measured), ways=16, trace=1870170 accesses, driver=lru, stride=2
+   random (expected)            0.121
+   lru (oldest last access)     0.148
+   mru (newest last access)     0.053
+   fifo (oldest insertion)      0.002
+   driver policy                0.148
+   tie fraction                 0.196
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/test/test__hash_18_100000_1500000_0_5.belady.npz: 218869 decisions (198830 measured), ways=16, trace=2797983 accesses, driver=belady, stride=2
+   random (expected)            0.075
+   lru (oldest last access)     0.029
+   mru (newest last access)     0.147
+   fifo (oldest insertion)      0.017
+   driver policy                1.000
+   tie fraction                 0.044
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/test/test__hash_18_100000_1500000_0_5.lru.npz: 481815 decisions (441594 measured), ways=16, trace=2797983 accesses, driver=lru, stride=2
+   random (expected)            0.083
+   lru (oldest last access)     0.112
+   mru (newest last access)     0.065
+   fifo (oldest insertion)      0.015
+   driver policy                0.112
+   tie fraction                 0.080
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/test/test__hash_18_100000_1500000_1_5.belady.npz: 138493 decisions (126327 measured), ways=16, trace=2196367 accesses, driver=belady, stride=2
+   random (expected)            0.080
+   lru (oldest last access)     0.039
+   mru (newest last access)     0.124
+   fifo (oldest insertion)      0.011
+   driver policy                1.000
+   tie fraction                 0.063
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/test/test__hash_18_100000_1500000_1_5.lru.npz: 302788 decisions (279866 measured), ways=16, trace=2196367 accesses, driver=lru, stride=2
+   random (expected)            0.091
+   lru (oldest last access)     0.131
+   mru (newest last access)     0.063
+   fifo (oldest insertion)      0.008
+   driver policy                0.131
+   tie fraction                 0.119
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/test/test__matrix_700_0_1.belady.npz: 602382 decisions (544864 measured), ways=16, trace=2506240 accesses, driver=belady, stride=2
+   random (expected)            0.079
+   lru (oldest last access)     0.000
+   mru (newest last access)     0.997
+   fifo (oldest insertion)      0.071
+   driver policy                1.000
+   tie fraction                 0.026
+   all-tied (no signal)         0.000
+/home/kiit/appcache_b/appcache/results/datasets/test/test__matrix_700_0_1.lru.npz: 1236736 decisions (1127808 measured), ways=16, trace=2506240 accesses, driver=lru, stride=2
+   random (expected)            0.080
+   lru (oldest last access)     0.016
+   mru (newest last access)     0.958
+   fifo (oldest insertion)      0.016
+   driver policy                0.016
+   tie fraction                 0.025
+   all-tied (no signal)         0.013
+/home/kiit/appcache_b/appcache/results/datasets/test/test__matrix_800_0_1.belady.npz: 758784 decisions (687456 measured), ways=16, trace=2505589 accesses, driver=belady, stride=2
+   random (expected)            0.091
+   lru (oldest last access)     0.012
+   mru (newest last access)     0.998
+   fifo (oldest insertion)      0.056
+   driver policy                1.000
+   tie fraction                 0.034
+   all-tied (no signal)         0.012
+/home/kiit/appcache_b/appcache/results/datasets/test/test__matrix_800_0_1.lru.npz: 1236411 decisions (1127516 measured), ways=16, trace=2505589 accesses, driver=lru, stride=2
+   random (expected)            0.088
+   lru (oldest last access)     0.023
+   mru (newest last access)     0.964
+   fifo (oldest insertion)      0.023
+   driver policy                0.023
+   tie fraction                 0.034
+   all-tied (no signal)         0.021
+/home/kiit/appcache_b/appcache/results/datasets/train/train__conv_640_3_8_1.belady.npz: 98505 decisions (94440 measured), ways=16, trace=408984 accesses, driver=belady, stride=2
+   random (expected)            0.272
+   lru (oldest last access)     0.881
+   mru (newest last access)     0.146
+   fifo (oldest insertion)      0.125
+   driver policy                1.000
+   tie fraction                 1.000
+   all-tied (no signal)         0.000
+/home/kiit/appcache_b/appcache/results/datasets/train/train__conv_640_3_8_1.lru.npz: 188108 decisions (184043 measured), ways=16, trace=408984 accesses, driver=lru, stride=2
+   random (expected)            0.547
+   lru (oldest last access)     0.542
+   mru (newest last access)     0.555
+   fifo (oldest insertion)      0.542
+   driver policy                0.542
+   tie fraction                 1.000
+   all-tied (no signal)         0.056
+/home/kiit/appcache_b/appcache/results/datasets/train/train__conv_704_3_8_1.belady.npz: 123436 decisions (115073 measured), ways=16, trace=494936 accesses, driver=belady, stride=2
+   random (expected)            0.127
+   lru (oldest last access)     0.000
+   mru (newest last access)     0.140
+   fifo (oldest insertion)      0.126
+   driver policy                1.000
+   tie fraction                 0.174
+   all-tied (no signal)         0.000
+/home/kiit/appcache_b/appcache/results/datasets/train/train__conv_704_3_8_1.lru.npz: 231084 decisions (222721 measured), ways=16, trace=494936 accesses, driver=lru, stride=2
+   random (expected)            0.551
+   lru (oldest last access)     0.577
+   mru (newest last access)     0.551
+   fifo (oldest insertion)      0.577
+   driver policy                0.577
+   tie fraction                 1.000
+   all-tied (no signal)         0.074
+/home/kiit/appcache_b/appcache/results/datasets/train/train__conv_768_3_8_1.belady.npz: 170588 decisions (157518 measured), ways=16, trace=589080 accesses, driver=belady, stride=2
+   random (expected)            0.142
+   lru (oldest last access)     0.037
+   mru (newest last access)     0.394
+   fifo (oldest insertion)      0.130
+   driver policy                1.000
+   tie fraction                 0.137
+   all-tied (no signal)         0.037
+/home/kiit/appcache_b/appcache/results/datasets/train/train__conv_768_3_8_1.lru.npz: 278156 decisions (265086 measured), ways=16, trace=589080 accesses, driver=lru, stride=2
+   random (expected)            0.552
+   lru (oldest last access)     0.524
+   mru (newest last access)     0.555
+   fifo (oldest insertion)      0.524
+   driver policy                0.524
+   tie fraction                 1.000
+   all-tied (no signal)         0.077
+/home/kiit/appcache_b/appcache/results/datasets/train/train__graph_100000_8_0_1_4.belady.npz: 125317 decisions (114310 measured), ways=16, trace=2809483 accesses, driver=belady, stride=2
+   random (expected)            0.092
+   lru (oldest last access)     0.038
+   mru (newest last access)     0.076
+   fifo (oldest insertion)      0.002
+   driver policy                1.000
+   tie fraction                 0.109
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__graph_100000_8_0_1_4.lru.npz: 230865 decisions (215348 measured), ways=16, trace=2809483 accesses, driver=lru, stride=2
+   random (expected)            0.111
+   lru (oldest last access)     0.145
+   mru (newest last access)     0.041
+   fifo (oldest insertion)      0.002
+   driver policy                0.145
+   tie fraction                 0.174
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__graph_100000_8_0_2_4.belady.npz: 125192 decisions (114212 measured), ways=16, trace=2806823 accesses, driver=belady, stride=2
+   random (expected)            0.091
+   lru (oldest last access)     0.038
+   mru (newest last access)     0.075
+   fifo (oldest insertion)      0.002
+   driver policy                1.000
+   tie fraction                 0.109
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__graph_100000_8_0_2_4.lru.npz: 230946 decisions (215462 measured), ways=16, trace=2806823 accesses, driver=lru, stride=2
+   random (expected)            0.111
+   lru (oldest last access)     0.144
+   mru (newest last access)     0.040
+   fifo (oldest insertion)      0.002
+   driver policy                0.144
+   tie fraction                 0.173
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__graph_100000_8_0_3_4.belady.npz: 125332 decisions (114277 measured), ways=16, trace=2807603 accesses, driver=belady, stride=2
+   random (expected)            0.092
+   lru (oldest last access)     0.039
+   mru (newest last access)     0.076
+   fifo (oldest insertion)      0.002
+   driver policy                1.000
+   tie fraction                 0.109
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__graph_100000_8_0_3_4.lru.npz: 230909 decisions (215286 measured), ways=16, trace=2807603 accesses, driver=lru, stride=2
+   random (expected)            0.111
+   lru (oldest last access)     0.146
+   mru (newest last access)     0.040
+   fifo (oldest insertion)      0.003
+   driver policy                0.146
+   tie fraction                 0.173
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__hash_18_100000_1500000_1_1.belady.npz: 138452 decisions (126368 measured), ways=16, trace=2198172 accesses, driver=belady, stride=2
+   random (expected)            0.080
+   lru (oldest last access)     0.038
+   mru (newest last access)     0.124
+   fifo (oldest insertion)      0.012
+   driver policy                1.000
+   tie fraction                 0.064
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__hash_18_100000_1500000_1_1.lru.npz: 303038 decisions (280181 measured), ways=16, trace=2198172 accesses, driver=lru, stride=2
+   random (expected)            0.091
+   lru (oldest last access)     0.132
+   mru (newest last access)     0.062
+   fifo (oldest insertion)      0.008
+   driver policy                0.132
+   tie fraction                 0.120
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__hash_18_100000_1500000_1_2.belady.npz: 139393 decisions (127229 measured), ways=16, trace=2199404 accesses, driver=belady, stride=2
+   random (expected)            0.080
+   lru (oldest last access)     0.038
+   mru (newest last access)     0.126
+   fifo (oldest insertion)      0.012
+   driver policy                1.000
+   tie fraction                 0.063
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__hash_18_100000_1500000_1_2.lru.npz: 304561 decisions (281448 measured), ways=16, trace=2199404 accesses, driver=lru, stride=2
+   random (expected)            0.091
+   lru (oldest last access)     0.132
+   mru (newest last access)     0.063
+   fifo (oldest insertion)      0.008
+   driver policy                0.132
+   tie fraction                 0.120
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__hash_18_100000_1500000_1_3.belady.npz: 139191 decisions (126879 measured), ways=16, trace=2198869 accesses, driver=belady, stride=2
+   random (expected)            0.080
+   lru (oldest last access)     0.038
+   mru (newest last access)     0.127
+   fifo (oldest insertion)      0.012
+   driver policy                1.000
+   tie fraction                 0.063
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__hash_18_100000_1500000_1_3.lru.npz: 304020 decisions (280685 measured), ways=16, trace=2198869 accesses, driver=lru, stride=2
+   random (expected)            0.091
+   lru (oldest last access)     0.131
+   mru (newest last access)     0.063
+   fifo (oldest insertion)      0.008
+   driver policy                0.131
+   tie fraction                 0.120
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__matrix_500_0_1.belady.npz: 5443 decisions (5442 measured), ways=16, trace=2508778 accesses, driver=belady, stride=2
+   random (expected)            0.066
+   lru (oldest last access)     0.754
+   mru (newest last access)     0.239
+   fifo (oldest insertion)      0.029
+   driver policy                1.000
+   tie fraction                 0.009
+   all-tied (no signal)         0.000
+/home/kiit/appcache_b/appcache/results/datasets/train/train__matrix_500_0_1.lru.npz: 24605 decisions (24597 measured), ways=16, trace=2508778 accesses, driver=lru, stride=2
+   random (expected)            0.073
+   lru (oldest last access)     0.172
+   mru (newest last access)     0.147
+   fifo (oldest insertion)      0.086
+   driver policy                0.172
+   tie fraction                 0.022
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__matrix_550_0_1.belady.npz: 180810 decisions (163856 measured), ways=16, trace=2507425 accesses, driver=belady, stride=2
+   random (expected)            0.070
+   lru (oldest last access)     0.001
+   mru (newest last access)     0.979
+   fifo (oldest insertion)      0.294
+   driver policy                1.000
+   tie fraction                 0.015
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__matrix_550_0_1.lru.npz: 1237329 decisions (1128342 measured), ways=16, trace=2507425 accesses, driver=lru, stride=2
+   random (expected)            0.071
+   lru (oldest last access)     0.006
+   mru (newest last access)     0.947
+   fifo (oldest insertion)      0.006
+   driver policy                0.006
+   tie fraction                 0.015
+   all-tied (no signal)         0.002
+/home/kiit/appcache_b/appcache/results/datasets/train/train__matrix_600_0_1.belady.npz: 359415 decisions (327213 measured), ways=16, trace=2506877 accesses, driver=belady, stride=2
+   random (expected)            0.076
+   lru (oldest last access)     0.001
+   mru (newest last access)     0.992
+   fifo (oldest insertion)      0.140
+   driver policy                1.000
+   tie fraction                 0.018
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/train/train__matrix_600_0_1.lru.npz: 1237055 decisions (1128095 measured), ways=16, trace=2506877 accesses, driver=lru, stride=2
+   random (expected)            0.074
+   lru (oldest last access)     0.009
+   mru (newest last access)     0.958
+   fifo (oldest insertion)      0.009
+   driver policy                0.009
+   tie fraction                 0.025
+   all-tied (no signal)         0.005
+/home/kiit/appcache_b/appcache/results/datasets/val/val__conv_672_3_8_1.belady.npz: 110297 decisions (104134 measured), ways=16, trace=450936 accesses, driver=belady, stride=2
+   random (expected)            0.199
+   lru (oldest last access)     0.877
+   mru (newest last access)     0.141
+   fifo (oldest insertion)      0.128
+   driver policy                1.000
+   tie fraction                 1.000
+   all-tied (no signal)         0.003
+/home/kiit/appcache_b/appcache/results/datasets/val/val__conv_672_3_8_1.lru.npz: 209084 decisions (202921 measured), ways=16, trace=450936 accesses, driver=lru, stride=2
+   random (expected)            0.547
+   lru (oldest last access)     0.478
+   mru (newest last access)     0.559
+   fifo (oldest insertion)      0.478
+   driver policy                0.478
+   tie fraction                 1.000
+   all-tied (no signal)         0.061
+/home/kiit/appcache_b/appcache/results/datasets/val/val__graph_100000_8_0_4_4.belady.npz: 125681 decisions (114576 measured), ways=16, trace=2811576 accesses, driver=belady, stride=2
+   random (expected)            0.092
+   lru (oldest last access)     0.038
+   mru (newest last access)     0.075
+   fifo (oldest insertion)      0.002
+   driver policy                1.000
+   tie fraction                 0.108
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/val/val__graph_100000_8_0_4_4.lru.npz: 231734 decisions (216071 measured), ways=16, trace=2811576 accesses, driver=lru, stride=2
+   random (expected)            0.111
+   lru (oldest last access)     0.144
+   mru (newest last access)     0.040
+   fifo (oldest insertion)      0.002
+   driver policy                0.144
+   tie fraction                 0.174
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/val/val__hash_18_100000_1500000_1_4.belady.npz: 139276 decisions (127059 measured), ways=16, trace=2199282 accesses, driver=belady, stride=2
+   random (expected)            0.080
+   lru (oldest last access)     0.038
+   mru (newest last access)     0.124
+   fifo (oldest insertion)      0.012
+   driver policy                1.000
+   tie fraction                 0.063
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/val/val__hash_18_100000_1500000_1_4.lru.npz: 304440 decisions (281222 measured), ways=16, trace=2199282 accesses, driver=lru, stride=2
+   random (expected)            0.091
+   lru (oldest last access)     0.131
+   mru (newest last access)     0.063
+   fifo (oldest insertion)      0.008
+   driver policy                0.131
+   tie fraction                 0.120
+   all-tied (no signal)         0.001
+/home/kiit/appcache_b/appcache/results/datasets/val/val__matrix_650_0_1.belady.npz: 495497 decisions (448000 measured), ways=16, trace=2506417 accesses, driver=belady, stride=2
+   random (expected)            0.077
+   lru (oldest last access)     0.000
+   mru (newest last access)     0.996
+   fifo (oldest insertion)      0.094
+   driver policy                1.000
+   tie fraction                 0.022
+   all-tied (no signal)         0.000
+/home/kiit/appcache_b/appcache/results/datasets/val/val__matrix_650_0_1.lru.npz: 1236825 decisions (1127888 measured), ways=16, trace=2506417 accesses, driver=lru, stride=2
+   random (expected)            0.077
+   lru (oldest last access)     0.012
+   mru (newest last access)     0.955
+   fifo (oldest insertion)      0.012
+   driver policy                0.012
+   tie fraction                 0.022
+   all-tied (no signal)         0.009

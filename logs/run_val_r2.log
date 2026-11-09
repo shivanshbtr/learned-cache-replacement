@@ -1,0 +1,98 @@
+done val__conv_672_3_8_1
+done val__graph_100000_8_0_4_4
+done val__hash_18_100000_1500000_1_4
+done val__matrix_650_0_1
+
+== val__conv_672_3_8_1   (LLC accesses 450936)   best simple baseline: bip 288870
+   policy                    misses gap closed vs best simple
+   lru                       405843          -         -40.5%
+   fifo                      405843         0%         -40.5%
+   random                    361466        22%         -25.1%
+   srrip                     405843         0%         -40.5%
+   drrip                     295172        56%          -2.2%
+   bip                       288870        59%          +0.0%
+   mru                       389723         8%         -34.9%
+   * mlp:conv_mlp            233637        87%         +19.1%
+   * mlp:conv_mlp_dag1       208268       100%         +27.9%
+   * mlp:conv_mlp_dag2       208268       100%         +27.9%
+   * gbdt:conv_lgbm          208268       100%         +27.9%
+   * gbdt:conv_lgbm_dag1     208268       100%         +27.9%
+   * lstm:conv_lstm          208273       100%         +27.9%
+   * mlp:all_mlp             245967        81%         +14.9%
+   * mlp:all_mlp_dag1        208268       100%         +27.9%
+   * mlp:all_mlp_dag2        208268       100%         +27.9%
+   * gbdt:all_lgbm           208268       100%         +27.9%
+   * gbdt:all_lgbm_dag1      208268       100%         +27.9%
+   * lstm:all_lstm           234563        87%         +18.8%
+   belady                    208268          -              -
+
+== val__graph_100000_8_0_4_4   (LLC accesses 2811576)   best simple baseline: bip 373581
+   policy                     misses gap closed vs best simple
+   lru                        432142          -         -15.7%
+   fifo                       571699       -69%         -53.0%
+   random                     565802       -66%         -51.5%
+   srrip                      414402         9%         -10.9%
+   drrip                      377778        27%          -1.1%
+   bip                        373581        29%          +0.0%
+   mru                       1342225      -448%        -259.3%
+   * mlp:graph_mlp            355436        38%          +4.9%
+   * mlp:graph_mlp_dag1       347459        42%          +7.0%
+   * mlp:graph_mlp_dag2       346859        42%          +7.2%
+   * gbdt:graph_lgbm          355422        38%          +4.9%
+   * gbdt:graph_lgbm_dag1     350436        40%          +6.2%
+   * lstm:graph_lstm          354932        38%          +5.0%
+   * mlp:all_mlp              356006        38%          +4.7%
+   * mlp:all_mlp_dag1         347166        42%          +7.1%
+   * mlp:all_mlp_dag2         348468        41%          +6.7%
+   * gbdt:all_lgbm            576505       -71%         -54.3%
+   * gbdt:all_lgbm_dag1       351738        40%          +5.8%
+   * lstm:all_lstm            354484        38%          +5.1%
+   belady                     229152          -              -
+
+== val__hash_18_100000_1500000_1_4   (LLC accesses 2199282)   best simple baseline: bip 453363
+   policy                    misses gap closed vs best simple
+   lru                       562444          -         -24.1%
+   fifo                      678627       -38%         -49.7%
+   random                    678460       -38%         -49.7%
+   srrip                     500657        20%         -10.4%
+   drrip                     463134        32%          -2.2%
+   bip                       453363        35%          +0.0%
+   mru                       995242      -140%        -119.5%
+   * mlp:hash_mlp            442545        39%          +2.4%
+   * mlp:hash_mlp_dag1       413924        48%          +8.7%
+   * mlp:hash_mlp_dag2       413288        48%          +8.8%
+   * gbdt:hash_lgbm          451406        36%          +0.4%
+   * gbdt:hash_lgbm_dag1     424144        45%          +6.4%
+   * lstm:hash_lstm          438052        40%          +3.4%
+   * mlp:all_mlp             439219        40%          +3.1%
+   * mlp:all_mlp_dag1        410665        49%          +9.4%
+   * mlp:all_mlp_dag2        407977        50%         +10.0%
+   * gbdt:all_lgbm           452191        36%          +0.3%
+   * gbdt:all_lgbm_dag1      424655        45%          +6.3%
+   * lstm:all_lstm           447749        37%          +1.2%
+   belady                    254118          -              -
+
+== val__matrix_650_0_1   (LLC accesses 2506417)   best simple baseline: drrip 971793
+   policy                      misses gap closed vs best simple
+   lru                        2255776          -        -132.1%
+   fifo                       2255776         0%        -132.1%
+   random                     1488911        56%         -53.2%
+   srrip                      2255776         0%        -132.1%
+   drrip                       971793        94%          +0.0%
+   bip                         976826        94%          -0.5%
+   mru                        1004098        92%          -3.3%
+   * mlp:matrix_mlp            896044       100%          +7.8%
+   * mlp:matrix_mlp_dag1       896000       100%          +7.8%
+   * mlp:matrix_mlp_dag2       896001       100%          +7.8%
+   * gbdt:matrix_lgbm          896319       100%          +7.8%
+   * gbdt:matrix_lgbm_dag1     896261       100%          +7.8%
+   * lstm:matrix_lstm          896045       100%          +7.8%
+   * mlp:all_mlp               896045       100%          +7.8%
+   * mlp:all_mlp_dag1          896000       100%          +7.8%
+   * mlp:all_mlp_dag2          896000       100%          +7.8%
+   * gbdt:all_lgbm             896049       100%          +7.8%
+   * gbdt:all_lgbm_dag1        896051       100%          +7.8%
+   * lstm:all_lstm             896001       100%          +7.8%
+   belady                      896000          -              -
+
+gap closed = (LRU - policy) / (LRU - Belady);  vs best simple = % fewer misses than the best of lru/fifo/random/srrip/brrip/drrip/bip/mru (+ is better);  * = learned model

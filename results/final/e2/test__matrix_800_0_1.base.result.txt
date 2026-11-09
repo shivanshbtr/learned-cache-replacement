@@ -1,0 +1,11 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__matrix_800_0_1.llc.trace
+LLC accesses=2505589 (warm-up 250558, measured 2255031), unique lines=86328 (5395.5 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru           2255031     0.0000    17.880        0.0%     12186924
+fifo          2255031     0.0000    17.880        0.0%     11579122
+random        2007843     0.1096    15.920       28.1%     25425367
+srrip         2255031     0.0000    17.880        0.0%     16790103
+drrip         1401123     0.3787    11.110       97.0%     16553656
+bip           1427471     0.3670    11.319       94.0%      7228662
+mru           1429927     0.3659    11.338       93.7%     14029528
+belady        1374912     0.3903    10.902      100.0%     14823603

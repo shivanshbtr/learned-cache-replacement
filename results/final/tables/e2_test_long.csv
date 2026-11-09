@@ -1,0 +1,121 @@
+trace,workload,role,policy,misses,gap_closed_pct,vs_best_simple_pct
+test__hash_18_100000_1500000_0_5,hash,lru,lru,883189,0.0,-24.24
+test__hash_18_100000_1500000_0_5,hash,best simple (bip),bip,710872,35.49,0.0
+test__hash_18_100000_1500000_0_5,hash,fifo,fifo,1012321,-26.6,-42.41
+test__hash_18_100000_1500000_0_5,hash,random,random,1008836,-25.88,-41.92
+test__hash_18_100000_1500000_0_5,hash,srrip,srrip,784766,20.27,-10.39
+test__hash_18_100000_1500000_0_5,hash,drrip,drrip,715736,34.49,-0.68
+test__hash_18_100000_1500000_0_5,hash,mru,mru,1276610,-81.03,-79.58
+test__hash_18_100000_1500000_0_5,hash,mlp specialized,mlp:hash_mlp_dag1,665140,44.91,6.43
+test__hash_18_100000_1500000_0_5,hash,mlp generic,mlp:all_mlp_dag1,662413,45.47,6.82
+test__hash_18_100000_1500000_0_5,hash,gbdt specialized,gbdt:hash_lgbm_dag1,702589,37.2,1.17
+test__hash_18_100000_1500000_0_5,hash,gbdt generic,gbdt:all_lgbm_dag1,704091,36.89,0.95
+test__hash_18_100000_1500000_0_5,hash,lstm specialized,lstm:hash_lstm,696203,38.51,2.06
+test__hash_18_100000_1500000_0_5,hash,lstm generic,lstm:all_lstm,708379,36.0,0.35
+test__hash_18_100000_1500000_0_5,hash,mlp generic-big,mlp:allbig_mlp_dag1,661625,45.63,6.93
+test__hash_18_100000_1500000_0_5,hash,belady,belady,397661,100.0,44.06
+test__hash_18_100000_1500000_1_5,hash,lru,lru,559732,0.0,-23.79
+test__hash_18_100000_1500000_1_5,hash,best simple (bip),bip,452148,35.03,0.0
+test__hash_18_100000_1500000_1_5,hash,fifo,fifo,675581,-37.73,-49.42
+test__hash_18_100000_1500000_1_5,hash,random,random,674744,-37.45,-49.23
+test__hash_18_100000_1500000_1_5,hash,srrip,srrip,499473,19.62,-10.47
+test__hash_18_100000_1500000_1_5,hash,drrip,drrip,454856,34.15,-0.6
+test__hash_18_100000_1500000_1_5,hash,mru,mru,990326,-140.22,-119.03
+test__hash_18_100000_1500000_1_5,hash,mlp specialized,mlp:hash_mlp_dag1,413392,47.66,8.57
+test__hash_18_100000_1500000_1_5,hash,mlp generic,mlp:all_mlp_dag1,409946,48.78,9.33
+test__hash_18_100000_1500000_1_5,hash,gbdt specialized,gbdt:hash_lgbm_dag1,422361,44.73,6.59
+test__hash_18_100000_1500000_1_5,hash,gbdt generic,gbdt:all_lgbm_dag1,422993,44.53,6.45
+test__hash_18_100000_1500000_1_5,hash,lstm specialized,lstm:hash_lstm,437146,39.92,3.32
+test__hash_18_100000_1500000_1_5,hash,lstm generic,lstm:all_lstm,445396,37.23,1.49
+test__hash_18_100000_1500000_1_5,hash,mlp generic-big,mlp:allbig_mlp_dag1,410118,48.72,9.3
+test__hash_18_100000_1500000_1_5,hash,belady,belady,252654,100.0,44.12
+test__graph_100000_8_0_5_4,graph,lru,lru,432038,0.0,-15.68
+test__graph_100000_8_0_5_4,graph,best simple (bip),bip,373485,28.87,0.0
+test__graph_100000_8_0_5_4,graph,fifo,fifo,571871,-68.95,-53.12
+test__graph_100000_8_0_5_4,graph,random,random,564478,-65.31,-51.14
+test__graph_100000_8_0_5_4,graph,srrip,srrip,414579,8.61,-11.0
+test__graph_100000_8_0_5_4,graph,drrip,drrip,383421,23.97,-2.66
+test__graph_100000_8_0_5_4,graph,mru,mru,1342526,-448.96,-259.46
+test__graph_100000_8_0_5_4,graph,mlp specialized,mlp:graph_mlp_dag1,346864,42.0,7.13
+test__graph_100000_8_0_5_4,graph,mlp generic,mlp:all_mlp_dag1,346792,42.03,7.15
+test__graph_100000_8_0_5_4,graph,gbdt specialized,gbdt:graph_lgbm_dag1,350045,40.43,6.28
+test__graph_100000_8_0_5_4,graph,gbdt generic,gbdt:all_lgbm_dag1,351385,39.77,5.92
+test__graph_100000_8_0_5_4,graph,lstm specialized,lstm:graph_lstm,354134,38.41,5.18
+test__graph_100000_8_0_5_4,graph,lstm generic,lstm:all_lstm,354215,38.37,5.16
+test__graph_100000_8_0_5_4,graph,mlp generic-big,mlp:allbig_mlp_dag1,346351,42.25,7.27
+test__graph_100000_8_0_5_4,graph,belady,belady,229240,100.0,38.62
+test__graph_100000_8_1_5_4,graph,lru,lru,338197,0.0,-8.42
+test__graph_100000_8_1_5_4,graph,best simple (bip),bip,311945,16.48,0.0
+test__graph_100000_8_1_5_4,graph,fifo,fifo,422896,-53.18,-35.57
+test__graph_100000_8_1_5_4,graph,random,random,432961,-59.5,-38.79
+test__graph_100000_8_1_5_4,graph,srrip,srrip,340826,-1.65,-9.26
+test__graph_100000_8_1_5_4,graph,drrip,drrip,332626,3.5,-6.63
+test__graph_100000_8_1_5_4,graph,mru,mru,844848,-318.1,-170.83
+test__graph_100000_8_1_5_4,graph,mlp specialized,mlp:graph_mlp_dag1,291099,29.57,6.68
+test__graph_100000_8_1_5_4,graph,mlp generic,mlp:all_mlp_dag1,289774,30.4,7.11
+test__graph_100000_8_1_5_4,graph,gbdt specialized,gbdt:graph_lgbm_dag1,291466,29.34,6.56
+test__graph_100000_8_1_5_4,graph,gbdt generic,gbdt:all_lgbm_dag1,292606,28.62,6.2
+test__graph_100000_8_1_5_4,graph,lstm specialized,lstm:graph_lstm,294640,27.35,5.55
+test__graph_100000_8_1_5_4,graph,lstm generic,lstm:all_lstm,294056,27.71,5.73
+test__graph_100000_8_1_5_4,graph,mlp generic-big,mlp:allbig_mlp_dag1,289596,30.51,7.16
+test__graph_100000_8_1_5_4,graph,belady,belady,178921,100.0,42.64
+test__matrix_700_0_1,matrix,lru,lru,2255616,0.0,-97.93
+test__matrix_700_0_1,matrix,best simple (drrip),drrip,1139586,95.72,0.0
+test__matrix_700_0_1,matrix,fifo,fifo,2255616,0.0,-97.93
+test__matrix_700_0_1,matrix,random,random,1728323,45.23,-51.66
+test__matrix_700_0_1,matrix,srrip,srrip,2255616,0.0,-97.93
+test__matrix_700_0_1,matrix,bip,bip,1149867,94.84,-0.9
+test__matrix_700_0_1,matrix,mru,mru,1176312,92.57,-3.22
+test__matrix_700_0_1,matrix,mlp specialized,mlp:matrix_mlp_dag1,1089727,100.0,4.38
+test__matrix_700_0_1,matrix,mlp generic,mlp:all_mlp_dag1,1089727,100.0,4.38
+test__matrix_700_0_1,matrix,gbdt specialized,gbdt:matrix_lgbm_dag1,1089762,100.0,4.37
+test__matrix_700_0_1,matrix,gbdt generic,gbdt:all_lgbm_dag1,1089742,100.0,4.37
+test__matrix_700_0_1,matrix,lstm specialized,lstm:matrix_lstm,1089766,100.0,4.37
+test__matrix_700_0_1,matrix,lstm generic,lstm:all_lstm,1089728,100.0,4.38
+test__matrix_700_0_1,matrix,mlp generic-big,mlp:allbig_mlp_dag1,1089727,100.0,4.38
+test__matrix_700_0_1,matrix,belady,belady,1089727,100.0,4.38
+test__matrix_800_0_1,matrix,lru,lru,2255031,0.0,-60.94
+test__matrix_800_0_1,matrix,best simple (drrip),drrip,1401123,97.02,0.0
+test__matrix_800_0_1,matrix,fifo,fifo,2255031,0.0,-60.94
+test__matrix_800_0_1,matrix,random,random,2007843,28.09,-43.3
+test__matrix_800_0_1,matrix,srrip,srrip,2255031,0.0,-60.94
+test__matrix_800_0_1,matrix,bip,bip,1427471,94.03,-1.88
+test__matrix_800_0_1,matrix,mru,mru,1429927,93.75,-2.06
+test__matrix_800_0_1,matrix,mlp specialized,mlp:matrix_mlp_dag1,1374912,100.0,1.87
+test__matrix_800_0_1,matrix,mlp generic,mlp:all_mlp_dag1,1374912,100.0,1.87
+test__matrix_800_0_1,matrix,gbdt specialized,gbdt:matrix_lgbm_dag1,1374921,100.0,1.87
+test__matrix_800_0_1,matrix,gbdt generic,gbdt:all_lgbm_dag1,1374918,100.0,1.87
+test__matrix_800_0_1,matrix,lstm specialized,lstm:matrix_lstm,1374941,100.0,1.87
+test__matrix_800_0_1,matrix,lstm generic,lstm:all_lstm,1374941,100.0,1.87
+test__matrix_800_0_1,matrix,mlp generic-big,mlp:allbig_mlp_dag1,1374912,100.0,1.87
+test__matrix_800_0_1,matrix,belady,belady,1374912,100.0,1.87
+test__conv_720_5_3_1,conv,lru,lru,174488,0.0,-22.38
+test__conv_720_5_3_1,conv,best simple (bip),bip,142582,51.63,0.0
+test__conv_720_5_3_1,conv,fifo,fifo,174488,0.0,-22.38
+test__conv_720_5_3_1,conv,random,random,162686,19.1,-14.1
+test__conv_720_5_3_1,conv,srrip,srrip,174488,0.0,-22.38
+test__conv_720_5_3_1,conv,drrip,drrip,144592,48.38,-1.41
+test__conv_720_5_3_1,conv,mru,mru,158161,26.42,-10.93
+test__conv_720_5_3_1,conv,mlp specialized,mlp:conv_mlp_dag1,112698,99.99,20.96
+test__conv_720_5_3_1,conv,mlp generic,mlp:all_mlp_dag1,112692,100.0,20.96
+test__conv_720_5_3_1,conv,gbdt specialized,gbdt:conv_lgbm_dag1,113048,99.42,20.71
+test__conv_720_5_3_1,conv,gbdt generic,gbdt:all_lgbm_dag1,112869,99.71,20.84
+test__conv_720_5_3_1,conv,lstm specialized,lstm:conv_lstm,112699,99.99,20.96
+test__conv_720_5_3_1,conv,lstm generic,lstm:all_lstm,125451,79.35,12.01
+test__conv_720_5_3_1,conv,mlp generic-big,mlp:allbig_mlp_dag1,112694,99.99,20.96
+test__conv_720_5_3_1,conv,belady,belady,112690,100.0,20.96
+test__conv_832_3_6_1,conv,lru,lru,466707,0.0,-22.44
+test__conv_832_3_6_1,conv,best simple (drrip),drrip,381162,55.41,0.0
+test__conv_832_3_6_1,conv,fifo,fifo,466707,0.0,-22.44
+test__conv_832_3_6_1,conv,random,random,449370,11.23,-17.89
+test__conv_832_3_6_1,conv,srrip,srrip,466707,0.0,-22.44
+test__conv_832_3_6_1,conv,bip,bip,384002,53.58,-0.75
+test__conv_832_3_6_1,conv,mru,mru,451641,9.76,-18.49
+test__conv_832_3_6_1,conv,mlp specialized,mlp:conv_mlp_dag1,312340,100.0,18.06
+test__conv_832_3_6_1,conv,mlp generic,mlp:all_mlp_dag1,312336,100.0,18.06
+test__conv_832_3_6_1,conv,gbdt specialized,gbdt:conv_lgbm_dag1,313107,99.5,17.85
+test__conv_832_3_6_1,conv,gbdt generic,gbdt:all_lgbm_dag1,312592,99.83,17.99
+test__conv_832_3_6_1,conv,lstm specialized,lstm:conv_lstm,312350,99.99,18.05
+test__conv_832_3_6_1,conv,lstm generic,lstm:all_lstm,322590,93.36,15.37
+test__conv_832_3_6_1,conv,mlp generic-big,mlp:allbig_mlp_dag1,312336,100.0,18.06
+test__conv_832_3_6_1,conv,belady,belady,312335,100.0,18.06

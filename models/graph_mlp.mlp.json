@@ -1,0 +1,29 @@
+{
+ "kind": "mlp",
+ "workload": "graph",
+ "drivers": [
+  "lru",
+  "belady"
+ ],
+ "hidden": "32,32",
+ "emb": 4,
+ "vocab": 64,
+ "seed": 1,
+ "params": 2203,
+ "train_files": [
+  "train__graph_100000_8_0_1_4.belady.npz",
+  "train__graph_100000_8_0_1_4.lru.npz",
+  "train__graph_100000_8_0_2_4.belady.npz",
+  "train__graph_100000_8_0_2_4.lru.npz",
+  "train__graph_100000_8_0_3_4.belady.npz",
+  "train__graph_100000_8_0_3_4.lru.npz"
+ ],
+ "val_files": [
+  "val__graph_100000_8_0_4_4.belady.npz",
+  "val__graph_100000_8_0_4_4.lru.npz"
+ ],
+ "train_top1": 0.3467416763305664,
+ "val_top1": 0.34412500262260437,
+ "bytes": 9364,
+ "seconds": 78.5
+}

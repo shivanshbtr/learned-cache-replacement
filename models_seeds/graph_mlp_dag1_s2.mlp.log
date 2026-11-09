@@ -1,0 +1,26 @@
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 9 files, 540000 decisions; val: 3 files, 180000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.9056  val loss 1.8671  val top-1 0.3184
+epoch  2  train loss 1.8654  val loss 1.8634  val top-1 0.3218
+epoch  3  train loss 1.8614  val loss 1.8598  val top-1 0.3241
+epoch  4  train loss 1.8591  val loss 1.8578  val top-1 0.3236
+epoch  5  train loss 1.8577  val loss 1.8581  val top-1 0.3244
+epoch  6  train loss 1.8569  val loss 1.8558  val top-1 0.3259
+epoch  7  train loss 1.8561  val loss 1.8580  val top-1 0.3251
+epoch  8  train loss 1.8556  val loss 1.8566  val top-1 0.3242
+epoch  9  train loss 1.8552  val loss 1.8553  val top-1 0.3245
+epoch 10  train loss 1.8547  val loss 1.8553  val top-1 0.3247
+epoch 11  train loss 1.8540  val loss 1.8537  val top-1 0.3247
+epoch 12  train loss 1.8536  val loss 1.8577  val top-1 0.3267
+epoch 13  train loss 1.8530  val loss 1.8558  val top-1 0.3265
+epoch 14  train loss 1.8526  val loss 1.8530  val top-1 0.3248
+epoch 15  train loss 1.8524  val loss 1.8530  val top-1 0.3272
+epoch 16  train loss 1.8522  val loss 1.8527  val top-1 0.3266
+epoch 17  train loss 1.8520  val loss 1.8533  val top-1 0.3249
+epoch 18  train loss 1.8515  val loss 1.8515  val top-1 0.3272
+epoch 19  train loss 1.8514  val loss 1.8521  val top-1 0.3267
+epoch 20  train loss 1.8513  val loss 1.8516  val top-1 0.3257
+epoch 21  train loss 1.8511  val loss 1.8536  val top-1 0.3257
+saved /home/kiit/appcache_b/appcache/models_seeds/graph_mlp_dag1_s2.mlp (2203 params, 9.1 KB): train top-1 0.327, val top-1 0.327

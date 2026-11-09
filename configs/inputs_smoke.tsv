@@ -1,0 +1,6 @@
+# Smoke inputs for small_test.cfg (tiny caches). Only proves the pipeline, NOT project results.
+train	hash	0	14 8000 30000 1 1
+val	hash	0	14 8000 30000 1 2
+test	graph	0	8000 8 0 1 2
+train	conv	0	160 3 2 1
+test	matrix	3000000	96 0 1

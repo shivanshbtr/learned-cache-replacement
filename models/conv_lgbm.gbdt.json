@@ -1,0 +1,28 @@
+{
+ "kind": "gbdt",
+ "workload": "conv",
+ "drivers": [
+  "lru",
+  "belady"
+ ],
+ "leaves": 31,
+ "trees": 44,
+ "vocab": 6,
+ "seed": 1,
+ "train_files": [
+  "train__conv_640_3_8_1.belady.npz",
+  "train__conv_640_3_8_1.lru.npz",
+  "train__conv_704_3_8_1.belady.npz",
+  "train__conv_704_3_8_1.lru.npz",
+  "train__conv_768_3_8_1.belady.npz",
+  "train__conv_768_3_8_1.lru.npz"
+ ],
+ "val_files": [
+  "val__conv_672_3_8_1.belady.npz",
+  "val__conv_672_3_8_1.lru.npz"
+ ],
+ "train_top1": 0.9999916666666666,
+ "val_top1": 1.0,
+ "seconds": 36.6,
+ "bytes": 158590
+}

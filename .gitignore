@@ -1,0 +1,15 @@
+# compiled files and caches
+build/
+*.o
+*.pyc
+__pycache__/
+venv*/
+# big data stays outside git (see docs/DATA.md)
+results/traces/
+results/datasets/
+*.trace
+*.npz
+*.zip
+# editor and OS files
+.DS_Store
+Thumbs.db

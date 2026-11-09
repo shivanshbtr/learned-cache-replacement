@@ -1,0 +1,5 @@
+apps: hash(2196367 acc, 60503795 instr) graph(2810621 acc, 40022237 instr) matrix(2506240 acc, 140128666 instr) conv(518563 acc, 359670674 instr)
+merged accesses=5725558 (warm-up 572555), slice=10000 instr, slices=15990, switches=15989, until=first, config hash=aad10428c2aa096c
+req:spec_gbdt              misses=3732374   MPKI=20.582  | hash 1068517 (29.79) graph 1357373 (37.88) matrix 1249220 (17.88) conv 57264 (1.44)  [478.9s]
+own:spec_gbdt              misses=3462478   MPKI=19.093  | hash 983359 (27.41) graph 1172658 (32.72) matrix 1249197 (17.88) conv 57264 (1.44)  [106.2s]
+gen:all_gbdt               misses=3012205   MPKI=16.610  | hash 1223445 (34.11) graph 924296 (25.79) matrix 807200 (11.55) conv 57264 (1.44)  [255.1s]

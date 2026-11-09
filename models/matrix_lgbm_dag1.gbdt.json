@@ -1,0 +1,33 @@
+{
+ "kind": "gbdt",
+ "workload": "matrix",
+ "drivers": [
+  "lru",
+  "belady",
+  "dag1lgbm"
+ ],
+ "leaves": 31,
+ "trees": 50,
+ "vocab": 5,
+ "seed": 1,
+ "train_files": [
+  "train__matrix_500_0_1.belady.npz",
+  "train__matrix_500_0_1.dag1lgbm.npz",
+  "train__matrix_500_0_1.lru.npz",
+  "train__matrix_550_0_1.belady.npz",
+  "train__matrix_550_0_1.dag1lgbm.npz",
+  "train__matrix_550_0_1.lru.npz",
+  "train__matrix_600_0_1.belady.npz",
+  "train__matrix_600_0_1.dag1lgbm.npz",
+  "train__matrix_600_0_1.lru.npz"
+ ],
+ "val_files": [
+  "val__matrix_650_0_1.belady.npz",
+  "val__matrix_650_0_1.dag1lgbm.npz",
+  "val__matrix_650_0_1.lru.npz"
+ ],
+ "train_top1": 0.9925729429555489,
+ "val_top1": 0.9936722222222222,
+ "seconds": 260.6,
+ "bytes": 179814
+}

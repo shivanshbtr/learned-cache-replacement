@@ -1,0 +1,34 @@
+nohup: ignoring input
+=== hash: LSTM+attention
+epoch  8  train loss 2.1427  val loss 2.1484  val top-1 0.2481  (314s)
+export self-check: max |torch - numpy| score difference 1.01e-06
+saved /home/kiit/appcache_b/appcache/models/hash_lstm.lstm (9363 params, 36.7 KB): train top-1 0.256, val top-1 0.254
+=== graph: LSTM+attention
+epoch 12  train loss 1.8093  val loss 1.8072  val top-1 0.3429  (537s)
+export self-check: max |torch - numpy| score difference 4.77e-06
+saved /home/kiit/appcache_b/appcache/models/graph_lstm.lstm (9595 params, 38.0 KB): train top-1 0.345, val top-1 0.345
+=== matrix: LSTM+attention
+epoch  6  train loss 0.0150  val loss 0.0007  val top-1 1.0000  (272s)
+export self-check: max |torch - numpy| score difference 5.72e-06
+saved /home/kiit/appcache_b/appcache/models/matrix_lstm.lstm (9359 params, 36.6 KB): train top-1 0.996, val top-1 1.000
+=== conv: LSTM+attention
+epoch  6  train loss 0.0002  val loss 0.0000  val top-1 1.0000  (891s)
+export self-check: max |torch - numpy| score difference 4.77e-06
+saved /home/kiit/appcache_b/appcache/models/conv_lstm.lstm (9363 params, 36.7 KB): train top-1 1.000, val top-1 1.000
+=== all: LSTM+attention
+epoch 12  train loss 1.0452  val loss 0.9852  val top-1 0.6506  (3187s)
+export self-check: max |torch - numpy| score difference 1.91e-05
+saved /home/kiit/appcache_b/appcache/models/all_lstm.lstm (9595 params, 38.0 KB): train top-1 0.630, val top-1 0.652
+--- offline comparison on validation inputs (top-1 agreement with Belady; higher is better) ---
+file                                decisions       random          LRU          MRU         FIFO hash_lstm.ls hash_mlp.mlp hash_lgbm.gb all_lstm.lst
+val__hash_18_100000_1500000_1_4.lru   200000        0.090        0.130        0.062        0.007        0.169        0.167        0.167        0.165
+MEAN                                                0.090        0.130        0.062        0.007        0.169        0.167        0.167        0.165
+file                          decisions       random          LRU          MRU         FIFO graph_lstm.l graph_mlp.ml graph_lgbm.g all_lstm.lst
+val__graph_100000_8_0_4_4.lru   200000        0.110        0.144        0.039        0.002        0.297        0.297        0.308        0.298
+MEAN                                          0.110        0.144        0.039        0.002        0.297        0.297        0.308        0.298
+file                    decisions       random          LRU          MRU         FIFO matrix_lstm. matrix_mlp.m matrix_lgbm. all_lstm.lst
+val__matrix_650_0_1.lru   200000        0.068        0.003        0.955        0.003        1.000        1.000        0.988        1.000
+MEAN                                    0.068        0.003        0.955        0.003        1.000        1.000        0.988        1.000
+file                    decisions       random          LRU          MRU         FIFO conv_lstm.ls conv_mlp.mlp conv_lgbm.gb all_lstm.lst
+val__conv_672_3_8_1.lru   190633        0.517        0.444        0.530        0.444        1.000        1.000        1.000        1.000
+MEAN                                    0.517        0.444        0.530        0.444        1.000        1.000        1.000        1.000

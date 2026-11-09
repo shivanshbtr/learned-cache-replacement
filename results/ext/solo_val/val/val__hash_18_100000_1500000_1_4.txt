@@ -1,0 +1,15 @@
+trace: results/traces/val/val__hash_18_100000_1500000_1_4.llc.trace
+LLC accesses=2199282 (warm-up 219928, measured 1979354), unique lines=65086 (4067.9 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru            562444     0.7158    10.321        0.0%     41866704
+fifo           678627     0.6571    12.453      -37.7%     34762529
+random         678460     0.6572    12.450      -37.6%     38885284
+srrip          500657     0.7471     9.187       20.0%     40972401
+drrip          463134     0.7660     8.499       32.2%     38478018
+bip            453363     0.7710     8.320       35.4%     25877797
+mru            995242     0.4972    18.263     -140.4%     30551427
+mlp:hash_mlp_mix1       417137     0.7893     7.655       47.1%       165944
+mlp:all_mlp_mix1       412327     0.7917     7.566       48.7%       172490
+belady         254118     0.8716     4.663      100.0%     21788020
+  model mlp:hash_mlp_mix1: {"kind":"mlp","params":1739,"model_bytes":7044,"ops_per_decision":52528,"decisions":458497,"lat_mean_ns":28100.3,"lat_p50_ns":24722,"lat_p99_ns":98006}
+  model mlp:all_mlp_mix1: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":453121,"lat_mean_ns":27574.3,"lat_p50_ns":23084,"lat_p99_ns":72883}

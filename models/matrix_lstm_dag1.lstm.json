@@ -1,0 +1,39 @@
+{
+ "kind": "lstm",
+ "workload": "matrix",
+ "drivers": [
+  "lru",
+  "belady",
+  "dag1lstm"
+ ],
+ "hist": 16,
+ "hidden": 32,
+ "emb": 4,
+ "dpos": 4,
+ "dc": 32,
+ "dh": 32,
+ "aux": 0.1,
+ "vocab": 5,
+ "seed": 1,
+ "params": 9359,
+ "train_files": [
+  "train__matrix_500_0_1.belady.npz",
+  "train__matrix_500_0_1.dag1lstm.npz",
+  "train__matrix_500_0_1.lru.npz",
+  "train__matrix_550_0_1.belady.npz",
+  "train__matrix_550_0_1.dag1lstm.npz",
+  "train__matrix_550_0_1.lru.npz",
+  "train__matrix_600_0_1.belady.npz",
+  "train__matrix_600_0_1.dag1lstm.npz",
+  "train__matrix_600_0_1.lru.npz"
+ ],
+ "val_files": [
+  "val__matrix_650_0_1.belady.npz",
+  "val__matrix_650_0_1.dag1lstm.npz",
+  "val__matrix_650_0_1.lru.npz"
+ ],
+ "train_top1": 0.997248113155365,
+ "val_top1": 1.0,
+ "bytes": 37516,
+ "seconds": 162.8
+}

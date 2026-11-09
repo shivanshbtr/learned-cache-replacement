@@ -1,0 +1,29 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__hash_18_100000_1500000_1_5.llc.trace
+LLC accesses=2196367 (warm-up 219636, measured 1976731), unique lines=64934 (4058.4 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru            559732     0.7168    10.276        0.0%     12577939
+belady         252654     0.8722     4.638      100.0%     13882934
+mlp:hash_mlp_dag1       413392     0.7909     7.589       47.7%       152313
+mlp:all_mlp_dag1       409946     0.7926     7.526       48.8%       152168
+mlp:allbig_mlp_dag1       410118     0.7925     7.529       48.7%        40828
+mlp:graph_mlp_dag1      1016815     0.4856    18.667     -148.8%        76016
+mlp:matrix_mlp_dag1       990740     0.4988    18.189     -140.4%        66784
+mlp:conv_mlp_dag1       989311     0.4995    18.162     -139.9%        76273
+mlp:hash_mlp_dag1_s2       412612     0.7913     7.575       47.9%       151865
+mlp:hash_mlp_dag1_s3       413592     0.7908     7.593       47.6%       154709
+mlp:all_mlp_dag1_s2       409396     0.7929     7.516       49.0%       192934
+mlp:all_mlp_dag1_s3       412394     0.7914     7.571       48.0%       175627
+mlp:allbig_mlp_dag1_s2       412782     0.7912     7.578       47.9%        51789
+mlp:allbig_mlp_dag1_s3       411069     0.7920     7.547       48.4%        44974
+  model mlp:hash_mlp_dag1: {"kind":"mlp","params":1739,"model_bytes":7044,"ops_per_decision":52528,"decisions":454361,"lat_mean_ns":31005.7,"lat_p50_ns":34578,"lat_p99_ns":78484}
+  model mlp:all_mlp_dag1: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":450247,"lat_mean_ns":31337.1,"lat_p50_ns":34630,"lat_p99_ns":77473}
+  model mlp:allbig_mlp_dag1: {"kind":"mlp","params":7495,"model_bytes":30532,"ops_per_decision":220528,"decisions":450693,"lat_mean_ns":118288,"lat_p50_ns":132159,"lat_p99_ns":237566}
+  model mlp:graph_mlp_dag1: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":1090768,"lat_mean_ns":26118.9,"lat_p50_ns":19395,"lat_p99_ns":69360}
+  model mlp:matrix_mlp_dag1: {"kind":"mlp","params":1731,"model_bytes":7004,"ops_per_decision":52528,"decisions":1056001,"lat_mean_ns":30701.4,"lat_p50_ns":34347,"lat_p99_ns":76991}
+  model mlp:conv_mlp_dag1: {"kind":"mlp","params":1739,"model_bytes":7044,"ops_per_decision":52528,"decisions":1054550,"lat_mean_ns":26947.8,"lat_p50_ns":30423,"lat_p99_ns":71139}
+  model mlp:hash_mlp_dag1_s2: {"kind":"mlp","params":1739,"model_bytes":7044,"ops_per_decision":52528,"decisions":453534,"lat_mean_ns":31161.2,"lat_p50_ns":34580,"lat_p99_ns":79785}
+  model mlp:hash_mlp_dag1_s3: {"kind":"mlp","params":1739,"model_bytes":7044,"ops_per_decision":52528,"decisions":454539,"lat_mean_ns":30522.9,"lat_p50_ns":34367,"lat_p99_ns":79910}
+  model mlp:all_mlp_dag1_s2: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":449855,"lat_mean_ns":24781.4,"lat_p50_ns":17641,"lat_p99_ns":68214}
+  model mlp:all_mlp_dag1_s3: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":453091,"lat_mean_ns":27025.5,"lat_p50_ns":30510,"lat_p99_ns":70602}
+  model mlp:allbig_mlp_dag1_s2: {"kind":"mlp","params":7495,"model_bytes":30532,"ops_per_decision":220528,"decisions":453734,"lat_mean_ns":92692.9,"lat_p50_ns":66213,"lat_p99_ns":208185}
+  model mlp:allbig_mlp_dag1_s3: {"kind":"mlp","params":7495,"model_bytes":30532,"ops_per_decision":220528,"decisions":451780,"lat_mean_ns":107113,"lat_p50_ns":76501,"lat_p99_ns":246257}

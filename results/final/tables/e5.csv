@@ -1,0 +1,17 @@
+LLC config,workload,best simple,mlp specialized,mlp generic,config hash
+"default (2 MB, 16-way)",hash,35.3%,46.3%,47.1%,aad10428c2aa096c
+"default (2 MB, 16-way)",graph,22.7%,35.8%,36.2%,aad10428c2aa096c
+"default (2 MB, 16-way)",matrix,96.4%,100.0%,100.0%,aad10428c2aa096c
+"default (2 MB, 16-way)",conv,53.5%,100.0%,100.0%,aad10428c2aa096c
+llc1m_16w,hash,37.1%,50.6%,50.5%,a4b69918085ec0b5
+llc1m_16w,graph,43.7%,62.7%,62.8%,a4b69918085ec0b5
+llc1m_16w,matrix,95.4%,100.0%,99.9%,a4b69918085ec0b5
+llc1m_16w,conv,56.8%,100.0%,100.0%,a4b69918085ec0b5
+llc2m_8w,hash,33.3%,47.3%,48.3%,c7249e0b85304ea7
+llc2m_8w,graph,20.4%,37.3%,37.6%,c7249e0b85304ea7
+llc2m_8w,matrix,93.7%,100.0%,99.5%,c7249e0b85304ea7
+llc2m_8w,conv,55.0%,100.0%,100.0%,c7249e0b85304ea7
+llc4m_16w,hash,17.1%,24.0%,26.2%,1165faf386505d17
+llc4m_16w,graph,38.8%,69.4%,69.8%,1165faf386505d17
+llc4m_16w,matrix,97.7%,100.0%,99.7%,1165faf386505d17
+llc4m_16w,conv,69.5%,100.0%,100.0%,1165faf386505d17

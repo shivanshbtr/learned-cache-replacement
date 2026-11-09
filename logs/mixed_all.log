@@ -1,0 +1,332 @@
+nohup: ignoring input
+=========== step 1: env EXPERT=1 bash scripts/mixed_dagger.sh gbdt (04:01)
+merge: 4 mixtures
+label: 20 jobs, 2 in parallel
+done  train__mix1s10000.mixreq1lgbm
+done  train__mix0s10000.mixreq1lgbm
+done  val__mix0s10000.mixreq1lgbm
+done  train__mix2s10000.mixreq1lgbm
+done  train__mix0s10000.mixown1lgbm
+done  train__mix1s10000.mixown1lgbm
+done  train__mix2s10000.mixown1lgbm
+done  val__mix0s10000.mixown1lgbm
+done  train__mix0s10000.mixgen1lgbm
+done  train__mix1s10000.mixgen1lgbm
+done  val__mix0s10000.mixgen1lgbm
+done  train__mix0s10000.mixlru1lgbm
+done  train__mix2s10000.mixgen1lgbm
+done  train__mix1s10000.mixlru1lgbm
+done  val__mix0s10000.mixlru1lgbm
+done  train__mix2s10000.mixlru1lgbm
+done  train__mix0s10000.mixbel1lgbm
+done  train__mix1s10000.mixbel1lgbm
+done  val__mix0s10000.mixbel1lgbm
+done  train__mix2s10000.mixbel1lgbm
+(merged traces kept in /home/kiit/appcache_b/appcache/results/datasets/_merged; delete them with: rm -rf /home/kiit/appcache_b/appcache/results/datasets/_merged  when all KINDs and rounds are labeled)
+=== train hash (gbdt, mix1b) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm
+train: 21 files, 1260000 decisions; val: 7 files, 420000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/hash_lgbm_mix1b.gbdt (145 trees, 515.6 KB): train top-1 0.386, val top-1 0.394 (informative measured decisions)
+=== train graph (gbdt, mix1b) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm
+train: 21 files, 1260000 decisions; val: 7 files, 420000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/graph_lgbm_mix1b.gbdt (173 trees, 612.0 KB): train top-1 0.450, val top-1 0.453 (informative measured decisions)
+=== train matrix (gbdt, mix1b) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm
+train: 21 files, 1115446 decisions; val: 7 files, 420000 decisions; vocab 5 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_lgbm_mix1b.gbdt (81 trees, 286.4 KB): train top-1 0.653, val top-1 0.682 (informative measured decisions)
+=== train conv (gbdt, mix1b) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm
+train: 21 files, 880463 decisions; val: 7 files, 293627 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/conv_lgbm_mix1b.gbdt (43 trees, 153.2 KB): train top-1 0.833, val top-1 0.793 (informative measured decisions)
+=== train all (gbdt, mix1b) on drivers lru,belady,dag1lgbm,dag1alllgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixgen1lgbm
+train: 63 files, 3580891 decisions; val: 21 files, 1260000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/all_lgbm_mix1b.gbdt (81 trees, 292.0 KB): train top-1 0.586, val top-1 0.607 (informative measured decisions)
+=========== step 2: env EXPERT=1 bash scripts/mixed_dagger.sh lstm (05:49)
+merge: 4 mixtures
+label: 20 jobs, 2 in parallel
+done  train__mix1s10000.mixreq1lstm
+done  train__mix0s10000.mixreq1lstm
+done  val__mix0s10000.mixreq1lstm
+done  train__mix2s10000.mixreq1lstm
+done  train__mix0s10000.mixown1lstm
+done  train__mix1s10000.mixown1lstm
+done  train__mix2s10000.mixown1lstm
+done  val__mix0s10000.mixown1lstm
+done  train__mix0s10000.mixgen1lstm
+done  train__mix1s10000.mixgen1lstm
+done  val__mix0s10000.mixgen1lstm
+done  train__mix0s10000.mixlru1lstm
+done  train__mix2s10000.mixgen1lstm
+done  train__mix1s10000.mixlru1lstm
+done  train__mix2s10000.mixlru1lstm
+done  val__mix0s10000.mixlru1lstm
+done  train__mix0s10000.mixbel1lstm
+done  train__mix1s10000.mixbel1lstm
+done  val__mix0s10000.mixbel1lstm
+done  train__mix2s10000.mixbel1lstm
+(merged traces kept in /home/kiit/appcache_b/appcache/results/datasets/_merged; delete them with: rm -rf /home/kiit/appcache_b/appcache/results/datasets/_merged  when all KINDs and rounds are labeled)
+=== train hash (lstm, mix1b) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm
+export self-check: max |torch - numpy| score difference 1.91e-06
+saved /home/kiit/appcache_b/appcache/models_ext/hash_lstm_mix1b.lstm (9363 params, 36.7 KB): train top-1 0.400, val top-1 0.406
+=== train graph (lstm, mix1b) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm
+export self-check: max |torch - numpy| score difference 4.77e-06
+saved /home/kiit/appcache_b/appcache/models_ext/graph_lstm_mix1b.lstm (9595 params, 38.0 KB): train top-1 0.458, val top-1 0.447
+=== train matrix (lstm, mix1b) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm
+export self-check: max |torch - numpy| score difference 5.72e-06
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_lstm_mix1b.lstm (9359 params, 36.6 KB): train top-1 0.678, val top-1 0.701
+=== train conv (lstm, mix1b) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm
+export self-check: max |torch - numpy| score difference 1.91e-05
+saved /home/kiit/appcache_b/appcache/models_ext/conv_lstm_mix1b.lstm (9363 params, 36.7 KB): train top-1 0.789, val top-1 0.756
+=== train all (lstm, mix1b) on drivers lru,belady,dag1lstm,dag1alllstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixgen1lstm
+export self-check: max |torch - numpy| score difference 7.63e-06
+saved /home/kiit/appcache_b/appcache/models_ext/all_lstm_mix1b.lstm (9595 params, 38.0 KB): train top-1 0.607, val top-1 0.629
+=========== step 3: env ROUND=2 bash scripts/mixed_dagger.sh mlp (16:54)
+merge: 4 mixtures
+label: 12 jobs, 2 in parallel
+done  train__mix1s10000.mixreq2mlp
+done  train__mix0s10000.mixreq2mlp
+done  val__mix0s10000.mixreq2mlp
+done  train__mix2s10000.mixreq2mlp
+done  train__mix0s10000.mixown2mlp
+done  train__mix1s10000.mixown2mlp
+done  train__mix2s10000.mixown2mlp
+done  val__mix0s10000.mixown2mlp
+done  train__mix0s10000.mixgen2mlp
+done  train__mix1s10000.mixgen2mlp
+done  val__mix0s10000.mixgen2mlp
+done  train__mix2s10000.mixgen2mlp
+(merged traces kept in /home/kiit/appcache_b/appcache/results/datasets/_merged; delete them with: rm -rf /home/kiit/appcache_b/appcache/results/datasets/_merged  when all KINDs and rounds are labeled)
+=== train hash (mlp, mix2) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixreq2mlp,mixown2mlp
+epoch 12  train loss 1.6708  val loss 1.5839  val top-1 0.4648
+saved /home/kiit/appcache_b/appcache/models_ext/hash_mlp_mix2.mlp (1739 params, 6.9 KB): train top-1 0.437, val top-1 0.472
+=== train graph (mlp, mix2) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixreq2mlp,mixown2mlp
+epoch 19  train loss 1.5019  val loss 1.4389  val top-1 0.4939
+saved /home/kiit/appcache_b/appcache/models_ext/graph_mlp_mix2.mlp (2203 params, 9.1 KB): train top-1 0.490, val top-1 0.502
+=== train matrix (mlp, mix2) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixreq2mlp,mixown2mlp
+epoch 22  train loss 0.9851  val loss 0.9450  val top-1 0.6903
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_mlp_mix2.mlp (1731 params, 6.8 KB): train top-1 0.657, val top-1 0.697
+=== train conv (mlp, mix2) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixreq2mlp,mixown2mlp
+epoch  8  train loss 0.5901  val loss 0.6466  val top-1 0.7873
+saved /home/kiit/appcache_b/appcache/models_ext/conv_mlp_mix2.mlp (1739 params, 6.9 KB): train top-1 0.806, val top-1 0.789
+=== train all (mlp, mix2) on drivers lru,belady,dag1mlp,dag1allmlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixgen1mlp,mixreq2mlp,mixown2mlp,mixgen2mlp
+=========== step 4: env ROUND=2 bash scripts/mixed_dagger.sh gbdt (18:17)
+merge: 4 mixtures
+label: 12 jobs, 2 in parallel
+done  train__mix1s10000.mixreq2lgbm
+done  train__mix0s10000.mixreq2lgbm
+done  val__mix0s10000.mixreq2lgbm
+done  train__mix2s10000.mixreq2lgbm
+done  train__mix0s10000.mixown2lgbm
+done  train__mix1s10000.mixown2lgbm
+done  train__mix2s10000.mixown2lgbm
+done  val__mix0s10000.mixown2lgbm
+done  train__mix0s10000.mixgen2lgbm
+done  train__mix1s10000.mixgen2lgbm
+done  val__mix0s10000.mixgen2lgbm
+done  train__mix2s10000.mixgen2lgbm
+(merged traces kept in /home/kiit/appcache_b/appcache/results/datasets/_merged; delete them with: rm -rf /home/kiit/appcache_b/appcache/results/datasets/_merged  when all KINDs and rounds are labeled)
+=== train hash (gbdt, mix2) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixreq2lgbm,mixown2lgbm
+train: 27 files, 1620000 decisions; val: 9 files, 540000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/hash_lgbm_mix2.gbdt (292 trees, 1032.4 KB): train top-1 0.437, val top-1 0.456 (informative measured decisions)
+=== train graph (gbdt, mix2) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixreq2lgbm,mixown2lgbm
+train: 27 files, 1620000 decisions; val: 9 files, 540000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/graph_lgbm_mix2.gbdt (286 trees, 1009.2 KB): train top-1 0.494, val top-1 0.509 (informative measured decisions)
+=== train matrix (gbdt, mix2) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixreq2lgbm,mixown2lgbm
+train: 27 files, 1475446 decisions; val: 9 files, 540000 decisions; vocab 5 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_lgbm_mix2.gbdt (163 trees, 576.8 KB): train top-1 0.650, val top-1 0.677 (informative measured decisions)
+=== train conv (gbdt, mix2) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixreq2lgbm,mixown2lgbm
+train: 27 files, 1049421 decisions; val: 9 files, 349892 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/conv_lgbm_mix2.gbdt (40 trees, 143.2 KB): train top-1 0.807, val top-1 0.778 (informative measured decisions)
+=== train all (gbdt, mix2) on drivers lru,belady,dag1lgbm,dag1alllgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixgen1lgbm,mixreq2lgbm,mixown2lgbm,mixgen2lgbm
+=========== step 5: env ROUND=2 bash scripts/mixed_dagger.sh lstm (19:53)
+merge: 4 mixtures
+label: 12 jobs, 2 in parallel
+done  train__mix1s10000.mixreq2lstm
+done  train__mix0s10000.mixreq2lstm
+done  val__mix0s10000.mixreq2lstm
+done  train__mix2s10000.mixreq2lstm
+done  train__mix0s10000.mixown2lstm
+done  train__mix1s10000.mixown2lstm
+done  train__mix2s10000.mixown2lstm
+done  val__mix0s10000.mixown2lstm
+done  train__mix0s10000.mixgen2lstm
+done  train__mix1s10000.mixgen2lstm
+done  val__mix0s10000.mixgen2lstm
+done  train__mix2s10000.mixgen2lstm
+(merged traces kept in /home/kiit/appcache_b/appcache/results/datasets/_merged; delete them with: rm -rf /home/kiit/appcache_b/appcache/results/datasets/_merged  when all KINDs and rounds are labeled)
+=== train hash (lstm, mix2) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixreq2lstm,mixown2lstm
+export self-check: max |torch - numpy| score difference 3.81e-06
+saved /home/kiit/appcache_b/appcache/models_ext/hash_lstm_mix2.lstm (9363 params, 36.7 KB): train top-1 0.435, val top-1 0.466
+=== train graph (lstm, mix2) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixreq2lstm,mixown2lstm
+export self-check: max |torch - numpy| score difference 3.81e-06
+saved /home/kiit/appcache_b/appcache/models_ext/graph_lstm_mix2.lstm (9595 params, 38.0 KB): train top-1 0.482, val top-1 0.488
+=== train matrix (lstm, mix2) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixreq2lstm,mixown2lstm
+export self-check: max |torch - numpy| score difference 7.63e-06
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_lstm_mix2.lstm (9359 params, 36.6 KB): train top-1 0.661, val top-1 0.698
+=== train conv (lstm, mix2) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixreq2lstm,mixown2lstm
+export self-check: max |torch - numpy| score difference 7.63e-06
+saved /home/kiit/appcache_b/appcache/models_ext/conv_lstm_mix2.lstm (9363 params, 36.7 KB): train top-1 0.761, val top-1 0.741
+=== train all (lstm, mix2) on drivers lru,belady,dag1lstm,dag1alllstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixgen1lstm,mixreq2lstm,mixown2lstm,mixgen2lstm
+=========== val comparison (22:08)
+note: no complete mlp mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete mlp mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete gbdt mix1 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete gbdt mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete gbdt mix1 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete gbdt mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete lstm mix1 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete lstm mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete lstm mix1 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete lstm mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+apps: hash(2199282 acc, 60525468 instr) graph(2811576 acc, 40024145 instr) matrix(2506417 acc, 140138568 instr) conv(450936 acc, 312504250 instr)
+merged accesses=5091712 (warm-up 509171), slice=10000 instr, slices=15990, switches=15989, until=first, config hash=aad10428c2aa096c
+lru                        misses=2502098   MPKI=16.741  | hash 966524 (26.95) graph 797874 (22.28) matrix 680366 (17.88) conv 57334 (1.44)  [0.6s]
+srrip                      misses=2299283   MPKI=15.384  | hash 866871 (24.18) graph 694712 (19.40) matrix 680366 (17.88) conv 57334 (1.44)  [0.5s]
+drrip                      misses=2036519   MPKI=13.626  | hash 700352 (19.53) graph 635128 (17.73) matrix 643705 (16.92) conv 57334 (1.44)  [0.4s]
+bip                        misses=2102836   MPKI=14.070  | hash 753438 (21.01) graph 667513 (18.64) matrix 624551 (16.41) conv 57334 (1.44)  [0.7s]
+mru                        misses=3975227   MPKI=26.597  | hash 1128494 (31.47) graph 2200412 (61.43) matrix 590095 (15.51) conv 56226 (1.42)  [0.5s]
+belady                     misses=1596290   MPKI=10.680  | hash 413079 (11.52) graph 447466 (12.49) matrix 678411 (17.83) conv 57334 (1.44)  [0.3s]
+req:spec_mlp               misses=2892274   MPKI=19.351  | hash 1193210 (33.28) graph 961364 (26.84) matrix 680366 (17.88) conv 57334 (1.44)  [50.8s]
+own:spec_mlp               misses=2517654   MPKI=16.845  | hash 948765 (26.46) graph 911061 (25.44) matrix 600494 (15.78) conv 57334 (1.44)  [11.0s]
+gen:all_mlp                misses=2448954   MPKI=16.385  | hash 1300003 (36.25) graph 654610 (18.28) matrix 437007 (11.49) conv 57334 (1.44)  [36.7s]
+req:mix1spec_mlp           misses=2231363   MPKI=14.929  | hash 881777 (24.59) graph 611886 (17.08) matrix 680366 (17.88) conv 57334 (1.44)  [34.9s]
+own:mix1spec_mlp           misses=2617083   MPKI=17.510  | hash 971517 (27.09) graph 911787 (25.46) matrix 680366 (17.88) conv 53413 (1.34)  [12.2s]
+gen:mix1all_mlp            misses=2073877   MPKI=13.876  | hash 814058 (22.70) graph 633078 (17.67) matrix 569407 (14.96) conv 57334 (1.44)  [36.3s]
+req:mix1bspec_mlp          misses=1961128   MPKI=13.121  | hash 651621 (18.17) graph 577740 (16.13) matrix 674433 (17.73) conv 57334 (1.44)  [40.3s]
+own:mix1bspec_mlp          misses=2565631   MPKI=17.166  | hash 941116 (26.25) graph 910926 (25.43) matrix 660176 (17.35) conv 53413 (1.34)  [14.3s]
+gen:mix1ball_mlp           misses=1905290   MPKI=12.748  | hash 642192 (17.91) graph 564886 (15.77) matrix 640878 (16.84) conv 57334 (1.44)  [38.3s]
+req:spec_gbdt              misses=2819788   MPKI=18.866  | hash 1018989 (28.42) graph 1063099 (29.68) matrix 680366 (17.88) conv 57334 (1.44)  [367.0s]
+own:spec_gbdt              misses=2847411   MPKI=19.051  | hash 975246 (27.20) graph 1145117 (31.97) matrix 671594 (17.65) conv 55454 (1.40)  [108.2s]
+gen:all_gbdt               misses=2728922   MPKI=18.258  | hash 1091392 (30.44) graph 899832 (25.12) matrix 680364 (17.88) conv 57334 (1.44)  [277.4s]
+req:mix1bspec_gbdt         misses=2158826   MPKI=14.444  | hash 827948 (23.09) graph 593492 (16.57) matrix 680052 (17.87) conv 57334 (1.44)  [273.1s]
+own:mix1bspec_gbdt         misses=2606907   MPKI=17.442  | hash 957622 (26.71) graph 913633 (25.51) matrix 680366 (17.88) conv 55286 (1.39)  [73.0s]
+gen:mix1ball_gbdt          misses=2256596   MPKI=15.098  | hash 937764 (26.15) graph 581148 (16.23) matrix 680350 (17.88) conv 57334 (1.44)  [160.7s]
+req:spec_lstm              misses=2806284   MPKI=18.776  | hash 1110180 (30.96) graph 958404 (26.76) matrix 680366 (17.88) conv 57334 (1.44)  [502.7s]
+own:spec_lstm              misses=3596986   MPKI=24.066  | hash 940547 (26.23) graph 1971550 (55.04) matrix 627555 (16.49) conv 57334 (1.44)  [283.1s]
+gen:all_lstm               misses=3473599   MPKI=23.241  | hash 1245687 (34.74) graph 1720579 (48.04) matrix 449999 (11.83) conv 57334 (1.44)  [342.1s]
+req:mix1bspec_lstm         misses=1913717   MPKI=12.804  | hash 597339 (16.66) graph 578754 (16.16) matrix 680290 (17.88) conv 57334 (1.44)  [237.7s]
+own:mix1bspec_lstm         misses=2524745   MPKI=16.892  | hash 928666 (25.90) graph 910750 (25.43) matrix 631897 (16.61) conv 53432 (1.34)  [222.7s]
+gen:mix1ball_lstm          misses=1904237   MPKI=12.741  | hash 652118 (18.19) graph 559826 (15.63) matrix 634959 (16.69) conv 57334 (1.44)  [236.3s]
+note: no complete mlp mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete mlp mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete gbdt mix1 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete gbdt mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete gbdt mix1 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete gbdt mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete lstm mix1 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete lstm mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete lstm mix1 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+note: no complete lstm mix2 model set in /home/kiit/appcache_b/appcache/models_ext: skipped
+apps: hash(2199282 acc, 60525468 instr) graph(2811576 acc, 40024145 instr) matrix(2506417 acc, 140138568 instr) conv(450936 acc, 312504250 instr)
+merged accesses=5091712 (warm-up 509171), slice=10000 instr, slices=15990, switches=15989, until=first, config hash=59d2554a4ce6bd29
+lru                        misses=1111617   MPKI=7.438   | hash 254140 (7.09) graph 327421 (9.14) matrix 472722 (12.42) conv 57334 (1.44)  [0.3s]
+srrip                      misses=973389    MPKI=6.513   | hash 173537 (4.84) graph 286117 (7.99) matrix 456401 (11.99) conv 57334 (1.44)  [0.2s]
+drrip                      misses=671796    MPKI=4.495   | hash 188792 (5.26) graph 249478 (6.97) matrix 176200 (4.63) conv 57326 (1.44)  [0.2s]
+bip                        misses=648829    MPKI=4.341   | hash 179513 (5.01) graph 279987 (7.82) matrix 132002 (3.47) conv 57327 (1.44)  [0.3s]
+mru                        misses=1783907   MPKI=11.936  | hash 559180 (15.59) graph 889598 (24.84) matrix 280996 (7.39) conv 54133 (1.36)  [0.3s]
+belady                     misses=380708    MPKI=2.547   | hash 116814 (3.26) graph 173277 (4.84) matrix 33283 (0.87) conv 57334 (1.44)  [0.2s]
+req:spec_mlp               misses=965285    MPKI=6.458   | hash 544795 (15.19) graph 207435 (5.79) matrix 155721 (4.09) conv 57334 (1.44)  [15.3s]
+own:spec_mlp               misses=967192    MPKI=6.471   | hash 304239 (8.48) graph 359103 (10.03) matrix 250437 (6.58) conv 53413 (1.34)  [5.3s]
+gen:all_mlp                misses=835430    MPKI=5.590   | hash 586126 (16.35) graph 192456 (5.37) matrix 2811 (0.07) conv 54037 (1.36)  [10.2s]
+req:mix1spec_mlp           misses=761138    MPKI=5.093   | hash 175280 (4.89) graph 292623 (8.17) matrix 235901 (6.20) conv 57334 (1.44)  [10.9s]
+own:mix1spec_mlp           misses=1192769   MPKI=7.981   | hash 311921 (8.70) graph 360030 (10.05) matrix 467405 (12.28) conv 53413 (1.34)  [5.4s]
+gen:mix1all_mlp            misses=604423    MPKI=4.044   | hash 127211 (3.55) graph 414579 (11.57) matrix 5299 (0.14) conv 57334 (1.44)  [7.9s]
+req:mix1bspec_mlp          misses=782356    MPKI=5.235   | hash 142144 (3.96) graph 294019 (8.21) matrix 288859 (7.59) conv 57334 (1.44)  [12.9s]
+own:mix1bspec_mlp          misses=1036752   MPKI=6.937   | hash 314098 (8.76) graph 361625 (10.10) matrix 307616 (8.08) conv 53413 (1.34)  [5.2s]
+gen:mix1ball_mlp           misses=638817    MPKI=4.274   | hash 43277 (1.21) graph 473870 (13.23) matrix 64336 (1.69) conv 57334 (1.44)  [7.8s]
+req:spec_gbdt              misses=1286604   MPKI=8.608   | hash 350068 (9.76) graph 487998 (13.62) matrix 391204 (10.28) conv 57334 (1.44)  [120.6s]
+own:spec_gbdt              misses=1101553   MPKI=7.370   | hash 339215 (9.46) graph 367328 (10.26) matrix 341597 (8.98) conv 53413 (1.34)  [32.1s]
+gen:all_gbdt               misses=1223171   MPKI=8.184   | hash 385480 (10.75) graph 174675 (4.88) matrix 608721 (16.00) conv 54295 (1.37)  [118.6s]
+req:mix1bspec_gbdt         misses=758904    MPKI=5.078   | hash 145278 (4.05) graph 288607 (8.06) matrix 267685 (7.04) conv 57334 (1.44)  [72.1s]
+own:mix1bspec_gbdt         misses=1255340   MPKI=8.399   | hash 324420 (9.05) graph 361363 (10.09) matrix 516144 (13.57) conv 53413 (1.34)  [26.2s]
+gen:mix1ball_gbdt          misses=758902    MPKI=5.078   | hash 119898 (3.34) graph 356671 (9.96) matrix 224999 (5.91) conv 57334 (1.44)  [47.9s]
+req:spec_lstm              misses=994824    MPKI=6.656   | hash 435094 (12.13) graph 277625 (7.75) matrix 224771 (5.91) conv 57334 (1.44)  [119.5s]
+own:spec_lstm              misses=1055933   MPKI=7.065   | hash 306559 (8.55) graph 360932 (10.08) matrix 335029 (8.81) conv 53413 (1.34)  [90.6s]
+gen:all_lstm               misses=717818    MPKI=4.803   | hash 401260 (11.19) graph 250463 (6.99) matrix 8846 (0.23) conv 57249 (1.44)  [82.0s]
+req:mix1bspec_lstm         misses=739145    MPKI=4.945   | hash 119892 (3.34) graph 346894 (9.68) matrix 215025 (5.65) conv 57334 (1.44)  [91.9s]
+own:mix1bspec_lstm         misses=1004607   MPKI=6.722   | hash 310823 (8.67) graph 364050 (10.16) matrix 276321 (7.26) conv 53413 (1.34)  [85.6s]
+gen:mix1ball_lstm          misses=611099    MPKI=4.089   | hash 99074 (2.76) graph 441439 (12.32) matrix 13252 (0.35) conv 57334 (1.44)  [75.1s]
+
+== mixed_default_s10000.json   (LLC 2048 KB, 16-way, slice 10000 instr)   best simple baseline: drrip 2036519 misses (+18.6% vs LRU)
+policy                     misses    vs LRU   vs best     gap% | MPKI per application: hash graph matrix conv
+lru                       2502098     +0.0%    -22.9%      0.0 | 26.95 22.28 17.88 1.44
+srrip                     2299283     +8.1%    -12.9%     22.4 | 24.18 19.40 17.88 1.44
+drrip                     2036519    +18.6%     +0.0%     51.4 | 19.53 17.73 16.92 1.44
+bip                       2102836    +16.0%     -3.3%     44.1 | 21.01 18.64 16.41 1.44
+mru                       3975227    -58.9%    -95.2%   -162.6 | 31.47 61.43 15.51 1.42
+belady                    1596290    +36.2%    +21.6%    100.0 | 11.52 12.49 17.83 1.44
+req:spec_mlp              2892274    -15.6%    -42.0%    -43.1 | 33.28 26.84 17.88 1.44
+own:spec_mlp              2517654     -0.6%    -23.6%     -1.7 | 26.46 25.44 15.78 1.44
+gen:all_mlp               2448954     +2.1%    -20.3%      5.9 | 36.25 18.28 11.49 1.44
+req:mix1spec_mlp          2231363    +10.8%     -9.6%     29.9 | 24.59 17.08 17.88 1.44
+own:mix1spec_mlp          2617083     -4.6%    -28.5%    -12.7 | 27.09 25.46 17.88 1.34
+gen:mix1all_mlp           2073877    +17.1%     -1.8%     47.3 | 22.70 17.67 14.96 1.44
+req:mix1bspec_mlp         1961128    +21.6%     +3.7%     59.7 | 18.17 16.13 17.73 1.44
+own:mix1bspec_mlp         2565631     -2.5%    -26.0%     -7.0 | 26.25 25.43 17.35 1.34
+gen:mix1ball_mlp          1905290    +23.9%     +6.4%     65.9 | 17.91 15.77 16.84 1.44
+req:spec_gbdt             2819788    -12.7%    -38.5%    -35.1 | 28.42 29.68 17.88 1.44
+own:spec_gbdt             2847411    -13.8%    -39.8%    -38.1 | 27.20 31.97 17.65 1.40
+gen:all_gbdt              2728922     -9.1%    -34.0%    -25.0 | 30.44 25.12 17.88 1.44
+req:mix1bspec_gbdt        2158826    +13.7%     -6.0%     37.9 | 23.09 16.57 17.87 1.44
+own:mix1bspec_gbdt        2606907     -4.2%    -28.0%    -11.6 | 26.71 25.51 17.88 1.39
+gen:mix1ball_gbdt         2256596     +9.8%    -10.8%     27.1 | 26.15 16.23 17.88 1.44
+req:spec_lstm             2806284    -12.2%    -37.8%    -33.6 | 30.96 26.76 17.88 1.44
+own:spec_lstm             3596986    -43.8%    -76.6%   -120.9 | 26.23 55.04 16.49 1.44
+gen:all_lstm              3473599    -38.8%    -70.6%   -107.3 | 34.74 48.04 11.83 1.44
+req:mix1bspec_lstm        1913717    +23.5%     +6.0%     65.0 | 16.66 16.16 17.88 1.44
+own:mix1bspec_lstm        2524745     -0.9%    -24.0%     -2.5 | 25.90 25.43 16.61 1.34
+gen:mix1ball_lstm         1904237    +23.9%     +6.5%     66.0 | 18.19 15.63 16.69 1.44
+(positive = fewer misses than LRU / than the best simple baseline; gap% = share of the LRU-to-Belady gap closed)
+  mlp req  frozen 2892274 -> mix1 2231363 misses (+22.9%)
+  mlp own  frozen 2517654 -> mix1 2617083 misses (-3.9%)
+  mlp gen  frozen 2448954 -> mix1 2073877 misses (+15.3%)
+  gbdt req  frozen 2819788 -> mix1b 2158826 misses (+23.4%)
+  gbdt own  frozen 2847411 -> mix1b 2606907 misses (+8.4%)
+  gbdt gen  frozen 2728922 -> mix1b 2256596 misses (+17.3%)
+  lstm req  frozen 2806284 -> mix1b 1913717 misses (+31.8%)
+  lstm own  frozen 3596986 -> mix1b 2524745 misses (+29.8%)
+  lstm gen  frozen 3473599 -> mix1b 1904237 misses (+45.2%)
+  mlp req  frozen 2892274 -> mix1b 1961128 misses (+32.2%)
+  mlp own  frozen 2517654 -> mix1b 2565631 misses (-1.9%)
+  mlp gen  frozen 2448954 -> mix1b 1905290 misses (+22.2%)
+
+== mixed_llc8m_16w_s10000.json   (LLC 8192 KB, 16-way, slice 10000 instr)   best simple baseline: bip 648829 misses (+41.6% vs LRU)
+policy                     misses    vs LRU   vs best     gap% | MPKI per application: hash graph matrix conv
+lru                       1111617     +0.0%    -71.3%      0.0 | 7.09 9.14 12.42 1.44
+srrip                      973389    +12.4%    -50.0%     18.9 | 4.84 7.99 11.99 1.44
+drrip                      671796    +39.6%     -3.5%     60.2 | 5.26 6.97 4.63 1.44
+bip                        648829    +41.6%     +0.0%     63.3 | 5.01 7.82 3.47 1.44
+mru                       1783907    -60.5%   -174.9%    -92.0 | 15.59 24.84 7.39 1.36
+belady                     380708    +65.8%    +41.3%    100.0 | 3.26 4.84 0.87 1.44
+req:spec_mlp               965285    +13.2%    -48.8%     20.0 | 15.19 5.79 4.09 1.44
+own:spec_mlp               967192    +13.0%    -49.1%     19.8 | 8.48 10.03 6.58 1.34
+gen:all_mlp                835430    +24.8%    -28.8%     37.8 | 16.35 5.37 0.07 1.36
+req:mix1spec_mlp           761138    +31.5%    -17.3%     48.0 | 4.89 8.17 6.20 1.44
+own:mix1spec_mlp          1192769     -7.3%    -83.8%    -11.1 | 8.70 10.05 12.28 1.34
+gen:mix1all_mlp            604423    +45.6%     +6.8%     69.4 | 3.55 11.57 0.14 1.44
+req:mix1bspec_mlp          782356    +29.6%    -20.6%     45.0 | 3.96 8.21 7.59 1.44
+own:mix1bspec_mlp         1036752     +6.7%    -59.8%     10.2 | 8.76 10.10 8.08 1.34
+gen:mix1ball_mlp           638817    +42.5%     +1.5%     64.7 | 1.21 13.23 1.69 1.44
+req:spec_gbdt             1286604    -15.7%    -98.3%    -23.9 | 9.76 13.62 10.28 1.44
+own:spec_gbdt             1101553     +0.9%    -69.8%      1.4 | 9.46 10.26 8.98 1.34
+gen:all_gbdt              1223171    -10.0%    -88.5%    -15.3 | 10.75 4.88 16.00 1.37
+req:mix1bspec_gbdt         758904    +31.7%    -17.0%     48.3 | 4.05 8.06 7.04 1.44
+own:mix1bspec_gbdt        1255340    -12.9%    -93.5%    -19.7 | 9.05 10.09 13.57 1.34
+gen:mix1ball_gbdt          758902    +31.7%    -17.0%     48.3 | 3.34 9.96 5.91 1.44
+req:spec_lstm              994824    +10.5%    -53.3%     16.0 | 12.13 7.75 5.91 1.44
+own:spec_lstm             1055933     +5.0%    -62.7%      7.6 | 8.55 10.08 8.81 1.34
+gen:all_lstm               717818    +35.4%    -10.6%     53.9 | 11.19 6.99 0.23 1.44
+req:mix1bspec_lstm         739145    +33.5%    -13.9%     51.0 | 3.34 9.68 5.65 1.44
+own:mix1bspec_lstm        1004607     +9.6%    -54.8%     14.6 | 8.67 10.16 7.26 1.34
+gen:mix1ball_lstm          611099    +45.0%     +5.8%     68.5 | 2.76 12.32 0.35 1.44
+(positive = fewer misses than LRU / than the best simple baseline; gap% = share of the LRU-to-Belady gap closed)
+  mlp req  frozen 965285 -> mix1 761138 misses (+21.1%)
+  mlp own  frozen 967192 -> mix1 1192769 misses (-23.3%)
+  mlp gen  frozen 835430 -> mix1 604423 misses (+27.7%)
+  gbdt req  frozen 1286604 -> mix1b 758904 misses (+41.0%)
+  gbdt own  frozen 1101553 -> mix1b 1255340 misses (-14.0%)
+  gbdt gen  frozen 1223171 -> mix1b 758902 misses (+38.0%)
+  lstm req  frozen 994824 -> mix1b 739145 misses (+25.7%)
+  lstm own  frozen 1055933 -> mix1b 1004607 misses (+4.9%)
+  lstm gen  frozen 717818 -> mix1b 611099 misses (+14.9%)
+  mlp req  frozen 965285 -> mix1b 782356 misses (+19.0%)
+  mlp own  frozen 967192 -> mix1b 1036752 misses (-7.2%)
+  mlp gen  frozen 835430 -> mix1b 638817 misses (+23.5%)
+=========== all done (01:15)

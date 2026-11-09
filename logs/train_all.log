@@ -1,0 +1,44 @@
+nohup: ignoring input
+=== hash: LightGBM
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models/hash_lgbm.gbdt (196 trees, 676.0 KB): train top-1 0.246, val top-1 0.241 (informative measured decisions)
+=== hash: MLP
+epoch  8  train loss 2.1413  val loss 2.1458  val top-1 0.2535
+saved /home/kiit/appcache_b/appcache/models/hash_mlp.mlp (1739 params, 6.9 KB): train top-1 0.254, val top-1 0.254
+=== graph: LightGBM
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models/graph_lgbm.gbdt (297 trees, 1019.6 KB): train top-1 0.346, val top-1 0.342 (informative measured decisions)
+=== graph: MLP
+epoch  9  train loss 1.8142  val loss 1.8138  val top-1 0.3423
+saved /home/kiit/appcache_b/appcache/models/graph_mlp.mlp (2203 params, 9.1 KB): train top-1 0.347, val top-1 0.344
+=== matrix: LightGBM
+train: 6 files, 270003 decisions; val: 2 files, 120000 decisions; vocab 5 PCs
+saved /home/kiit/appcache_b/appcache/models/matrix_lgbm.gbdt (45 trees, 157.8 KB): train top-1 0.993, val top-1 0.993 (informative measured decisions)
+=== matrix: MLP
+epoch  7  train loss 0.0111  val loss 0.0012  val top-1 1.0000
+saved /home/kiit/appcache_b/appcache/models/matrix_mlp.mlp (1731 params, 6.8 KB): train top-1 0.997, val top-1 1.000
+=== conv: LightGBM
+train: 6 files, 360000 decisions; val: 2 files, 120000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models/conv_lgbm.gbdt (44 trees, 154.9 KB): train top-1 1.000, val top-1 1.000 (informative measured decisions)
+=== conv: MLP
+epoch  7  train loss 0.0000  val loss 0.0003  val top-1 1.0000
+saved /home/kiit/appcache_b/appcache/models/conv_mlp.mlp (1739 params, 6.9 KB): train top-1 1.000, val top-1 1.000
+=== all: LightGBM
+train: 24 files, 1350003 decisions; val: 8 files, 480000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models/all_lgbm.gbdt (90 trees, 320.3 KB): train top-1 0.618, val top-1 0.644 (informative measured decisions)
+=== all: MLP
+epoch  9  train loss 1.0568  val loss 1.0168  val top-1 0.6465
+saved /home/kiit/appcache_b/appcache/models/all_mlp.mlp (2203 params, 9.1 KB): train top-1 0.625, val top-1 0.650
+--- offline comparison on validation inputs (top-1 agreement with Belady; higher is better) ---
+file                                decisions       random          LRU          MRU         FIFO hash_lgbm.gb hash_mlp.mlp all_lgbm.gbd  all_mlp.mlp
+val__hash_18_100000_1500000_1_4.lru   200000        0.090        0.130        0.062        0.007        0.167        0.167        0.161        0.168
+MEAN                                                0.090        0.130        0.062        0.007        0.167        0.167        0.161        0.168
+file                          decisions       random          LRU          MRU         FIFO graph_lgbm.g graph_mlp.ml all_lgbm.gbd  all_mlp.mlp
+val__graph_100000_8_0_4_4.lru   200000        0.110        0.144        0.039        0.002        0.308        0.297        0.305        0.289
+MEAN                                          0.110        0.144        0.039        0.002        0.308        0.297        0.305        0.289
+file                    decisions       random          LRU          MRU         FIFO matrix_lgbm. matrix_mlp.m all_lgbm.gbd  all_mlp.mlp
+val__matrix_650_0_1.lru   200000        0.068        0.003        0.955        0.003        0.988        1.000        0.997        1.000
+MEAN                                    0.068        0.003        0.955        0.003        0.988        1.000        0.997        1.000
+file                    decisions       random          LRU          MRU         FIFO conv_lgbm.gb conv_mlp.mlp all_lgbm.gbd  all_mlp.mlp
+val__conv_672_3_8_1.lru   190633        0.517        0.444        0.530        0.444        1.000        1.000        1.000        1.000
+MEAN                                    0.517        0.444        0.530        0.444        1.000        1.000        1.000        1.000

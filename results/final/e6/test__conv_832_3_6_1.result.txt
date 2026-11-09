@@ -1,0 +1,18 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__conv_832_3_6_1.llc.trace
+LLC accesses=518563 (warm-up 51856, measured 466707), unique lines=302238 (18889.9 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru            466707     0.0000     1.442         n/a     30139919
+mlp:conv_mlp_dag1       312340     0.3308     0.965         n/a       136982
+mlp:all_mlp_dag1       312336     0.3308     0.965         n/a       130849
+gbdt:conv_lgbm_dag1       313107     0.3291     0.967         n/a       198421
+gbdt:all_lgbm_dag1       312592     0.3302     0.966         n/a        41494
+lstm:conv_lstm       312350     0.3307     0.965         n/a        13300
+lstm:all_lstm       322590     0.3088     0.996         n/a        13669
+mlp:allbig_mlp_dag1       312336     0.3308     0.965         n/a        27392
+  model mlp:conv_mlp_dag1: {"kind":"mlp","params":1739,"model_bytes":7044,"ops_per_decision":52528,"decisions":331428,"lat_mean_ns":11338.3,"lat_p50_ns":10837,"lat_p99_ns":21931}
+  model mlp:all_mlp_dag1: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":331424,"lat_mean_ns":11884.7,"lat_p50_ns":10891,"lat_p99_ns":26302}
+  model gbdt:conv_lgbm_dag1: {"kind":"gbdt","params":2623,"model_bytes":154851,"ops_per_decision":3160.81,"decisions":332195,"lat_mean_ns":7783.55,"lat_p50_ns":7397,"lat_p99_ns":16750}
+  model gbdt:all_lgbm_dag1: {"kind":"gbdt","params":7869,"model_bytes":471637,"ops_per_decision":12978.2,"decisions":331680,"lat_mean_ns":37563,"lat_p50_ns":32269,"lat_p99_ns":96033}
+  model lstm:conv_lstm: {"kind":"lstm","params":9363,"model_bytes":37540,"ops_per_decision":325632,"decisions":331438,"lat_mean_ns":117465,"lat_p50_ns":103710,"lat_p99_ns":300608}
+  model lstm:all_lstm: {"kind":"lstm","params":9595,"model_bytes":38932,"ops_per_decision":325632,"decisions":341678,"lat_mean_ns":110868,"lat_p50_ns":100757,"lat_p99_ns":261354}
+  model mlp:allbig_mlp_dag1: {"kind":"mlp","params":7495,"model_bytes":30532,"ops_per_decision":220528,"decisions":331424,"lat_mean_ns":56967.9,"lat_p50_ns":50496,"lat_p99_ns":152997}

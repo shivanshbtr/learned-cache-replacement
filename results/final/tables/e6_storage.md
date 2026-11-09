@@ -1,0 +1,7 @@
+### E6: total storage of four specialized models vs the generic model(s), bytes
+
+| family | 4 specialized | generic | generic-big | 4 specialized / generic |
+| ------ | ------------- | ------- | ----------- | ----------------------- |
+| mlp    |         30456 |    9364 |       30532 |                    3.3x |
+| gbdt   |       2163042 |  471637 |           - |                    4.6x |
+| lstm   |        151528 |   38932 |           - |                    3.9x |

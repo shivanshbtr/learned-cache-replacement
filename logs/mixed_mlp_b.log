@@ -1,0 +1,39 @@
+nohup: ignoring input
+merge: 4 mixtures
+label: 20 jobs, 2 in parallel
+skip train__mix1s10000.mixreq1mlp (done)
+skip train__mix0s10000.mixreq1mlp (done)
+skip train__mix2s10000.mixreq1mlp (done)
+skip val__mix0s10000.mixreq1mlp (done)
+skip train__mix0s10000.mixown1mlp (done)
+skip train__mix1s10000.mixown1mlp (done)
+skip train__mix2s10000.mixown1mlp (done)
+skip val__mix0s10000.mixown1mlp (done)
+skip train__mix0s10000.mixgen1mlp (done)
+skip train__mix1s10000.mixgen1mlp (done)
+skip train__mix2s10000.mixgen1mlp (done)
+skip val__mix0s10000.mixgen1mlp (done)
+done  train__mix1s10000.mixlru1mlp
+done  train__mix0s10000.mixlru1mlp
+done  val__mix0s10000.mixlru1mlp
+done  train__mix2s10000.mixlru1mlp
+done  train__mix0s10000.mixbel1mlp
+done  train__mix1s10000.mixbel1mlp
+done  train__mix2s10000.mixbel1mlp
+done  val__mix0s10000.mixbel1mlp
+(merged traces kept in /home/kiit/appcache_b/appcache/results/datasets/_merged; delete them with: rm -rf /home/kiit/appcache_b/appcache/results/datasets/_merged  when all KINDs are labeled)
+=== train hash (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp
+epoch 30  train loss 1.7497  val loss 1.7342  val top-1 0.4086
+saved /home/kiit/appcache_b/appcache/models_ext/hash_mlp_mix1b.mlp (1739 params, 6.9 KB): train top-1 0.406, val top-1 0.413
+=== train graph (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp
+epoch 10  train loss 1.5374  val loss 1.5544  val top-1 0.4551
+saved /home/kiit/appcache_b/appcache/models_ext/graph_mlp_mix1b.mlp (2203 params, 9.1 KB): train top-1 0.466, val top-1 0.456
+=== train matrix (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp
+epoch 16  train loss 0.9278  val loss 0.9013  val top-1 0.7065
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_mlp_mix1b.mlp (1731 params, 6.8 KB): train top-1 0.676, val top-1 0.711
+=== train conv (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp
+epoch  8  train loss 0.4902  val loss 0.5837  val top-1 0.8071
+saved /home/kiit/appcache_b/appcache/models_ext/conv_mlp_mix1b.mlp (1739 params, 6.9 KB): train top-1 0.837, val top-1 0.807
+=== train all (mlp) on drivers lru,belady,dag1mlp,dag1allmlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixgen1mlp
+epoch 15  train loss 1.0990  val loss 1.0521  val top-1 0.6269
+saved /home/kiit/appcache_b/appcache/models_ext/all_mlp_mix1b.mlp (2203 params, 9.1 KB): train top-1 0.607, val top-1 0.628

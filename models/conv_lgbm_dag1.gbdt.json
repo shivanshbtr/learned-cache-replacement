@@ -1,0 +1,33 @@
+{
+ "kind": "gbdt",
+ "workload": "conv",
+ "drivers": [
+  "lru",
+  "belady",
+  "dag1lgbm"
+ ],
+ "leaves": 31,
+ "trees": 43,
+ "vocab": 6,
+ "seed": 1,
+ "train_files": [
+  "train__conv_640_3_8_1.belady.npz",
+  "train__conv_640_3_8_1.dag1lgbm.npz",
+  "train__conv_640_3_8_1.lru.npz",
+  "train__conv_704_3_8_1.belady.npz",
+  "train__conv_704_3_8_1.dag1lgbm.npz",
+  "train__conv_704_3_8_1.lru.npz",
+  "train__conv_768_3_8_1.belady.npz",
+  "train__conv_768_3_8_1.dag1lgbm.npz",
+  "train__conv_768_3_8_1.lru.npz"
+ ],
+ "val_files": [
+  "val__conv_672_3_8_1.belady.npz",
+  "val__conv_672_3_8_1.dag1lgbm.npz",
+  "val__conv_672_3_8_1.lru.npz"
+ ],
+ "train_top1": 0.9996796296296296,
+ "val_top1": 1.0,
+ "seconds": 195.0,
+ "bytes": 154851
+}

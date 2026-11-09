@@ -1,0 +1,545 @@
+=== train hash (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 15 files, 900000 decisions; val: 5 files, 300000 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 1.7687  val loss 1.7221  val top-1 0.3933
+epoch  2  train loss 1.7444  val loss 1.7197  val top-1 0.3938
+epoch  3  train loss 1.7421  val loss 1.7181  val top-1 0.3958
+epoch  4  train loss 1.7405  val loss 1.7169  val top-1 0.3961
+epoch  5  train loss 1.7389  val loss 1.7181  val top-1 0.3954
+epoch  6  train loss 1.7376  val loss 1.7151  val top-1 0.3983
+epoch  7  train loss 1.7366  val loss 1.7125  val top-1 0.3994
+epoch  8  train loss 1.7357  val loss 1.7122  val top-1 0.3979
+epoch  9  train loss 1.7348  val loss 1.7135  val top-1 0.3962
+epoch 10  train loss 1.7339  val loss 1.7117  val top-1 0.3993
+epoch 11  train loss 1.7333  val loss 1.7152  val top-1 0.3957
+epoch 12  train loss 1.7324  val loss 1.7116  val top-1 0.3997
+epoch 13  train loss 1.7320  val loss 1.7128  val top-1 0.3963
+epoch 14  train loss 1.7317  val loss 1.7125  val top-1 0.3991
+epoch 15  train loss 1.7312  val loss 1.7135  val top-1 0.3986
+epoch 16  train loss 1.7312  val loss 1.7124  val top-1 0.3993
+epoch 17  train loss 1.7310  val loss 1.7098  val top-1 0.3998
+epoch 18  train loss 1.7307  val loss 1.7120  val top-1 0.3993
+saved /home/kiit/appcache_b/appcache/models_ext/hash_mlp_mix1.mlp (1739 params, 6.9 KB): train top-1 0.396, val top-1 0.400
+=== train graph (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 15 files, 900000 decisions; val: 5 files, 300000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.5747  val loss 1.5306  val top-1 0.4471
+epoch  2  train loss 1.5421  val loss 1.5299  val top-1 0.4480
+epoch  3  train loss 1.5388  val loss 1.5261  val top-1 0.4492
+epoch  4  train loss 1.5370  val loss 1.5235  val top-1 0.4487
+epoch  5  train loss 1.5353  val loss 1.5236  val top-1 0.4487
+epoch  6  train loss 1.5344  val loss 1.5238  val top-1 0.4494
+epoch  7  train loss 1.5335  val loss 1.5233  val top-1 0.4489
+epoch  8  train loss 1.5326  val loss 1.5241  val top-1 0.4494
+epoch  9  train loss 1.5320  val loss 1.5216  val top-1 0.4490
+epoch 10  train loss 1.5314  val loss 1.5226  val top-1 0.4508
+epoch 11  train loss 1.5308  val loss 1.5216  val top-1 0.4503
+epoch 12  train loss 1.5306  val loss 1.5226  val top-1 0.4493
+epoch 13  train loss 1.5302  val loss 1.5215  val top-1 0.4512
+epoch 14  train loss 1.5298  val loss 1.5211  val top-1 0.4506
+epoch 15  train loss 1.5294  val loss 1.5192  val top-1 0.4487
+epoch 16  train loss 1.5292  val loss 1.5191  val top-1 0.4501
+epoch 17  train loss 1.5290  val loss 1.5180  val top-1 0.4512
+epoch 18  train loss 1.5288  val loss 1.5200  val top-1 0.4490
+epoch 19  train loss 1.5285  val loss 1.5193  val top-1 0.4523
+epoch 20  train loss 1.5283  val loss 1.5188  val top-1 0.4511
+epoch 21  train loss 1.5282  val loss 1.5182  val top-1 0.4498
+epoch 22  train loss 1.5279  val loss 1.5190  val top-1 0.4503
+epoch 23  train loss 1.5277  val loss 1.5187  val top-1 0.4508
+epoch 24  train loss 1.5274  val loss 1.5183  val top-1 0.4508
+epoch 25  train loss 1.5272  val loss 1.5189  val top-1 0.4490
+saved /home/kiit/appcache_b/appcache/models_ext/graph_mlp_mix1.mlp (2203 params, 9.1 KB): train top-1 0.453, val top-1 0.452
+=== train matrix (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 15 files, 755450 decisions; val: 5 files, 300000 decisions; vocab 5 PCs; 16 ways
+epoch  1  train loss 0.6319  val loss 0.4696  val top-1 0.8333
+epoch  2  train loss 0.5628  val loss 0.4668  val top-1 0.8348
+epoch  3  train loss 0.5602  val loss 0.4642  val top-1 0.8355
+epoch  4  train loss 0.5590  val loss 0.4626  val top-1 0.8368
+epoch  5  train loss 0.5584  val loss 0.4627  val top-1 0.8345
+epoch  6  train loss 0.5580  val loss 0.4625  val top-1 0.8358
+epoch  7  train loss 0.5577  val loss 0.4654  val top-1 0.8322
+epoch  8  train loss 0.5574  val loss 0.4627  val top-1 0.8356
+epoch  9  train loss 0.5571  val loss 0.4639  val top-1 0.8358
+epoch 10  train loss 0.5568  val loss 0.4623  val top-1 0.8343
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_mlp_mix1.mlp (1731 params, 6.8 KB): train top-1 0.796, val top-1 0.837
+=== train conv (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 15 files, 711498 decisions; val: 5 files, 237274 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 0.2752  val loss 0.2881  val top-1 0.8924
+epoch  2  train loss 0.2453  val loss 0.2800  val top-1 0.8998
+epoch  3  train loss 0.2439  val loss 0.2800  val top-1 0.8972
+epoch  4  train loss 0.2431  val loss 0.2709  val top-1 0.9008
+epoch  5  train loss 0.2430  val loss 0.2702  val top-1 0.9032
+epoch  6  train loss 0.2427  val loss 0.2709  val top-1 0.9032
+epoch  7  train loss 0.2426  val loss 0.2701  val top-1 0.9032
+epoch  8  train loss 0.2425  val loss 0.2709  val top-1 0.9030
+epoch  9  train loss 0.2424  val loss 0.2700  val top-1 0.9030
+epoch 10  train loss 0.2424  val loss 0.2706  val top-1 0.9030
+epoch 11  train loss 0.2424  val loss 0.2735  val top-1 0.9016
+saved /home/kiit/appcache_b/appcache/models_ext/conv_mlp_mix1.mlp (1739 params, 6.9 KB): train top-1 0.914, val top-1 0.903
+=== train all (mlp) on drivers lru,belady,dag1mlp,dag1allmlp,mixreq1mlp,mixown1mlp,mixgen1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 57 files, 3220895 decisions; val: 19 files, 1140000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.0921  val loss 0.9985  val top-1 0.6415
+epoch  2  train loss 1.0679  val loss 0.9943  val top-1 0.6423
+epoch  3  train loss 1.0651  val loss 0.9925  val top-1 0.6424
+epoch  4  train loss 1.0635  val loss 0.9909  val top-1 0.6429
+epoch  5  train loss 1.0624  val loss 0.9910  val top-1 0.6435
+epoch  6  train loss 1.0616  val loss 0.9866  val top-1 0.6447
+epoch  7  train loss 1.0608  val loss 0.9895  val top-1 0.6432
+epoch  8  train loss 1.0604  val loss 0.9877  val top-1 0.6443
+epoch  9  train loss 1.0598  val loss 0.9878  val top-1 0.6452
+epoch 10  train loss 1.0595  val loss 0.9930  val top-1 0.6435
+epoch 11  train loss 1.0590  val loss 0.9880  val top-1 0.6450
+epoch 12  train loss 1.0586  val loss 0.9883  val top-1 0.6448
+epoch 13  train loss 1.0583  val loss 0.9860  val top-1 0.6456
+epoch 14  train loss 1.0580  val loss 0.9869  val top-1 0.6452
+epoch 15  train loss 1.0579  val loss 0.9870  val top-1 0.6456
+epoch 16  train loss 1.0576  val loss 0.9881  val top-1 0.6451
+epoch 17  train loss 1.0574  val loss 0.9848  val top-1 0.6455
+epoch 18  train loss 1.0573  val loss 0.9866  val top-1 0.6453
+epoch 19  train loss 1.0571  val loss 0.9850  val top-1 0.6463
+epoch 20  train loss 1.0569  val loss 0.9863  val top-1 0.6461
+epoch 21  train loss 1.0567  val loss 0.9864  val top-1 0.6454
+epoch 22  train loss 1.0566  val loss 0.9843  val top-1 0.6463
+epoch 23  train loss 1.0565  val loss 0.9836  val top-1 0.6463
+epoch 24  train loss 1.0564  val loss 0.9855  val top-1 0.6457
+epoch 25  train loss 1.0564  val loss 0.9867  val top-1 0.6454
+saved /home/kiit/appcache_b/appcache/models_ext/all_mlp_mix1.mlp (2203 params, 9.1 KB): train top-1 0.620, val top-1 0.646
+=== train hash (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 21 files, 1260000 decisions; val: 7 files, 420000 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 1.8111  val loss 1.7468  val top-1 0.4073
+epoch  2  train loss 1.7746  val loss 1.7458  val top-1 0.4049
+epoch  3  train loss 1.7693  val loss 1.7552  val top-1 0.3998
+epoch  4  train loss 1.7668  val loss 1.7390  val top-1 0.4047
+epoch  5  train loss 1.7648  val loss 1.7400  val top-1 0.4059
+epoch  6  train loss 1.7634  val loss 1.7349  val top-1 0.4092
+epoch  7  train loss 1.7623  val loss 1.7404  val top-1 0.4041
+epoch  8  train loss 1.7613  val loss 1.7334  val top-1 0.4074
+epoch  9  train loss 1.7602  val loss 1.7331  val top-1 0.4071
+epoch 10  train loss 1.7589  val loss 1.7300  val top-1 0.4092
+epoch 11  train loss 1.7580  val loss 1.7318  val top-1 0.4108
+epoch 12  train loss 1.7574  val loss 1.7374  val top-1 0.4072
+epoch 13  train loss 1.7562  val loss 1.7242  val top-1 0.4114
+epoch 14  train loss 1.7553  val loss 1.7319  val top-1 0.4111
+epoch 15  train loss 1.7546  val loss 1.7354  val top-1 0.4072
+epoch 16  train loss 1.7537  val loss 1.7288  val top-1 0.4117
+epoch 17  train loss 1.7536  val loss 1.7257  val top-1 0.4117
+epoch 18  train loss 1.7527  val loss 1.7233  val top-1 0.4118
+epoch 19  train loss 1.7523  val loss 1.7309  val top-1 0.4086
+epoch 20  train loss 1.7519  val loss 1.7273  val top-1 0.4102
+epoch 21  train loss 1.7518  val loss 1.7231  val top-1 0.4122
+epoch 22  train loss 1.7516  val loss 1.7324  val top-1 0.4087
+epoch 23  train loss 1.7511  val loss 1.7253  val top-1 0.4130
+epoch 24  train loss 1.7511  val loss 1.7248  val top-1 0.4100
+epoch 25  train loss 1.7506  val loss 1.7279  val top-1 0.4126
+epoch 26  train loss 1.7504  val loss 1.7274  val top-1 0.4134
+epoch 27  train loss 1.7501  val loss 1.7242  val top-1 0.4131
+epoch 28  train loss 1.7498  val loss 1.7276  val top-1 0.4098
+epoch 29  train loss 1.7496  val loss 1.7219  val top-1 0.4119
+epoch 30  train loss 1.7497  val loss 1.7342  val top-1 0.4086
+saved /home/kiit/appcache_b/appcache/models_ext/hash_mlp_mix1b.mlp (1739 params, 6.9 KB): train top-1 0.406, val top-1 0.413
+=== train graph (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 21 files, 1260000 decisions; val: 7 files, 420000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.5909  val loss 1.5705  val top-1 0.4448
+epoch  2  train loss 1.5535  val loss 1.5565  val top-1 0.4517
+epoch  3  train loss 1.5476  val loss 1.5618  val top-1 0.4495
+epoch  4  train loss 1.5444  val loss 1.5514  val top-1 0.4565
+epoch  5  train loss 1.5424  val loss 1.5531  val top-1 0.4552
+epoch  6  train loss 1.5407  val loss 1.5550  val top-1 0.4540
+epoch  7  train loss 1.5399  val loss 1.5501  val top-1 0.4545
+epoch  8  train loss 1.5391  val loss 1.5525  val top-1 0.4548
+epoch  9  train loss 1.5383  val loss 1.5562  val top-1 0.4531
+epoch 10  train loss 1.5374  val loss 1.5544  val top-1 0.4551
+saved /home/kiit/appcache_b/appcache/models_ext/graph_mlp_mix1b.mlp (2203 params, 9.1 KB): train top-1 0.466, val top-1 0.456
+=== train matrix (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 21 files, 1115450 decisions; val: 7 files, 420000 decisions; vocab 5 PCs; 16 ways
+epoch  1  train loss 1.0396  val loss 0.9388  val top-1 0.7002
+epoch  2  train loss 0.9618  val loss 0.9205  val top-1 0.7047
+epoch  3  train loss 0.9507  val loss 0.9146  val top-1 0.7022
+epoch  4  train loss 0.9463  val loss 0.9174  val top-1 0.7029
+epoch  5  train loss 0.9435  val loss 0.9219  val top-1 0.7056
+epoch  6  train loss 0.9414  val loss 0.8981  val top-1 0.7053
+epoch  7  train loss 0.9390  val loss 0.9041  val top-1 0.7052
+epoch  8  train loss 0.9364  val loss 0.9139  val top-1 0.7080
+epoch  9  train loss 0.9344  val loss 0.9104  val top-1 0.7049
+epoch 10  train loss 0.9326  val loss 0.8978  val top-1 0.7114
+epoch 11  train loss 0.9314  val loss 0.8987  val top-1 0.7069
+epoch 12  train loss 0.9308  val loss 0.9068  val top-1 0.7063
+epoch 13  train loss 0.9298  val loss 0.9026  val top-1 0.7070
+epoch 14  train loss 0.9292  val loss 0.9026  val top-1 0.7061
+epoch 15  train loss 0.9286  val loss 0.8930  val top-1 0.7091
+epoch 16  train loss 0.9278  val loss 0.9013  val top-1 0.7065
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_mlp_mix1b.mlp (1731 params, 6.8 KB): train top-1 0.676, val top-1 0.711
+=== train conv (mlp) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 21 files, 883051 decisions; val: 7 files, 294572 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 0.5424  val loss 0.5942  val top-1 0.8054
+epoch  2  train loss 0.5023  val loss 0.5887  val top-1 0.8072
+epoch  3  train loss 0.4981  val loss 0.5882  val top-1 0.8070
+epoch  4  train loss 0.4953  val loss 0.5882  val top-1 0.8058
+epoch  5  train loss 0.4937  val loss 0.5852  val top-1 0.8061
+epoch  6  train loss 0.4923  val loss 0.5818  val top-1 0.8068
+epoch  7  train loss 0.4911  val loss 0.5823  val top-1 0.8071
+epoch  8  train loss 0.4902  val loss 0.5837  val top-1 0.8071
+saved /home/kiit/appcache_b/appcache/models_ext/conv_mlp_mix1b.mlp (1739 params, 6.9 KB): train top-1 0.837, val top-1 0.807
+=== train all (mlp) on drivers lru,belady,dag1mlp,dag1allmlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixgen1mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 63 files, 3580895 decisions; val: 21 files, 1260000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.1437  val loss 1.0629  val top-1 0.6231
+epoch  2  train loss 1.1133  val loss 1.0629  val top-1 0.6229
+epoch  3  train loss 1.1085  val loss 1.0597  val top-1 0.6239
+epoch  4  train loss 1.1061  val loss 1.0565  val top-1 0.6262
+epoch  5  train loss 1.1044  val loss 1.0538  val top-1 0.6249
+epoch  6  train loss 1.1033  val loss 1.0551  val top-1 0.6250
+epoch  7  train loss 1.1024  val loss 1.0509  val top-1 0.6271
+epoch  8  train loss 1.1016  val loss 1.0513  val top-1 0.6269
+epoch  9  train loss 1.1009  val loss 1.0507  val top-1 0.6280
+epoch 10  train loss 1.1006  val loss 1.0539  val top-1 0.6251
+epoch 11  train loss 1.1001  val loss 1.0528  val top-1 0.6258
+epoch 12  train loss 1.0998  val loss 1.0527  val top-1 0.6270
+epoch 13  train loss 1.0995  val loss 1.0489  val top-1 0.6278
+epoch 14  train loss 1.0991  val loss 1.0487  val top-1 0.6278
+epoch 15  train loss 1.0990  val loss 1.0521  val top-1 0.6269
+saved /home/kiit/appcache_b/appcache/models_ext/all_mlp_mix1b.mlp (2203 params, 9.1 KB): train top-1 0.607, val top-1 0.628
+=== train hash (gbdt, mix1b) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm
+train: 21 files, 1260000 decisions; val: 7 files, 420000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/hash_lgbm_mix1b.gbdt (145 trees, 515.6 KB): train top-1 0.386, val top-1 0.394 (informative measured decisions)
+=== train graph (gbdt, mix1b) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm
+train: 21 files, 1260000 decisions; val: 7 files, 420000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/graph_lgbm_mix1b.gbdt (173 trees, 612.0 KB): train top-1 0.450, val top-1 0.453 (informative measured decisions)
+=== train matrix (gbdt, mix1b) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm
+train: 21 files, 1115446 decisions; val: 7 files, 420000 decisions; vocab 5 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_lgbm_mix1b.gbdt (81 trees, 286.4 KB): train top-1 0.653, val top-1 0.682 (informative measured decisions)
+=== train conv (gbdt, mix1b) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm
+train: 21 files, 880463 decisions; val: 7 files, 293627 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/conv_lgbm_mix1b.gbdt (43 trees, 153.2 KB): train top-1 0.833, val top-1 0.793 (informative measured decisions)
+=== train all (gbdt, mix1b) on drivers lru,belady,dag1lgbm,dag1alllgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixgen1lgbm
+train: 63 files, 3580891 decisions; val: 21 files, 1260000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/all_lgbm_mix1b.gbdt (81 trees, 292.0 KB): train top-1 0.586, val top-1 0.607 (informative measured decisions)
+=== train hash (lstm, mix1b) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 21 files, 840000 decisions; val: 7 files, 280000 decisions; vocab 6 PCs; 16 ways; history 16
+epoch  1  train loss 1.8361  val loss 1.7716  val top-1 0.4009  (449s)
+epoch  2  train loss 1.8071  val loss 1.7693  val top-1 0.4044  (556s)
+epoch  3  train loss 1.7988  val loss 1.7594  val top-1 0.4036  (636s)
+epoch  4  train loss 1.7930  val loss 1.7537  val top-1 0.4063  (697s)
+epoch  5  train loss 1.7895  val loss 1.7558  val top-1 0.4036  (765s)
+epoch  6  train loss 1.7877  val loss 1.7567  val top-1 0.4044  (849s)
+epoch  7  train loss 1.7866  val loss 1.7577  val top-1 0.4015  (921s)
+epoch  8  train loss 1.7854  val loss 1.7514  val top-1 0.4036  (990s)
+epoch  9  train loss 1.7847  val loss 1.7549  val top-1 0.4037  (1058s)
+export self-check: max |torch - numpy| score difference 1.91e-06
+saved /home/kiit/appcache_b/appcache/models_ext/hash_lstm_mix1b.lstm (9363 params, 36.7 KB): train top-1 0.400, val top-1 0.406
+=== train graph (lstm, mix1b) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 21 files, 840000 decisions; val: 7 files, 280000 decisions; vocab 64 PCs; 16 ways; history 16
+epoch  1  train loss 1.5859  val loss 1.5841  val top-1 0.4313  (388s)
+epoch  2  train loss 1.5575  val loss 1.5722  val top-1 0.4383  (447s)
+epoch  3  train loss 1.5534  val loss 1.5768  val top-1 0.4393  (514s)
+epoch  4  train loss 1.5493  val loss 1.5750  val top-1 0.4358  (577s)
+epoch  5  train loss 1.5455  val loss 1.5820  val top-1 0.4334  (658s)
+epoch  6  train loss 1.5430  val loss 1.5717  val top-1 0.4381  (731s)
+epoch  7  train loss 1.5409  val loss 1.5704  val top-1 0.4401  (789s)
+epoch  8  train loss 1.5396  val loss 1.5610  val top-1 0.4472  (848s)
+epoch  9  train loss 1.5385  val loss 1.5661  val top-1 0.4471  (911s)
+epoch 10  train loss 1.5375  val loss 1.5684  val top-1 0.4419  (971s)
+epoch 11  train loss 1.5370  val loss 1.5601  val top-1 0.4471  (1040s)
+epoch 12  train loss 1.5365  val loss 1.5623  val top-1 0.4453  (1100s)
+export self-check: max |torch - numpy| score difference 4.77e-06
+saved /home/kiit/appcache_b/appcache/models_ext/graph_lstm_mix1b.lstm (9595 params, 38.0 KB): train top-1 0.458, val top-1 0.447
+=== train matrix (lstm, mix1b) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 21 files, 755448 decisions; val: 7 files, 280000 decisions; vocab 5 PCs; 16 ways; history 16
+epoch  1  train loss 1.0238  val loss 0.9329  val top-1 0.6911  (443s)
+epoch  2  train loss 0.9581  val loss 0.9010  val top-1 0.6975  (506s)
+epoch  3  train loss 0.9440  val loss 0.8947  val top-1 0.6989  (565s)
+epoch  4  train loss 0.9382  val loss 0.9011  val top-1 0.6941  (647s)
+epoch  5  train loss 0.9334  val loss 0.8955  val top-1 0.6971  (704s)
+epoch  6  train loss 0.9289  val loss 0.8956  val top-1 0.7003  (757s)
+epoch  7  train loss 0.9273  val loss 0.8913  val top-1 0.6999  (816s)
+epoch  8  train loss 0.9252  val loss 0.8902  val top-1 0.7012  (880s)
+epoch  9  train loss 0.9260  val loss 0.8899  val top-1 0.7002  (938s)
+epoch 10  train loss 0.9225  val loss 0.8932  val top-1 0.6954  (1003s)
+epoch 11  train loss 0.9218  val loss 0.8903  val top-1 0.6988  (1090s)
+epoch 12  train loss 0.9213  val loss 0.8933  val top-1 0.7000  (1169s)
+export self-check: max |torch - numpy| score difference 5.72e-06
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_lstm_mix1b.lstm (9359 params, 36.6 KB): train top-1 0.678, val top-1 0.701
+=== train conv (lstm, mix1b) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 21 files, 703010 decisions; val: 7 files, 234559 decisions; vocab 6 PCs; 16 ways; history 16
+epoch  1  train loss 0.6855  val loss 0.7635  val top-1 0.7511  (467s)
+epoch  2  train loss 0.6605  val loss 0.7649  val top-1 0.7543  (530s)
+epoch  3  train loss 0.6575  val loss 0.7555  val top-1 0.7516  (584s)
+epoch  4  train loss 0.6552  val loss 0.7616  val top-1 0.7452  (637s)
+epoch  5  train loss 0.6536  val loss 0.7593  val top-1 0.7497  (691s)
+epoch  6  train loss 0.6521  val loss 0.7590  val top-1 0.7498  (751s)
+epoch  7  train loss 0.6511  val loss 0.7519  val top-1 0.7559  (807s)
+epoch  8  train loss 0.6496  val loss 0.7523  val top-1 0.7524  (859s)
+epoch  9  train loss 0.6484  val loss 0.7528  val top-1 0.7530  (906s)
+epoch 10  train loss 0.6475  val loss 0.7871  val top-1 0.7528  (960s)
+epoch 11  train loss 0.6470  val loss 0.7557  val top-1 0.7543  (1013s)
+epoch 12  train loss 0.6464  val loss 0.7516  val top-1 0.7533  (1070s)
+export self-check: max |torch - numpy| score difference 1.91e-05
+saved /home/kiit/appcache_b/appcache/models_ext/conv_lstm_mix1b.lstm (9363 params, 36.7 KB): train top-1 0.789, val top-1 0.756
+=== train all (lstm, mix1b) on drivers lru,belady,dag1lstm,dag1alllstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixgen1lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 63 files, 2400893 decisions; val: 21 files, 840000 decisions; vocab 64 PCs; 16 ways; history 16
+epoch  1  train loss 1.1357  val loss 1.0781  val top-1 0.6169  (974s)
+epoch  2  train loss 1.1100  val loss 1.0677  val top-1 0.6221  (1152s)
+epoch  3  train loss 1.1039  val loss 1.0610  val top-1 0.6233  (1333s)
+epoch  4  train loss 1.1008  val loss 1.0581  val top-1 0.6219  (1524s)
+epoch  5  train loss 1.0987  val loss 1.0614  val top-1 0.6220  (1692s)
+epoch  6  train loss 1.0970  val loss 1.0575  val top-1 0.6231  (1877s)
+epoch  7  train loss 1.0956  val loss 1.0550  val top-1 0.6243  (2044s)
+epoch  8  train loss 1.0947  val loss 1.0510  val top-1 0.6261  (2224s)
+epoch  9  train loss 1.0943  val loss 1.0461  val top-1 0.6284  (2397s)
+epoch 10  train loss 1.0932  val loss 1.0502  val top-1 0.6256  (2575s)
+epoch 11  train loss 1.0927  val loss 1.0519  val top-1 0.6247  (2777s)
+epoch 12  train loss 1.0921  val loss 1.0446  val top-1 0.6289  (2960s)
+export self-check: max |torch - numpy| score difference 7.63e-06
+saved /home/kiit/appcache_b/appcache/models_ext/all_lstm_mix1b.lstm (9595 params, 38.0 KB): train top-1 0.607, val top-1 0.629
+=== train hash (mlp, mix2) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixreq2mlp,mixown2mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 27 files, 1620000 decisions; val: 9 files, 540000 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 1.7258  val loss 1.6020  val top-1 0.4674
+epoch  2  train loss 1.6943  val loss 1.5869  val top-1 0.4698
+epoch  3  train loss 1.6869  val loss 1.5987  val top-1 0.4582
+epoch  4  train loss 1.6835  val loss 1.5802  val top-1 0.4703
+epoch  5  train loss 1.6809  val loss 1.6024  val top-1 0.4513
+epoch  6  train loss 1.6778  val loss 1.5736  val top-1 0.4716
+epoch  7  train loss 1.6761  val loss 1.5833  val top-1 0.4613
+epoch  8  train loss 1.6743  val loss 1.6043  val top-1 0.4484
+epoch  9  train loss 1.6730  val loss 1.5885  val top-1 0.4633
+epoch 10  train loss 1.6720  val loss 1.5745  val top-1 0.4672
+epoch 11  train loss 1.6713  val loss 1.5788  val top-1 0.4647
+epoch 12  train loss 1.6708  val loss 1.5839  val top-1 0.4648
+saved /home/kiit/appcache_b/appcache/models_ext/hash_mlp_mix2.mlp (1739 params, 6.9 KB): train top-1 0.437, val top-1 0.472
+=== train graph (mlp, mix2) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixreq2mlp,mixown2mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 27 files, 1620000 decisions; val: 9 files, 540000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.5593  val loss 1.4654  val top-1 0.4804
+epoch  2  train loss 1.5269  val loss 1.4835  val top-1 0.4673
+epoch  3  train loss 1.5210  val loss 1.4700  val top-1 0.4703
+epoch  4  train loss 1.5172  val loss 1.4537  val top-1 0.4805
+epoch  5  train loss 1.5145  val loss 1.4515  val top-1 0.4811
+epoch  6  train loss 1.5121  val loss 1.4507  val top-1 0.4859
+epoch  7  train loss 1.5101  val loss 1.4649  val top-1 0.4739
+epoch  8  train loss 1.5086  val loss 1.4347  val top-1 0.4998
+epoch  9  train loss 1.5072  val loss 1.4360  val top-1 0.4980
+epoch 10  train loss 1.5062  val loss 1.4342  val top-1 0.4951
+epoch 11  train loss 1.5052  val loss 1.4342  val top-1 0.4977
+epoch 12  train loss 1.5048  val loss 1.4442  val top-1 0.4953
+epoch 13  train loss 1.5042  val loss 1.4313  val top-1 0.5017
+epoch 14  train loss 1.5036  val loss 1.4574  val top-1 0.4853
+epoch 15  train loss 1.5031  val loss 1.4469  val top-1 0.4888
+epoch 16  train loss 1.5027  val loss 1.4376  val top-1 0.4922
+epoch 17  train loss 1.5023  val loss 1.4532  val top-1 0.4855
+epoch 18  train loss 1.5018  val loss 1.4375  val top-1 0.4980
+epoch 19  train loss 1.5019  val loss 1.4389  val top-1 0.4939
+saved /home/kiit/appcache_b/appcache/models_ext/graph_mlp_mix2.mlp (2203 params, 9.1 KB): train top-1 0.490, val top-1 0.502
+=== train matrix (mlp, mix2) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixreq2mlp,mixown2mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 27 files, 1475450 decisions; val: 9 files, 540000 decisions; vocab 5 PCs; 16 ways
+epoch  1  train loss 1.0839  val loss 0.9847  val top-1 0.6837
+epoch  2  train loss 1.0140  val loss 0.9572  val top-1 0.6866
+epoch  3  train loss 1.0052  val loss 0.9459  val top-1 0.6911
+epoch  4  train loss 1.0009  val loss 0.9566  val top-1 0.6896
+epoch  5  train loss 0.9980  val loss 0.9481  val top-1 0.6932
+epoch  6  train loss 0.9958  val loss 0.9483  val top-1 0.6931
+epoch  7  train loss 0.9942  val loss 0.9463  val top-1 0.6897
+epoch  8  train loss 0.9923  val loss 0.9446  val top-1 0.6920
+epoch  9  train loss 0.9908  val loss 0.9420  val top-1 0.6930
+epoch 10  train loss 0.9898  val loss 0.9420  val top-1 0.6930
+epoch 11  train loss 0.9893  val loss 0.9336  val top-1 0.6969
+epoch 12  train loss 0.9883  val loss 0.9466  val top-1 0.6898
+epoch 13  train loss 0.9882  val loss 0.9390  val top-1 0.6916
+epoch 14  train loss 0.9875  val loss 0.9271  val top-1 0.6947
+epoch 15  train loss 0.9872  val loss 0.9531  val top-1 0.6874
+epoch 16  train loss 0.9867  val loss 0.9290  val top-1 0.6972
+epoch 17  train loss 0.9865  val loss 0.9404  val top-1 0.6925
+epoch 18  train loss 0.9860  val loss 0.9440  val top-1 0.6934
+epoch 19  train loss 0.9858  val loss 0.9323  val top-1 0.6928
+epoch 20  train loss 0.9855  val loss 0.9434  val top-1 0.6924
+epoch 21  train loss 0.9851  val loss 0.9368  val top-1 0.6929
+epoch 22  train loss 0.9851  val loss 0.9450  val top-1 0.6903
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_mlp_mix2.mlp (1731 params, 6.8 KB): train top-1 0.657, val top-1 0.697
+=== train conv (mlp, mix2) on drivers lru,belady,dag1mlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixreq2mlp,mixown2mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 27 files, 1050990 decisions; val: 9 files, 349919 decisions; vocab 6 PCs; 16 ways
+epoch  1  train loss 0.6297  val loss 0.6518  val top-1 0.7874
+epoch  2  train loss 0.5981  val loss 0.6451  val top-1 0.7895
+epoch  3  train loss 0.5951  val loss 0.6497  val top-1 0.7867
+epoch  4  train loss 0.5934  val loss 0.6494  val top-1 0.7884
+epoch  5  train loss 0.5922  val loss 0.6432  val top-1 0.7891
+epoch  6  train loss 0.5912  val loss 0.6470  val top-1 0.7887
+epoch  7  train loss 0.5906  val loss 0.6436  val top-1 0.7890
+epoch  8  train loss 0.5901  val loss 0.6466  val top-1 0.7873
+saved /home/kiit/appcache_b/appcache/models_ext/conv_mlp_mix2.mlp (1739 params, 6.9 KB): train top-1 0.806, val top-1 0.789
+=== train all (mlp, mix2) on drivers lru,belady,dag1mlp,dag1allmlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixgen1mlp,mixreq2mlp,mixown2mlp,mixgen2mlp
+=== train hash (gbdt, mix2) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixreq2lgbm,mixown2lgbm
+train: 27 files, 1620000 decisions; val: 9 files, 540000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/hash_lgbm_mix2.gbdt (292 trees, 1032.4 KB): train top-1 0.437, val top-1 0.456 (informative measured decisions)
+=== train graph (gbdt, mix2) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixreq2lgbm,mixown2lgbm
+train: 27 files, 1620000 decisions; val: 9 files, 540000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/graph_lgbm_mix2.gbdt (286 trees, 1009.2 KB): train top-1 0.494, val top-1 0.509 (informative measured decisions)
+=== train matrix (gbdt, mix2) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixreq2lgbm,mixown2lgbm
+train: 27 files, 1475446 decisions; val: 9 files, 540000 decisions; vocab 5 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_lgbm_mix2.gbdt (163 trees, 576.8 KB): train top-1 0.650, val top-1 0.677 (informative measured decisions)
+=== train conv (gbdt, mix2) on drivers lru,belady,dag1lgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixreq2lgbm,mixown2lgbm
+train: 27 files, 1049421 decisions; val: 9 files, 349892 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/conv_lgbm_mix2.gbdt (40 trees, 143.2 KB): train top-1 0.807, val top-1 0.778 (informative measured decisions)
+=== train all (gbdt, mix2) on drivers lru,belady,dag1lgbm,dag1alllgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixgen1lgbm,mixreq2lgbm,mixown2lgbm,mixgen2lgbm
+=== train hash (lstm, mix2) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixreq2lstm,mixown2lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 27 files, 1080000 decisions; val: 9 files, 360000 decisions; vocab 6 PCs; 16 ways; history 16
+epoch  1  train loss 1.7391  val loss 1.6132  val top-1 0.4603  (588s)
+epoch  2  train loss 1.7096  val loss 1.6068  val top-1 0.4595  (674s)
+epoch  3  train loss 1.7005  val loss 1.5897  val top-1 0.4644  (759s)
+epoch  4  train loss 1.6962  val loss 1.5940  val top-1 0.4641  (836s)
+epoch  5  train loss 1.6935  val loss 1.6028  val top-1 0.4587  (907s)
+epoch  6  train loss 1.6914  val loss 1.5996  val top-1 0.4552  (981s)
+epoch  7  train loss 1.6901  val loss 1.5989  val top-1 0.4592  (1058s)
+epoch  8  train loss 1.6889  val loss 1.5877  val top-1 0.4663  (1136s)
+epoch  9  train loss 1.6875  val loss 1.5992  val top-1 0.4580  (1211s)
+epoch 10  train loss 1.6863  val loss 1.6038  val top-1 0.4542  (1287s)
+epoch 11  train loss 1.6853  val loss 1.6004  val top-1 0.4546  (1366s)
+epoch 12  train loss 1.6847  val loss 1.5915  val top-1 0.4621  (1441s)
+export self-check: max |torch - numpy| score difference 3.81e-06
+saved /home/kiit/appcache_b/appcache/models_ext/hash_lstm_mix2.lstm (9363 params, 36.7 KB): train top-1 0.435, val top-1 0.466
+=== train graph (lstm, mix2) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixreq2lstm,mixown2lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 27 files, 1080000 decisions; val: 9 files, 360000 decisions; vocab 64 PCs; 16 ways; history 16
+epoch  1  train loss 1.5555  val loss 1.4704  val top-1 0.4709  (620s)
+epoch  2  train loss 1.5256  val loss 1.4586  val top-1 0.4782  (693s)
+epoch  3  train loss 1.5191  val loss 1.4500  val top-1 0.4882  (768s)
+epoch  4  train loss 1.5145  val loss 1.4509  val top-1 0.4821  (841s)
+epoch  5  train loss 1.5116  val loss 1.4666  val top-1 0.4771  (922s)
+epoch  6  train loss 1.5098  val loss 1.4471  val top-1 0.4845  (999s)
+epoch  7  train loss 1.5082  val loss 1.4491  val top-1 0.4855  (1072s)
+epoch  8  train loss 1.5069  val loss 1.4526  val top-1 0.4821  (1147s)
+export self-check: max |torch - numpy| score difference 3.81e-06
+saved /home/kiit/appcache_b/appcache/models_ext/graph_lstm_mix2.lstm (9595 params, 38.0 KB): train top-1 0.482, val top-1 0.488
+=== train matrix (lstm, mix2) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixreq2lstm,mixown2lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 27 files, 995448 decisions; val: 9 files, 360000 decisions; vocab 5 PCs; 16 ways; history 16
+epoch  1  train loss 1.0556  val loss 0.9366  val top-1 0.6917  (648s)
+epoch  2  train loss 0.9750  val loss 0.9318  val top-1 0.6923  (723s)
+epoch  3  train loss 0.9598  val loss 0.9122  val top-1 0.6942  (793s)
+epoch  4  train loss 0.9690  val loss 0.9263  val top-1 0.6883  (862s)
+epoch  5  train loss 0.9670  val loss 0.9275  val top-1 0.6888  (933s)
+epoch  6  train loss 0.9491  val loss 0.9189  val top-1 0.6884  (1001s)
+epoch  7  train loss 0.9589  val loss 0.9184  val top-1 0.6981  (1070s)
+epoch  8  train loss 0.9478  val loss 0.9154  val top-1 0.6933  (1137s)
+epoch  9  train loss 0.9662  val loss 0.9312  val top-1 0.6924  (1206s)
+epoch 10  train loss 0.9771  val loss 0.9343  val top-1 0.6842  (1273s)
+epoch 11  train loss 0.9679  val loss 0.9095  val top-1 0.6921  (1349s)
+epoch 12  train loss 0.9452  val loss 0.9349  val top-1 0.6810  (1424s)
+export self-check: max |torch - numpy| score difference 7.63e-06
+saved /home/kiit/appcache_b/appcache/models_ext/matrix_lstm_mix2.lstm (9359 params, 36.6 KB): train top-1 0.661, val top-1 0.698
+=== train conv (lstm, mix2) on drivers lru,belady,dag1lstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixreq2lstm,mixown2lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 27 files, 870944 decisions; val: 9 files, 289908 decisions; vocab 6 PCs; 16 ways; history 16
+epoch  1  train loss 0.7602  val loss 0.7925  val top-1 0.7408  (602s)
+epoch  2  train loss 0.7397  val loss 0.7998  val top-1 0.7350  (670s)
+epoch  3  train loss 0.7381  val loss 0.7953  val top-1 0.7340  (731s)
+epoch  4  train loss 0.7366  val loss 0.7920  val top-1 0.7391  (791s)
+epoch  5  train loss 0.7357  val loss 0.7930  val top-1 0.7394  (862s)
+epoch  6  train loss 0.7352  val loss 0.7962  val top-1 0.7365  (923s)
+export self-check: max |torch - numpy| score difference 7.63e-06
+saved /home/kiit/appcache_b/appcache/models_ext/conv_lstm_mix2.lstm (9363 params, 36.7 KB): train top-1 0.761, val top-1 0.741
+=== train all (lstm, mix2) on drivers lru,belady,dag1lstm,dag1alllstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixgen1lstm,mixreq2lstm,mixown2lstm,mixgen2lstm
+=== train all (mlp, mix2) on drivers lru,belady,dag1mlp,dag1allmlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixgen1mlp,mixreq2mlp,mixown2mlp,mixgen2mlp
+=== train all (gbdt, mix2) on drivers lru,belady,dag1lgbm,dag1alllgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixgen1lgbm,mixreq2lgbm,mixown2lgbm,mixgen2lgbm
+=== train all (mlp, mix2) on drivers lru,belady,dag1mlp,dag1allmlp,mixreq1mlp,mixown1mlp,mixlru1mlp,mixbel1mlp,mixgen1mlp,mixreq2mlp,mixown2mlp,mixgen2mlp
+/home/kiit/appcache_b/appcache/training/train_mlp.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 72 files, 4120895 decisions; val: 24 files, 1440000 decisions; vocab 64 PCs; 16 ways
+epoch  1  train loss 1.1661  val loss 1.1144  val top-1 0.6117
+epoch  2  train loss 1.1386  val loss 1.0998  val top-1 0.6154
+epoch  3  train loss 1.1339  val loss 1.0944  val top-1 0.6167
+epoch  4  train loss 1.1315  val loss 1.0860  val top-1 0.6188
+epoch  5  train loss 1.1299  val loss 1.0874  val top-1 0.6182
+epoch  6  train loss 1.1286  val loss 1.0889  val top-1 0.6192
+epoch  7  train loss 1.1277  val loss 1.0917  val top-1 0.6177
+epoch  8  train loss 1.1268  val loss 1.0843  val top-1 0.6197
+epoch  9  train loss 1.1262  val loss 1.0908  val top-1 0.6188
+epoch 10  train loss 1.1258  val loss 1.0921  val top-1 0.6164
+epoch 11  train loss 1.1254  val loss 1.0836  val top-1 0.6196
+epoch 12  train loss 1.1250  val loss 1.0884  val top-1 0.6183
+epoch 13  train loss 1.1248  val loss 1.0851  val top-1 0.6190
+epoch 14  train loss 1.1245  val loss 1.0861  val top-1 0.6185
+saved /home/kiit/appcache_b/appcache/models_ext/all_mlp_mix2.mlp (2203 params, 9.1 KB): train top-1 0.597, val top-1 0.620
+=== train all (gbdt, mix2) on drivers lru,belady,dag1lgbm,dag1alllgbm,mixreq1lgbm,mixown1lgbm,mixlru1lgbm,mixbel1lgbm,mixgen1lgbm,mixreq2lgbm,mixown2lgbm,mixgen2lgbm
+train: 72 files, 4120891 decisions; val: 24 files, 1440000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models_ext/all_lgbm_mix2.gbdt (242 trees, 860.0 KB): train top-1 0.590, val top-1 0.604 (informative measured decisions)
+=== train all (lstm, mix2) on drivers lru,belady,dag1lstm,dag1alllstm,mixreq1lstm,mixown1lstm,mixlru1lstm,mixbel1lstm,mixgen1lstm,mixreq2lstm,mixown2lstm,mixgen2lstm
+/home/kiit/appcache_b/appcache/training/train_lstm.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  l.backward(); opt.step(); tot += float(l) * len(b)
+train: 72 files, 2760893 decisions; val: 24 files, 960000 decisions; vocab 64 PCs; 16 ways; history 16
+epoch  1  train loss 1.1587  val loss 1.1234  val top-1 0.6074  (711s)
+epoch  2  train loss 1.1334  val loss 1.1071  val top-1 0.6141  (919s)
+epoch  3  train loss 1.1269  val loss 1.1038  val top-1 0.6148  (1114s)
+epoch  4  train loss 1.1238  val loss 1.0972  val top-1 0.6162  (1312s)
+epoch  5  train loss 1.1219  val loss 1.0851  val top-1 0.6198  (1504s)
+epoch  6  train loss 1.1203  val loss 1.0868  val top-1 0.6199  (1703s)
+epoch  7  train loss 1.1188  val loss 1.0961  val top-1 0.6160  (1947s)
+epoch  8  train loss 1.1176  val loss 1.0763  val top-1 0.6227  (2168s)
+epoch  9  train loss 1.1161  val loss 1.0785  val top-1 0.6212  (2389s)
+epoch 10  train loss 1.1150  val loss 1.0918  val top-1 0.6173  (2613s)
+epoch 11  train loss 1.1143  val loss 1.0692  val top-1 0.6225  (2826s)
+epoch 12  train loss 1.1138  val loss 1.0786  val top-1 0.6206  (3027s)
+export self-check: max |torch - numpy| score difference 1.14e-05
+saved /home/kiit/appcache_b/appcache/models_ext/all_lstm_mix2.lstm (9595 params, 38.0 KB): train top-1 0.598, val top-1 0.623

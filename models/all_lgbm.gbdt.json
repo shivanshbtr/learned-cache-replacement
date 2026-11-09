@@ -1,0 +1,52 @@
+{
+ "kind": "gbdt",
+ "workload": "all",
+ "drivers": [
+  "lru",
+  "belady"
+ ],
+ "leaves": 31,
+ "trees": 90,
+ "vocab": 64,
+ "seed": 1,
+ "train_files": [
+  "train__conv_640_3_8_1.belady.npz",
+  "train__conv_640_3_8_1.lru.npz",
+  "train__conv_704_3_8_1.belady.npz",
+  "train__conv_704_3_8_1.lru.npz",
+  "train__conv_768_3_8_1.belady.npz",
+  "train__conv_768_3_8_1.lru.npz",
+  "train__graph_100000_8_0_1_4.belady.npz",
+  "train__graph_100000_8_0_1_4.lru.npz",
+  "train__graph_100000_8_0_2_4.belady.npz",
+  "train__graph_100000_8_0_2_4.lru.npz",
+  "train__graph_100000_8_0_3_4.belady.npz",
+  "train__graph_100000_8_0_3_4.lru.npz",
+  "train__hash_18_100000_1500000_1_1.belady.npz",
+  "train__hash_18_100000_1500000_1_1.lru.npz",
+  "train__hash_18_100000_1500000_1_2.belady.npz",
+  "train__hash_18_100000_1500000_1_2.lru.npz",
+  "train__hash_18_100000_1500000_1_3.belady.npz",
+  "train__hash_18_100000_1500000_1_3.lru.npz",
+  "train__matrix_500_0_1.belady.npz",
+  "train__matrix_500_0_1.lru.npz",
+  "train__matrix_550_0_1.belady.npz",
+  "train__matrix_550_0_1.lru.npz",
+  "train__matrix_600_0_1.belady.npz",
+  "train__matrix_600_0_1.lru.npz"
+ ],
+ "val_files": [
+  "val__conv_672_3_8_1.belady.npz",
+  "val__conv_672_3_8_1.lru.npz",
+  "val__graph_100000_8_0_4_4.belady.npz",
+  "val__graph_100000_8_0_4_4.lru.npz",
+  "val__hash_18_100000_1500000_1_4.belady.npz",
+  "val__hash_18_100000_1500000_1_4.lru.npz",
+  "val__matrix_650_0_1.belady.npz",
+  "val__matrix_650_0_1.lru.npz"
+ ],
+ "train_top1": 0.6182549223964687,
+ "val_top1": 0.6439145833333333,
+ "seconds": 302.9,
+ "bytes": 328037
+}

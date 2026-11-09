@@ -1,0 +1,11 @@
+nohup: ignoring input
+done val__conv_672_3_8_1
+done val__matrix_650_0_1
+done val__hash_18_100000_1500000_1_4
+done val__graph_100000_8_0_4_4
+misses per policy; (x%) = share of the LRU-to-Belady gap closed
+label                            LLC acc      lru           fifo         random         srrip         drrip           bip  gbdt:all_lgbm  gbdt:conv_lgbm  gbdt:graph_lgbm  gbdt:hash_lgbm  gbdt:matrix_lgbm    mlp:all_mlp  mlp:conv_mlp  mlp:graph_mlp  mlp:hash_mlp  mlp:matrix_mlp  belady
+val__conv_672_3_8_1               450936   405843    405843 (0%)   361466 (22%)   405843 (0%)  295172 (56%)  288870 (59%)  208268 (100%)   208268 (100%)                -               -                 -   245967 (81%)  233637 (87%)              -             -               -  208268
+val__graph_100000_8_0_4_4        2811576   432142  571699 (-69%)  565802 (-66%)   414402 (9%)  377778 (27%)  373581 (29%)  576505 (-71%)               -     355422 (38%)               -                 -   356006 (38%)             -   355436 (38%)             -               -  229152
+val__hash_18_100000_1500000_1_4  2199282   562444  678627 (-38%)  678460 (-38%)  500657 (20%)  463134 (32%)  453363 (35%)   452191 (36%)               -                -    451406 (36%)                 -   439219 (40%)             -              -  442545 (39%)               -  254118
+val__matrix_650_0_1              2506417  2255776   2255776 (0%)  1488911 (56%)  2255776 (0%)  971793 (94%)  976826 (94%)  896049 (100%)               -                -               -     896319 (100%)  896045 (100%)             -              -             -   896044 (100%)  896000

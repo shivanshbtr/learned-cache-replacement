@@ -1,0 +1,57 @@
+trace,workload,arm,n_seeds,gap_closed_mean_pct,gap_closed_std_pct
+test__conv_720_5_3_1,conv,specialized,3,99.995,0.007
+test__conv_720_5_3_1,conv,generic (equal size),3,99.997,0.002
+test__conv_720_5_3_1,conv,generic-big (equal total storage),3,99.995,0.002
+test__conv_720_5_3_1,conv,gbdt specialized,1,99.421,0
+test__conv_720_5_3_1,conv,gbdt generic,1,99.71,0
+test__conv_720_5_3_1,conv,lstm specialized,1,99.985,0
+test__conv_720_5_3_1,conv,lstm generic,1,79.35,0
+test__conv_832_3_6_1,conv,specialized,3,99.998,0.002
+test__conv_832_3_6_1,conv,generic (equal size),3,99.999,0.002
+test__conv_832_3_6_1,conv,generic-big (equal total storage),3,99.998,0.001
+test__conv_832_3_6_1,conv,gbdt specialized,1,99.5,0
+test__conv_832_3_6_1,conv,gbdt generic,1,99.834,0
+test__conv_832_3_6_1,conv,lstm specialized,1,99.99,0
+test__conv_832_3_6_1,conv,lstm generic,1,93.357,0
+test__graph_100000_8_0_5_4,graph,specialized,3,41.826,0.16
+test__graph_100000_8_0_5_4,graph,generic (equal size),3,42.058,0.023
+test__graph_100000_8_0_5_4,graph,generic-big (equal total storage),3,42.25,0.048
+test__graph_100000_8_0_5_4,graph,gbdt specialized,1,40.431,0
+test__graph_100000_8_0_5_4,graph,gbdt generic,1,39.77,0
+test__graph_100000_8_0_5_4,graph,lstm specialized,1,38.415,0
+test__graph_100000_8_0_5_4,graph,lstm generic,1,38.375,0
+test__graph_100000_8_1_5_4,graph,specialized,3,29.271,0.325
+test__graph_100000_8_1_5_4,graph,generic (equal size),3,30.065,0.308
+test__graph_100000_8_1_5_4,graph,generic-big (equal total storage),3,30.178,0.297
+test__graph_100000_8_1_5_4,graph,gbdt specialized,1,29.34,0
+test__graph_100000_8_1_5_4,graph,gbdt generic,1,28.624,0
+test__graph_100000_8_1_5_4,graph,lstm specialized,1,27.347,0
+test__graph_100000_8_1_5_4,graph,lstm generic,1,27.714,0
+test__hash_18_100000_1500000_0_5,hash,specialized,3,44.728,0.16
+test__hash_18_100000_1500000_0_5,hash,generic (equal size),3,45.434,0.594
+test__hash_18_100000_1500000_0_5,hash,generic-big (equal total storage),3,45.149,0.529
+test__hash_18_100000_1500000_0_5,hash,gbdt specialized,1,37.197,0
+test__hash_18_100000_1500000_0_5,hash,gbdt generic,1,36.887,0
+test__hash_18_100000_1500000_0_5,hash,lstm specialized,1,38.512,0
+test__hash_18_100000_1500000_0_5,hash,lstm generic,1,36.004,0
+test__hash_18_100000_1500000_1_5,hash,specialized,3,47.719,0.169
+test__hash_18_100000_1500000_1_5,hash,generic (equal size),3,48.572,0.52
+test__hash_18_100000_1500000_1_5,hash,generic-big (equal total storage),3,48.329,0.44
+test__hash_18_100000_1500000_1_5,hash,gbdt specialized,1,44.735,0
+test__hash_18_100000_1500000_1_5,hash,gbdt generic,1,44.529,0
+test__hash_18_100000_1500000_1_5,hash,lstm specialized,1,39.92,0
+test__hash_18_100000_1500000_1_5,hash,lstm generic,1,37.234,0
+test__matrix_700_0_1,matrix,specialized,3,100.0,0.0
+test__matrix_700_0_1,matrix,generic (equal size),3,100.0,0.0
+test__matrix_700_0_1,matrix,generic-big (equal total storage),3,100.0,0.0
+test__matrix_700_0_1,matrix,gbdt specialized,1,99.997,0
+test__matrix_700_0_1,matrix,gbdt generic,1,99.999,0
+test__matrix_700_0_1,matrix,lstm specialized,1,99.997,0
+test__matrix_700_0_1,matrix,lstm generic,1,100.0,0
+test__matrix_800_0_1,matrix,specialized,3,100.0,0.0
+test__matrix_800_0_1,matrix,generic (equal size),3,100.0,0.0
+test__matrix_800_0_1,matrix,generic-big (equal total storage),3,100.0,0.0
+test__matrix_800_0_1,matrix,gbdt specialized,1,99.999,0
+test__matrix_800_0_1,matrix,gbdt generic,1,99.999,0
+test__matrix_800_0_1,matrix,lstm specialized,1,99.997,0
+test__matrix_800_0_1,matrix,lstm generic,1,99.997,0

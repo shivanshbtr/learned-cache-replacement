@@ -1,0 +1,24 @@
+nohup: ignoring input
+# target 30456 bytes (sum of the four specialized files), chosen file size 30532 bytes
+MLP variant '_dag1'; spec drivers lru,belady,dag1mlp; generic drivers lru,belady,dag1mlp,dag1allmlp; big generic hidden 74,74
+13 training jobs, 3 in parallel
+done   hash_mlp_dag1_s2.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/hash_mlp_dag1_s2.mlp (1739 params, 6.9 KB): train top-1 0.270, val top-1 0.269
+done   graph_mlp_dag1_s2.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/graph_mlp_dag1_s2.mlp (2203 params, 9.1 KB): train top-1 0.327, val top-1 0.327
+done   matrix_mlp_dag1_s2.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/matrix_mlp_dag1_s2.mlp (1731 params, 6.8 KB): train top-1 0.998, val top-1 1.000
+done   conv_mlp_dag1_s2.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/conv_mlp_dag1_s2.mlp (1739 params, 6.9 KB): train top-1 1.000, val top-1 1.000
+allbig: line 5: 225553 Killed                  python3 "$ROOT/training/train_mlp.py" --data "$DS" --workload "$w" --drivers "$drv" --hidden "$hid" --seed "$seed" $TH --out "$out" > "$out.log" 2>&1
+FAILED allbig_mlp_dag1.mlp (see /home/kiit/appcache_b/appcache/models/allbig_mlp_dag1.mlp.log)
+done   hash_mlp_dag1_s3.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/hash_mlp_dag1_s3.mlp (1739 params, 6.9 KB): train top-1 0.271, val top-1 0.270
+done   graph_mlp_dag1_s3.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/graph_mlp_dag1_s3.mlp (2203 params, 9.1 KB): train top-1 0.326, val top-1 0.329
+done   matrix_mlp_dag1_s3.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/matrix_mlp_dag1_s3.mlp (1731 params, 6.8 KB): train top-1 0.998, val top-1 1.000
+done   conv_mlp_dag1_s3.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/conv_mlp_dag1_s3.mlp (1739 params, 6.9 KB): train top-1 1.000, val top-1 1.000
+all: line 5: 225753 Killed                  python3 "$ROOT/training/train_mlp.py" --data "$DS" --workload "$w" --drivers "$drv" --hidden "$hid" --seed "$seed" $TH --out "$out" > "$out.log" 2>&1
+FAILED allbig_mlp_dag1_s2.mlp (see /home/kiit/appcache_b/appcache/models_seeds/allbig_mlp_dag1_s2.mlp.log)

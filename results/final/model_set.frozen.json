@@ -1,0 +1,195 @@
+{
+ "version": 1,
+ "selected": {
+  "mlp": "_dag1",
+  "gbdt": "_dag1",
+  "lstm": ""
+ },
+ "val_mean_gap": {
+  "mlp": {
+   "": 0.6527758116940621,
+   "_dag1": 0.7262207075486948,
+   "_dag2": 0.7271359279355815
+  },
+  "gbdt": {
+   "": 0.5480267266969523,
+   "_dag1": 0.7117283000378724
+  },
+  "lstm": {
+   "": 0.6756527547924334
+  }
+ },
+ "files": {
+  "mlp": {
+   "hash": "/home/kiit/appcache_b/appcache/models/hash_mlp_dag1.mlp",
+   "graph": "/home/kiit/appcache_b/appcache/models/graph_mlp_dag1.mlp",
+   "matrix": "/home/kiit/appcache_b/appcache/models/matrix_mlp_dag1.mlp",
+   "conv": "/home/kiit/appcache_b/appcache/models/conv_mlp_dag1.mlp",
+   "all": "/home/kiit/appcache_b/appcache/models/all_mlp_dag1.mlp",
+   "allbig": "/home/kiit/appcache_b/appcache/models/allbig_mlp_dag1.mlp"
+  },
+  "gbdt": {
+   "hash": "/home/kiit/appcache_b/appcache/models/hash_lgbm_dag1.gbdt",
+   "graph": "/home/kiit/appcache_b/appcache/models/graph_lgbm_dag1.gbdt",
+   "matrix": "/home/kiit/appcache_b/appcache/models/matrix_lgbm_dag1.gbdt",
+   "conv": "/home/kiit/appcache_b/appcache/models/conv_lgbm_dag1.gbdt",
+   "all": "/home/kiit/appcache_b/appcache/models/all_lgbm_dag1.gbdt"
+  },
+  "lstm": {
+   "hash": "/home/kiit/appcache_b/appcache/models/hash_lstm.lstm",
+   "graph": "/home/kiit/appcache_b/appcache/models/graph_lstm.lstm",
+   "matrix": "/home/kiit/appcache_b/appcache/models/matrix_lstm.lstm",
+   "conv": "/home/kiit/appcache_b/appcache/models/conv_lstm.lstm",
+   "all": "/home/kiit/appcache_b/appcache/models/all_lstm.lstm"
+  }
+ },
+ "seed_files": {
+  "hash": [
+   "/home/kiit/appcache_b/appcache/models_seeds/hash_mlp_dag1_s2.mlp",
+   "/home/kiit/appcache_b/appcache/models_seeds/hash_mlp_dag1_s3.mlp"
+  ],
+  "graph": [
+   "/home/kiit/appcache_b/appcache/models_seeds/graph_mlp_dag1_s2.mlp",
+   "/home/kiit/appcache_b/appcache/models_seeds/graph_mlp_dag1_s3.mlp"
+  ],
+  "matrix": [
+   "/home/kiit/appcache_b/appcache/models_seeds/matrix_mlp_dag1_s2.mlp",
+   "/home/kiit/appcache_b/appcache/models_seeds/matrix_mlp_dag1_s3.mlp"
+  ],
+  "conv": [
+   "/home/kiit/appcache_b/appcache/models_seeds/conv_mlp_dag1_s2.mlp",
+   "/home/kiit/appcache_b/appcache/models_seeds/conv_mlp_dag1_s3.mlp"
+  ],
+  "all": [
+   "/home/kiit/appcache_b/appcache/models_seeds/all_mlp_dag1_s2.mlp",
+   "/home/kiit/appcache_b/appcache/models_seeds/all_mlp_dag1_s3.mlp"
+  ],
+  "allbig": [
+   "/home/kiit/appcache_b/appcache/models_seeds/allbig_mlp_dag1_s2.mlp",
+   "/home/kiit/appcache_b/appcache/models_seeds/allbig_mlp_dag1_s3.mlp"
+  ]
+ },
+ "sha256": {
+  "/home/kiit/appcache_b/appcache/models/hash_mlp_dag1.mlp": "24d09d8bf173e075cc974e2691a0c8c87133d77b043f6e4126d104206321654e",
+  "/home/kiit/appcache_b/appcache/models/graph_mlp_dag1.mlp": "8054a52b9896836460116d7255c1c0d45b06738957a56d42ef74fb76ea8dd644",
+  "/home/kiit/appcache_b/appcache/models/matrix_mlp_dag1.mlp": "230305a02d7091f57a2d3b94cc0ada2412bba0c5d45676eaf233a6167bdf1815",
+  "/home/kiit/appcache_b/appcache/models/conv_mlp_dag1.mlp": "61d803ebe75391db70e0f0dad359c41c7db8b27db7c8b4a2cbb67215305b8f7c",
+  "/home/kiit/appcache_b/appcache/models/all_mlp_dag1.mlp": "beba72d09a84b83e1bb1391237ae1e742ff2265e2c5b32d35323b0e57602af47",
+  "/home/kiit/appcache_b/appcache/models/allbig_mlp_dag1.mlp": "688da6b987ee1d4c4671b11ab3b492a4ee9f6a283640bcefe46c03cf798ec2e5",
+  "/home/kiit/appcache_b/appcache/models/hash_lgbm_dag1.gbdt": "f53222e3c08b39d227f9db1942e1c8e12709c78b8a5df85853c879ac02a1ca5d",
+  "/home/kiit/appcache_b/appcache/models/graph_lgbm_dag1.gbdt": "39e3ae1a68d6bedfdd6075f03083589de94e8190eb5f078a45bd6986735c24f6",
+  "/home/kiit/appcache_b/appcache/models/matrix_lgbm_dag1.gbdt": "3a3271d083d97bc9161ee6c15d3e3fc046ce9cd0a58b47b24c1011e57d3dafd9",
+  "/home/kiit/appcache_b/appcache/models/conv_lgbm_dag1.gbdt": "7944571f6c8bcf9550b61caefff535ebb8919abfae14e539a3672251468ae6da",
+  "/home/kiit/appcache_b/appcache/models/all_lgbm_dag1.gbdt": "760face751523a327fad1204b3b33a67263309a513b497f34389164b3cc99276",
+  "/home/kiit/appcache_b/appcache/models/hash_lstm.lstm": "78c54bd8e02b4219f7aa497379321ba169635f482a9776169c8f5aa113557371",
+  "/home/kiit/appcache_b/appcache/models/graph_lstm.lstm": "d0e80ad17c84292d135aca29691a2a859ed9581bb51d4e6a0419ec64a737ecdd",
+  "/home/kiit/appcache_b/appcache/models/matrix_lstm.lstm": "21b56130c8295b5a30d6a4270ecf6f39fd6e9f89dd52ac899de289c21bce6b03",
+  "/home/kiit/appcache_b/appcache/models/conv_lstm.lstm": "6473676a64047f5380c585d2ba43b3b88e694bb7033294d50697000a352e7c85",
+  "/home/kiit/appcache_b/appcache/models/all_lstm.lstm": "7e791c803d768e0f6d463e37875ab65193dcbbde853254f51bc1e173480dc3ef",
+  "/home/kiit/appcache_b/appcache/models_seeds/hash_mlp_dag1_s2.mlp": "961af1b164139dcb150dccfd183d0c437c1943f586f05913c3a8154cefd01508",
+  "/home/kiit/appcache_b/appcache/models_seeds/hash_mlp_dag1_s3.mlp": "c1570c451b0f1893f98ddf625138b7627be4e04f32e563b937194f468ad60823",
+  "/home/kiit/appcache_b/appcache/models_seeds/graph_mlp_dag1_s2.mlp": "ae213792860b73f5463a9c56d8a7037e0fd146f23e4c26db20a8b738de0bf893",
+  "/home/kiit/appcache_b/appcache/models_seeds/graph_mlp_dag1_s3.mlp": "b6109e1139a0578ce9af2316c2c27a6c07f0bd769fa182bdc96ad4842bfd3f19",
+  "/home/kiit/appcache_b/appcache/models_seeds/matrix_mlp_dag1_s2.mlp": "939813862f982075e473cfb489fe764df7eb4c18003f6a47276f42dd591ff5a0",
+  "/home/kiit/appcache_b/appcache/models_seeds/matrix_mlp_dag1_s3.mlp": "c162d0680283e91a6c1ba65fc37cb7bf6ef65dd4bc073f013ad4ef440c1706e6",
+  "/home/kiit/appcache_b/appcache/models_seeds/conv_mlp_dag1_s2.mlp": "b7b4c8a9b00197c31a6b295180d8c5402ac3d6f16c44c73524e1d5b660ed4032",
+  "/home/kiit/appcache_b/appcache/models_seeds/conv_mlp_dag1_s3.mlp": "c9a5449d458cee338be7f59f1117d1c7bbc54916a6ec89ad27301da8bd89abc7",
+  "/home/kiit/appcache_b/appcache/models_seeds/all_mlp_dag1_s2.mlp": "e293853e8b96459a5465607126b5f2b69557d6e6ba3ff921c3efc3e1247a5efa",
+  "/home/kiit/appcache_b/appcache/models_seeds/all_mlp_dag1_s3.mlp": "1a9e1bcfb67fa0482dae747eb5ddbac1294bfa013727da724585db8f0042f14b",
+  "/home/kiit/appcache_b/appcache/models_seeds/allbig_mlp_dag1_s2.mlp": "21126bb17b124a6dc50763518dc0d0faec77575ccc44600f961b7de989b60865",
+  "/home/kiit/appcache_b/appcache/models_seeds/allbig_mlp_dag1_s3.mlp": "1473a03c8791a73b1f473e334af72cc8194f546954cf6f81b42ca45f29513c7e"
+ },
+ "val_gap_closed": {
+  "mlp/hash": {
+   "hash": 0.4817,
+   "graph": NaN,
+   "matrix": NaN,
+   "conv": NaN
+  },
+  "mlp/graph": {
+   "hash": NaN,
+   "graph": 0.4172,
+   "matrix": NaN,
+   "conv": NaN
+  },
+  "mlp/matrix": {
+   "hash": NaN,
+   "graph": NaN,
+   "matrix": 1.0,
+   "conv": NaN
+  },
+  "mlp/conv": {
+   "hash": NaN,
+   "graph": NaN,
+   "matrix": NaN,
+   "conv": 1.0
+  },
+  "mlp/all": {
+   "hash": 0.4923,
+   "graph": 0.4186,
+   "matrix": 1.0,
+   "conv": 1.0
+  },
+  "gbdt/hash": {
+   "hash": 0.4486,
+   "graph": NaN,
+   "matrix": NaN,
+   "conv": NaN
+  },
+  "gbdt/graph": {
+   "hash": NaN,
+   "graph": 0.4025,
+   "matrix": NaN,
+   "conv": NaN
+  },
+  "gbdt/matrix": {
+   "hash": NaN,
+   "graph": NaN,
+   "matrix": 0.9998,
+   "conv": NaN
+  },
+  "gbdt/conv": {
+   "hash": NaN,
+   "graph": NaN,
+   "matrix": NaN,
+   "conv": 1.0
+  },
+  "gbdt/all": {
+   "hash": 0.4469,
+   "graph": 0.3961,
+   "matrix": 1.0,
+   "conv": 1.0
+  },
+  "lstm/hash": {
+   "hash": 0.4034,
+   "graph": NaN,
+   "matrix": NaN,
+   "conv": NaN
+  },
+  "lstm/graph": {
+   "hash": NaN,
+   "graph": 0.3804,
+   "matrix": NaN,
+   "conv": NaN
+  },
+  "lstm/matrix": {
+   "hash": NaN,
+   "graph": NaN,
+   "matrix": 1.0,
+   "conv": NaN
+  },
+  "lstm/conv": {
+   "hash": NaN,
+   "graph": NaN,
+   "matrix": NaN,
+   "conv": 1.0
+  },
+  "lstm/all": {
+   "hash": 0.372,
+   "graph": 0.3826,
+   "matrix": 1.0,
+   "conv": 0.8669
+  }
+ },
+ "rule": "per model family, the variant with the highest mean gap closed on the VALIDATION traces (4 workloads, specialized and generic models together; ties within 0.001 go to the earlier round); test results never used"
+}

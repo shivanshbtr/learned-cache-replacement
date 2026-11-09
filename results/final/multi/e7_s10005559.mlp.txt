@@ -1,0 +1,5 @@
+apps: hash(2196367 acc, 60503795 instr) graph(2810621 acc, 40022237 instr) matrix(2506240 acc, 140128666 instr) conv(518563 acc, 359670674 instr)
+merged accesses=4844902 (warm-up 484490), slice=10005559 instr, slices=14, switches=13, until=first, config hash=aad10428c2aa096c
+req:spec_mlp               misses=1591036   MPKI=12.441  | hash 583813 (19.45) graph 426465 (11.27) matrix 537422 (17.90) conv 43336 (1.44)  [42.9s]
+gen:all_mlp                misses=2079846   MPKI=16.263  | hash 1024511 (34.13) graph 608037 (16.07) matrix 403962 (13.45) conv 43336 (1.44)  [47.8s]
+gen:allbig_mlp             misses=2181603   MPKI=17.058  | hash 1015450 (33.83) graph 722280 (19.09) matrix 400537 (13.34) conv 43336 (1.44)  [173.5s]

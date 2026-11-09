@@ -1,0 +1,19 @@
+### E8: 4 applications sharing the LLC (2048KB/16-way, slice 10000 instr, 15990 slices, until first finished), default_s10000
+
+| policy         |  misses |  MPKI | vs LRU | MPKI hash | MPKI graph | MPKI matrix | MPKI conv | max slowdown | Jain fairness | cross-app evictions |
+| -------------- | ------- | ----- | ------ | --------- | ---------- | ----------- | --------- | ------------ | ------------- | ------------------- |
+| lru            | 3229206 | 17.81 |      - |     28.99 |      24.64 |       17.88 |      1.44 |         2.82 |         0.855 |               67.5% |
+| srrip          | 2978663 | 16.43 |  +7.8% |     26.15 |      20.49 |       17.88 |      1.44 |         2.85 |         0.871 |               66.8% |
+| drrip          | 2633063 | 14.52 | +18.5% |     22.96 |      18.85 |       15.41 |      1.44 |         2.75 |         0.930 |               74.0% |
+| bip            | 2717589 | 14.99 | +15.8% |     24.13 |      20.65 |       15.09 |      1.44 |         2.91 |         0.915 |               74.5% |
+| mru            | 4499277 | 24.81 | -39.3% |     31.64 |      61.87 |       15.60 |      1.44 |         1.74 |         0.947 |               70.7% |
+| gen:all_gbdt   | 3012205 | 16.61 |  +6.7% |     34.11 |      25.79 |       11.55 |      1.44 |         4.39 |         0.852 |               75.9% |
+| gen:all_mlp    | 3024787 | 16.68 |  +6.3% |     36.30 |      22.78 |       12.16 |      1.44 |         4.82 |         0.861 |               76.9% |
+| gen:allbig_mlp | 2936191 | 16.19 |  +9.1% |     36.17 |      21.33 |       11.70 |      1.44 |         4.80 |         0.862 |               73.3% |
+| own:spec_gbdt  | 3462478 | 19.09 |  -7.2% |     27.41 |      32.72 |       17.88 |      1.44 |         3.54 |         0.883 |                0.0% |
+| own:spec_mlp   | 3041762 | 16.77 |  +5.8% |     26.56 |      25.43 |       16.03 |      1.44 |         3.50 |         0.911 |                0.0% |
+| req:spec_gbdt  | 3732374 | 20.58 | -15.6% |     29.79 |      37.88 |       17.88 |      1.44 |         3.86 |         0.855 |               92.7% |
+| req:spec_mlp   | 3738607 | 20.62 | -15.8% |     33.14 |      34.69 |       17.88 |      1.44 |         4.37 |         0.850 |               83.7% |
+| belady         | 2157901 | 11.90 | +33.2% |     12.50 |      13.13 |       16.91 |      1.44 |         2.70 |         0.958 |               67.2% |
+
+max slowdown = largest MPKI(shared) / MPKI(alone, same policy); Jain fairness over normalized progress MPKI(alone)/MPKI(shared) (1 = no interference); cross-app evictions = share of evictions that removed another application's line. req = requester's model, own = ownership (quota ways/apps, a model only evicts its own application's lines), gen = one generic model.

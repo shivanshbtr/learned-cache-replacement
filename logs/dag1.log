@@ -1,0 +1,97 @@
+nohup: ignoring input
+DAgger round 1 (lgbm): 32 labeling jobs, 3 in parallel
+done  train__conv_640_3_8_1.dag1lgbm
+done  train__conv_704_3_8_1.dag1lgbm
+done  train__conv_640_3_8_1.dag1alllgbm
+done  train__conv_768_3_8_1.dag1lgbm
+done  train__conv_704_3_8_1.dag1alllgbm
+done  train__conv_768_3_8_1.dag1alllgbm
+done  train__graph_100000_8_0_1_4.dag1alllgbm
+done  train__graph_100000_8_0_1_4.dag1lgbm
+done  train__graph_100000_8_0_2_4.dag1lgbm
+done  train__graph_100000_8_0_2_4.dag1alllgbm
+done  train__graph_100000_8_0_3_4.dag1alllgbm
+done  train__graph_100000_8_0_3_4.dag1lgbm
+done  train__hash_18_100000_1500000_1_1.dag1alllgbm
+done  train__hash_18_100000_1500000_1_1.dag1lgbm
+done  train__hash_18_100000_1500000_1_2.dag1lgbm
+done  train__hash_18_100000_1500000_1_2.dag1alllgbm
+done  train__matrix_500_0_1.dag1lgbm
+done  train__matrix_500_0_1.dag1alllgbm
+done  train__matrix_550_0_1.dag1lgbm
+done  train__hash_18_100000_1500000_1_3.dag1alllgbm
+done  train__hash_18_100000_1500000_1_3.dag1lgbm
+done  train__matrix_550_0_1.dag1alllgbm
+done  val__conv_672_3_8_1.dag1lgbm
+done  train__matrix_600_0_1.dag1lgbm
+done  val__conv_672_3_8_1.dag1alllgbm
+done  train__matrix_600_0_1.dag1alllgbm
+done  val__graph_100000_8_0_4_4.dag1alllgbm
+done  val__graph_100000_8_0_4_4.dag1lgbm
+done  val__hash_18_100000_1500000_1_4.dag1lgbm
+done  val__hash_18_100000_1500000_1_4.dag1alllgbm
+done  val__matrix_650_0_1.dag1lgbm
+done  val__matrix_650_0_1.dag1alllgbm
+=== retrain hash (lgbm) on drivers lru,belady,dag1lgbm
+train: 9 files, 540000 decisions; val: 3 files, 180000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models/hash_lgbm_dag1.gbdt (300 trees, 1034.0 KB): train top-1 0.260, val top-1 0.257 (informative measured decisions)
+=== retrain graph (lgbm) on drivers lru,belady,dag1lgbm
+train: 9 files, 540000 decisions; val: 3 files, 180000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models/graph_lgbm_dag1.gbdt (217 trees, 751.5 KB): train top-1 0.314, val top-1 0.312 (informative measured decisions)
+=== retrain matrix (lgbm) on drivers lru,belady,dag1lgbm
+train: 9 files, 395446 decisions; val: 3 files, 180000 decisions; vocab 5 PCs
+saved /home/kiit/appcache_b/appcache/models/matrix_lgbm_dag1.gbdt (50 trees, 175.6 KB): train top-1 0.993, val top-1 0.994 (informative measured decisions)
+=== retrain conv (lgbm) on drivers lru,belady,dag1lgbm
+train: 9 files, 540000 decisions; val: 3 files, 180000 decisions; vocab 6 PCs
+saved /home/kiit/appcache_b/appcache/models/conv_lgbm_dag1.gbdt (43 trees, 151.2 KB): train top-1 1.000, val top-1 1.000 (informative measured decisions)
+=== retrain all (lgbm) on drivers lru,belady,dag1lgbm,dag1alllgbm
+train: 48 files, 2680891 decisions; val: 16 files, 960000 decisions; vocab 64 PCs
+saved /home/kiit/appcache_b/appcache/models/all_lgbm_dag1.gbdt (129 trees, 460.6 KB): train top-1 0.611, val top-1 0.639 (informative measured decisions)
+DAgger round 1 (mlp): 32 labeling jobs, 3 in parallel
+done  train__conv_640_3_8_1.dag1allmlp
+done  train__conv_640_3_8_1.dag1mlp
+done  train__conv_704_3_8_1.dag1mlp
+done  train__conv_704_3_8_1.dag1allmlp
+done  train__conv_768_3_8_1.dag1mlp
+done  train__conv_768_3_8_1.dag1allmlp
+done  train__graph_100000_8_0_1_4.dag1mlp
+done  train__graph_100000_8_0_1_4.dag1allmlp
+done  train__graph_100000_8_0_2_4.dag1mlp
+done  train__graph_100000_8_0_2_4.dag1allmlp
+done  train__graph_100000_8_0_3_4.dag1mlp
+done  train__graph_100000_8_0_3_4.dag1allmlp
+done  train__hash_18_100000_1500000_1_1.dag1mlp
+done  train__hash_18_100000_1500000_1_1.dag1allmlp
+done  train__hash_18_100000_1500000_1_2.dag1mlp
+done  train__hash_18_100000_1500000_1_2.dag1allmlp
+done  train__matrix_500_0_1.dag1mlp
+done  train__hash_18_100000_1500000_1_3.dag1mlp
+done  train__matrix_500_0_1.dag1allmlp
+done  train__hash_18_100000_1500000_1_3.dag1allmlp
+done  train__matrix_550_0_1.dag1mlp
+done  train__matrix_550_0_1.dag1allmlp
+done  val__conv_672_3_8_1.dag1mlp
+done  train__matrix_600_0_1.dag1mlp
+done  val__conv_672_3_8_1.dag1allmlp
+done  train__matrix_600_0_1.dag1allmlp
+done  val__graph_100000_8_0_4_4.dag1mlp
+done  val__graph_100000_8_0_4_4.dag1allmlp
+done  val__hash_18_100000_1500000_1_4.dag1mlp
+done  val__hash_18_100000_1500000_1_4.dag1allmlp
+done  val__matrix_650_0_1.dag1mlp
+done  val__matrix_650_0_1.dag1allmlp
+=== retrain hash (mlp) on drivers lru,belady,dag1mlp
+epoch 14  train loss 2.0922  val loss 2.0877  val top-1 0.2705
+saved /home/kiit/appcache_b/appcache/models/hash_mlp_dag1.mlp (1739 params, 6.9 KB): train top-1 0.270, val top-1 0.272
+=== retrain graph (mlp) on drivers lru,belady,dag1mlp
+epoch 18  train loss 1.8509  val loss 1.8502  val top-1 0.3262
+saved /home/kiit/appcache_b/appcache/models/graph_mlp_dag1.mlp (2203 params, 9.1 KB): train top-1 0.327, val top-1 0.327
+=== retrain matrix (mlp) on drivers lru,belady,dag1mlp
+epoch  7  train loss 0.0076  val loss 0.0006  val top-1 1.0000
+saved /home/kiit/appcache_b/appcache/models/matrix_mlp_dag1.mlp (1731 params, 6.8 KB): train top-1 0.997, val top-1 1.000
+=== retrain conv (mlp) on drivers lru,belady,dag1mlp
+epoch  7  train loss 0.0000  val loss 0.0000  val top-1 1.0000
+saved /home/kiit/appcache_b/appcache/models/conv_mlp_dag1.mlp (1739 params, 6.9 KB): train top-1 1.000, val top-1 1.000
+=== retrain all (mlp) on drivers lru,belady,dag1mlp,dag1allmlp
+epoch 20  train loss 1.0565  val loss 0.9832  val top-1 0.6468
+saved /home/kiit/appcache_b/appcache/models/all_mlp_dag1.mlp (2203 params, 9.1 KB): train top-1 0.621, val top-1 0.648

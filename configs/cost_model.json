@@ -1,0 +1,8 @@
+{
+  "_comment": "Assumptions of the activation / switching / decision-latency cost model (E6, E7). NOT measurements: they are swept in results/final/tables/e7_cost_model.csv and e6_activation.csv.",
+  "t_fixed_us": [1, 10, 100],
+  "bandwidth_gbps": [1, 10, 100],
+  "hw_latency_ns": [20, 100, 1000],
+  "ns_per_instr": 0.33,
+  "main": {"t_miss_ns": 80, "t_fixed_us": 10, "bandwidth_gbps": 10}
+}

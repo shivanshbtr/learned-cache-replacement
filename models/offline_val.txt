@@ -1,0 +1,12 @@
+file                                decisions       random          LRU          MRU         FIFO hash_lgbm.gb hash_mlp.mlp all_lgbm.gbd  all_mlp.mlp
+val__hash_18_100000_1500000_1_4.lru   200000        0.090        0.130        0.062        0.007        0.167        0.167        0.161        0.168
+MEAN                                                0.090        0.130        0.062        0.007        0.167        0.167        0.161        0.168
+file                          decisions       random          LRU          MRU         FIFO graph_lgbm.g graph_mlp.ml all_lgbm.gbd  all_mlp.mlp
+val__graph_100000_8_0_4_4.lru   200000        0.110        0.144        0.039        0.002        0.308        0.297        0.305        0.289
+MEAN                                          0.110        0.144        0.039        0.002        0.308        0.297        0.305        0.289
+file                    decisions       random          LRU          MRU         FIFO matrix_lgbm. matrix_mlp.m all_lgbm.gbd  all_mlp.mlp
+val__matrix_650_0_1.lru   200000        0.068        0.003        0.955        0.003        0.988        1.000        0.997        1.000
+MEAN                                    0.068        0.003        0.955        0.003        0.988        1.000        0.997        1.000
+file                    decisions       random          LRU          MRU         FIFO conv_lgbm.gb conv_mlp.mlp all_lgbm.gbd  all_mlp.mlp
+val__conv_672_3_8_1.lru   190633        0.517        0.444        0.530        0.444        1.000        1.000        1.000        1.000
+MEAN                                    0.517        0.444        0.530        0.444        1.000        1.000        1.000        1.000

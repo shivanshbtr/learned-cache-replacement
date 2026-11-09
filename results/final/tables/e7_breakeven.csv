@@ -1,0 +1,7 @@
+policy,decision latency ns,miss time saved vs best simple (ms),decision stall (ms),resident: slice >=,on demand: slice >=
+req:spec_gbdt,20,-17.4,0.0,never (net loss),never (net loss)
+req:spec_gbdt,100,-17.4,35.6,never (net loss),never (net loss)
+req:spec_gbdt,1000,-17.4,1637.5,never (net loss),never (net loss)
+req:spec_mlp,20,-13.5,0.0,never (net loss),never (net loss)
+req:spec_mlp,100,-13.5,34.0,never (net loss),never (net loss)
+req:spec_mlp,1000,-13.5,1565.3,never (net loss),never (net loss)

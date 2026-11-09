@@ -1,0 +1,8 @@
+nohup: ignoring input
+# target 30456 bytes (sum of the four specialized files), chosen file size 30532 bytes
+MLP variant '_dag1'; spec drivers lru,belady,dag1mlp; generic drivers lru,belady,dag1mlp,dag1allmlp; big generic hidden 74,74
+5 training jobs, 2 in parallel
+done   all_mlp_dag1_s2.mlp
+saved /home/kiit/appcache_b/appcache/models_seeds/all_mlp_dag1_s2.mlp (2203 params, 9.1 KB): train top-1 0.621, val top-1 0.648
+done   allbig_mlp_dag1.mlp
+saved /home/kiit/appcache_b/appcache/models/allbig_mlp_dag1.mlp (7495 params, 29.8 KB): train top-1 0.622, val top-1 0.648

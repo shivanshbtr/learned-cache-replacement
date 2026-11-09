@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learned Cache Replacement Lab</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f2f5f9; --panel:#ffffff; --panel2:#f7f9fc; --ink:#0f1b2d; --ink2:#44516a; --muted:#66748a; --rule:#d9e0ea; --rule2:#c6d0de;
+  --hash:#2a78d6; --graph:#eb6834; --matrix:#1baf7a; --conv:#eda100; --empty:#e4e9f1;
+  --miss:#c4281c; --hit:#0f1b2d; --pos:#2a78d6; --neg:#eb6834; --btn:#0f1b2d; --btnink:#ffffff; --warn:#fff4d6; --warnink:#5b4300;
+  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,"Iowan Old Style",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#0d131c; --panel:#141c28; --panel2:#101722; --ink:#e9eef6; --ink2:#b6c0d0; --muted:#8e9aae; --rule:#263243; --rule2:#344359;
+  --hash:#3987e5; --graph:#d95926; --matrix:#199e70; --conv:#c98500; --empty:#1d2736;
+  --miss:#ff6b5e; --hit:#e9eef6; --pos:#3987e5; --neg:#d95926; --btn:#e9eef6; --btnink:#0d131c; --warn:#3a3012; --warnink:#f3d98b;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0d131c; --panel:#141c28; --panel2:#101722; --ink:#e9eef6; --ink2:#b6c0d0; --muted:#8e9aae; --rule:#263243; --rule2:#344359;
+  --hash:#3987e5; --graph:#d95926; --matrix:#199e70; --conv:#c98500; --empty:#1d2736;
+  --miss:#ff6b5e; --hit:#e9eef6; --pos:#3987e5; --neg:#d95926; --btn:#e9eef6; --btnink:#0d131c; --warn:#3a3012; --warnink:#f3d98b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans)}
+body{min-height:100vh;display:grid;grid-template-columns:232px minmax(0,1fr)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0}
+h2{font-size:24px;line-height:1.2}
+h3{font-size:17px;line-height:1.3}
+p{margin:0 0 .6em}
+.num,td.n,th.n{font-variant-numeric:tabular-nums}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--hash);outline-offset:2px}
+/* rail */
+nav.rail{position:sticky;top:0;height:100vh;padding:22px 16px;border-right:1px solid var(--rule);background:var(--panel);display:flex;flex-direction:column;gap:6px;overflow:auto}
+.mark{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.25;margin-bottom:4px}
+.mark small{display:block;font:12px/1.35 var(--sans);font-weight:400;color:var(--muted);margin-top:4px}
+.rail button.tab{all:unset;cursor:pointer;display:block;padding:8px 10px;border-radius:6px;color:var(--ink2);font-weight:500}
+.rail button.tab:hover{background:var(--panel2)}
+.rail button.tab[aria-current="page"]{background:var(--ink);color:var(--bg);}
+.rail button.tab:focus-visible{outline:2px solid var(--hash);outline-offset:1px}
+.legend{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink2);display:grid;gap:5px}
+.legend span{display:flex;align-items:center;gap:8px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}
+.themebtn{all:unset;cursor:pointer;color:var(--muted);font-size:12px;margin-top:6px}
+.themebtn:hover{color:var(--ink)}
+/* main */
+main{min-width:0;padding:26px clamp(16px,3vw,40px) 60px;max-width:1280px;width:100%}
+.screen{display:none}.screen.on{display:block}
+.lede{color:var(--ink2);max-width:72ch;margin:6px 0 18px}
+.sample{display:inline-block;background:var(--warn);color:var(--warnink);border-radius:4px;padding:1px 8px;font-size:12px;font-weight:600}
+.full{display:inline-block;border:1px solid var(--rule2);color:var(--ink2);border-radius:4px;padding:0 8px;font-size:12px;font-weight:600}
+.panel{min-width:0;background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;margin:0 0 16px}
+.panel>h3{margin-bottom:8px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end}
+.grid2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.grid2>*,.split>*{min-width:0}
+@media(max-width:1020px){.grid2{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.panel .heat{grid-template-columns:auto repeat(4,minmax(58px,1fr));font-size:12px;gap:3px}.panel .heat .h{padding:2px;font-size:11px}.panel .cell{padding:6px 1px;font-size:12px}}
+@media(max-width:760px){
+  body{grid-template-columns:minmax(0,1fr)}
+  nav.rail{position:static;height:auto;flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid var(--rule);padding:12px}
+  .mark{width:100%}.legend{display:none}
+}
+label.f{display:grid;gap:3px;font-size:12px;color:var(--muted);font-weight:600}
+select,input[type=range]{font:inherit;color:var(--ink)}
+select{background:var(--panel);border:1px solid var(--rule2);border-radius:6px;padding:6px 8px;min-width:150px;max-width:100%}
+button.b{font:inherit;font-weight:600;cursor:pointer;border:1px solid var(--rule2);background:var(--panel);color:var(--ink);border-radius:6px;padding:6px 12px}
+button.b.pri{background:var(--btn);color:var(--btnink);border-color:var(--btn)}
+button.b:hover{filter:brightness(.96)}
+.seg{display:inline-flex;border:1px solid var(--rule2);border-radius:6px;overflow:hidden}
+.seg button{all:unset;cursor:pointer;padding:6px 12px;font-weight:600;color:var(--ink2);border-right:1px solid var(--rule2)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button:focus-visible{outline:2px solid var(--hash);outline-offset:-2px}
+/* tables */
+.tw{overflow:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--rule);text-align:left;white-space:nowrap}
+th{font-weight:600;color:var(--ink2);background:var(--panel2);position:sticky;top:0;white-space:normal;vertical-align:bottom;line-height:1.25}
+td.n,th.n{text-align:right}
+table.tight th,table.tight td{padding:6px 5px;font-size:12.5px}
+tr.hl td{background:var(--panel2);font-weight:600}
+.neg{color:var(--miss)}
+.bar{display:inline-block;height:8px;border-radius:2px;vertical-align:middle;margin-left:8px;background:var(--pos)}
+.bar.neg{background:var(--neg)}
+.note{font-size:13px;color:var(--muted)}
+.hint{background:var(--warn);color:var(--warnink);padding:10px 14px;border-radius:6px;margin:0 0 14px}
+.pill{display:inline-block;border-radius:999px;padding:0 8px;font-size:12px;font-weight:600;border:1px solid var(--rule2);color:var(--ink2)}
+.pill.m{border-color:var(--miss);color:var(--miss)}
+/* cache grid */
+.die{background:var(--panel2);border:1px solid var(--rule);border-radius:8px;padding:10px;position:relative}
+canvas{display:block;max-width:100%;height:auto}
+.split{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start}
+@media(max-width:1020px){.split{grid-template-columns:minmax(0,1fr)}}
+.ctl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.ctl input[type=range]{flex:1;min-width:140px}
+.evlog{font-size:13px;display:grid;gap:3px;margin-top:6px}
+.evlog div{display:flex;gap:8px;white-space:nowrap;overflow:hidden}
+.tip{position:fixed;z-index:9;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:5px 8px;border-radius:5px;max-width:260px;display:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;border-top:4px solid var(--c)}
+.card h3{margin-bottom:4px}
+.card dl{margin:8px 0 0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13px}
+.card dt{color:var(--muted)}.card dd{margin:0;text-align:right}
+.find{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.find li{padding-left:14px;border-left:3px solid var(--rule2)}
+.find li.bad{border-left-color:var(--graph)}
+.find b{font-weight:600}
+.cell{display:grid;place-items:center;padding:8px 6px;border-radius:5px;font-size:13px;cursor:pointer;border:2px solid transparent;text-align:center}
+.cell[aria-pressed="true"]{border-color:var(--ink)}
+.heat{display:grid;grid-template-columns:auto repeat(4,minmax(96px,1fr));gap:4px;align-items:stretch;font-size:13px}
+.heat .h{color:var(--muted);font-weight:600;padding:4px 6px}
+.cand td.score{min-width:150px}
+.vic{font-weight:700;font-size:12px;padding:1px 6px;border-radius:4px;margin-right:4px;border:1px solid var(--rule2)}
+.vic.mod{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.vic.lru{border-color:var(--hash);color:var(--hash)}
+.vic.bel{border-color:var(--matrix);color:var(--matrix)}
+.svgc text{fill:var(--ink2);font-size:11px;font-family:var(--sans)}
+.svgc .ax{stroke:var(--rule2)}
+.flow rect{fill:var(--panel2);stroke:var(--rule2)}
+.flow text{fill:var(--ink);font-size:12px;font-family:var(--sans)}
+.flow path{stroke:var(--muted);fill:none;stroke-width:1.5}
+details{margin:6px 0}summary{cursor:pointer;color:var(--ink2);font-weight:600}
+.foot{margin-top:28px;font-size:12.5px;color:var(--muted);max-width:80ch}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav class="rail" aria-label="Screens">
+  <div class="mark">Learned Cache Replacement Lab<small>Belady-imitating models with DAgger, from one application to a shared cache</small></div>
+  <button class="tab" data-s="overview">Overview</button>
+  <button class="tab" data-s="single">Single application</button>
+  <button class="tab" data-s="switching">Switching</button>
+  <button class="tab" data-s="shared">Shared cache</button>
+  <button class="tab" data-s="inspector">Decision inspector</button>
+  <button class="tab" data-s="results">Results and tables</button>
+  <div class="legend" aria-label="Application colors">
+    <span><i class="sw" style="background:var(--hash)"></i>hash table</span>
+    <span><i class="sw" style="background:var(--graph)"></i>graph BFS</span>
+    <span><i class="sw" style="background:var(--matrix)"></i>matrix multiply</span>
+    <span><i class="sw" style="background:var(--conv)"></i>image convolution</span>
+    <button class="themebtn" id="themebtn" aria-label="Switch light or dark theme">Switch theme</button>
+  </div>
+</nav>
+<main id="main">
+  <section class="screen" id="overview"></section>
+  <section class="screen" id="single"></section>
+  <section class="screen" id="switching"></section>
+  <section class="screen" id="shared"></section>
+  <section class="screen" id="inspector"></section>
+  <section class="screen" id="results"></section>
+  <p class="foot">Every number on these screens comes from the C++ cache simulator, real memory traces of four small C programs, and the trained models. Animated views replay a short sample window of a trace and say so. Full-run numbers are computed on the complete traces. Simulation only: no hardware was modified.</p>
+</main>
+<div class="tip" id="tip" role="tooltip"></div>
+<script src="data/main.js"></script>
+<script src="data/ext.js"></script>
+<script>
+"use strict";
+/* ---------- helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s);
+const APPS=["hash","graph","matrix","conv"];
+const APPNAME={hash:"hash table",graph:"graph BFS",matrix:"matrix multiply",conv:"image convolution"};
+const APPDESC={
+ hash:"Random key lookups with a few hot keys. Reuse is irregular and skewed.",
+ graph:"Breadth-first search over a large graph. Pointer-like, data-dependent accesses.",
+ matrix:"Naive matrix multiply. A cyclic sweep of one matrix that is larger than the cache (partial run, first rows only).",
+ conv:"Image convolution with several output channels. Short bursts of LLC traffic, mostly compulsory misses."};
+const M=window.AC_MAIN, X=window.AC_EXT;
+const fmt=n=>n==null?"-":Math.round(n).toLocaleString("en-US");
+const pct=(x,d=1)=>x==null?"-":(x>=0?"":"−")+Math.abs(x*100).toFixed(d)+"%";
+const spct=(x,d=1)=>x==null?"-":(x>=0?"+":"−")+Math.abs(x*100).toFixed(d)+"%";
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const appColor=a=>css("--"+(typeof a==="number"?APPS[a]:a));
+const h=(tag,attrs={},...kids)=>{const e=document.createElement(tag);for(const k in attrs){if(k==="class")e.className=attrs[k];else if(k==="html")e.innerHTML=attrs[k];else if(k.startsWith("on"))e.addEventListener(k.slice(2),attrs[k]);else if(attrs[k]!==false&&attrs[k]!=null)e.setAttribute(k,attrs[k]===true?"":attrs[k]);}
+  for(const c of kids.flat())if(c!=null)e.append(c.nodeType?c:document.createTextNode(c));return e;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const tipEl=$("#tip");
+function tip(e,text){if(!text){tipEl.style.display="none";return;}tipEl.textContent=text;tipEl.style.display="block";
+  const x=Math.min(e.clientX+12,innerWidth-270),y=e.clientY+14;tipEl.style.left=x+"px";tipEl.style.top=y+"px";}
+function select(label,opts,val,on,extra=""){const s=h("select",{"aria-label":label});
+  for(const o of opts){const [v,t,g]=Array.isArray(o)?o:[o,o];const op=h("option",{value:v},t);s.append(op);}
+  s.value=val;s.addEventListener("change",()=>on(s.value));return h("label",{class:"f"},label,s);}
+function seg(opts,val,on){const d=h("div",{class:"seg",role:"group"});
+  const draw=()=>{[...d.children].forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===String(val)))};
+  for(const [v,t] of opts){d.append(h("button",{"data-v":v,onclick:()=>{val=v;draw();on(v);}},t));}draw();return d;}
+function table(head,rows,{numFrom=1,hl=null,cls=""}={}){
+  const t=h("table",{class:cls});const th=h("tr");head.forEach((x,i)=>th.append(h("th",{class:i>=numFrom?"n":""},x)));t.append(h("thead",{},th));
+  const tb=h("tbody");rows.forEach((r,ri)=>{const tr=h("tr",{class:hl&&hl(r,ri)?"hl":""});r.forEach((c,i)=>{
+    const td=h("td",{class:i>=numFrom?"n":""});if(c&&c.nodeType)td.append(c);else if(c&&c.html!==undefined)td.innerHTML=c.html;else{td.textContent=c;if(typeof c==="string"&&/^[−-]\d/.test(c))td.classList.add("neg");}tr.append(td);});tb.append(tr);});
+  t.append(tb);return h("div",{class:"tw"},t);}
+function panel(title,badge,...kids){const p=h("div",{class:"panel"});if(title)p.append(h("h3",{},title,badge||""));p.append(...kids);return p;}
+const BS=()=>h("span",{class:"sample"},"sample window");
+const BF=()=>h("span",{class:"full"},"full run");
+function csvRows(name){return (M.tables[name]||[]);}
+function parsePct(s){const m=/^(-?[\d.]+)%/.exec(s);return m?parseFloat(m[1])/100:null;}
+
+/* ---------- sample windows ---------- */
+const WIN={};  // name -> {data, prefix}
+function loadWin(name){
+  return new Promise(res=>{
+    if(WIN[name]!==undefined){res(WIN[name]);return;}
+    window.AC_WIN=window.AC_WIN||{};
+    const s=document.createElement("script");s.src="data/win_"+name+".js";
+    s.onload=()=>{const w=window.AC_WIN[name];WIN[name]=w?prepWin(w):null;res(WIN[name]);};
+    s.onerror=()=>{WIN[name]=null;res(null);};document.head.append(s);});
+}
+function prepWin(w){
+  w.apps_idx=(w.apps||[]).map(a=>APPS.indexOf(a));
+  w.lineApp=w.line_app.map(a=>w.apps_idx[a]>=0?w.apps_idx[a]:0);
+  w.shownIdx=new Map(w.shown_sets.map((s,i)=>[s,i]));
+  w.byLabel={};w.policies.forEach((p,i)=>w.byLabel[p.label]=i);
+  return w;
+}
+function winHint(name){return h("div",{class:"hint"},"Sample window file data/win_"+name+".js not found. The full-run numbers below still work. To get the animation, run scripts/make_windows.py, then export/build_web_data.py (see web_simulation/README.md).");}
+
+/* ---------- cache grid animation ---------- */
+class Grid{
+  constructor(host,{onUpdate}={}){
+    this.host=host;this.cv=h("canvas",{role:"img","aria-label":"Cache sets and ways of the sample window"});this.host.append(this.cv);
+    this.onUpdate=onUpdate||(()=>{});this.W=null;this.p=0;this.i=0;this.playing=false;this.speed=20;this.acc=0;this.last=0;
+    this.cv.addEventListener("mousemove",e=>this.hover(e));this.cv.addEventListener("mouseleave",()=>tip(null));
+    this.raf=0;
+  }
+  set(W,pol){this.W=W;this.p=pol;this.reset();}
+  setPolicy(pol){const i=this.i;this.p=pol;this.reset();this.stepTo(i);}
+  reset(){const W=this.W,P=W.policies[this.p];this.ways=W.ways;this.n=W.shown_sets.length;
+    this.grid=Int32Array.from(P.init);this.touched=new Uint8Array(this.n*this.ways);this.i=0;this.ev=null;this.draw();this.onUpdate(this);}
+  apply(j){const W=this.W,P=W.policies[this.p],s=W.acc.set[j],k=W.shownIdx.get(s),o=P.o[j],way=o>>1,hit=o&1;
+    this.ev={j,set:s,line:W.acc.line[j],way,hit,shown:k!==undefined,pc:W.acc.pc[j],wr:W.acc.wr[j]};
+    if(k!==undefined){const c=k*this.ways+way;if(!hit)this.grid[c]=W.acc.line[j];this.touched[c]=1;this.ev.k=k;}}
+  stepTo(n){const L=this.W.len;n=Math.max(0,Math.min(L,n));if(n<this.i){const p=this.p;this.reset();}
+    while(this.i<n){this.apply(this.i);this.i++;}this.draw();this.onUpdate(this);}
+  nextMiss(){const P=this.W.policies[this.p],L=this.W.len;let j=this.i;while(j<L&&(P.o[j]&1))j++;this.stepTo(Math.min(L,j+1));}
+  play(on){this.playing=on;if(on){this.last=performance.now();this.loop();}}
+  loop(){cancelAnimationFrame(this.raf);if(!this.playing)return;this.raf=requestAnimationFrame(t=>{const dt=(t-this.last)/1000;this.last=t;this.acc+=dt*this.speed;
+    const k=Math.floor(this.acc);if(k>0){this.acc-=k;if(this.i+k>=this.W.len){this.stepTo(this.W.len);this.playing=false;this.onUpdate(this);return;}this.stepTo(this.i+k);}this.loop();});}
+  layout(){const cols=2,rowsPer=Math.ceil(this.n/cols),cell=19,gap=2,lab=26,pad=6;
+    this.L={cols,rowsPer,cell,gap,lab,pad,bw:lab+this.ways*(cell+gap),};
+    this.L.w=pad*2+cols*this.L.bw+(cols-1)*14;this.L.h=pad*2+rowsPer*(cell+gap);}
+  draw(){if(!this.W)return;this.layout();const L=this.L,dpr=window.devicePixelRatio||1,cv=this.cv;
+    cv.width=L.w*dpr;cv.height=L.h*dpr;cv.style.width=L.w+"px";cv.style.height="";const g=cv.getContext("2d");g.setTransform(dpr,0,0,dpr,0,0);
+    const W=this.W,empty=css("--empty"),miss=css("--miss"),hit=css("--hit"),muted=css("--muted");
+    g.font="10px system-ui,sans-serif";g.textBaseline="middle";
+    for(let k=0;k<this.n;k++){const col=Math.floor(k/L.rowsPer),r=k%L.rowsPer,x0=L.pad+col*(L.bw+14),y0=L.pad+r*(L.cell+L.gap);
+      g.fillStyle=muted;g.textAlign="right";g.fillText(W.shown_sets[k],x0+L.lab-5,y0+L.cell/2);
+      for(let w=0;w<this.ways;w++){const id=this.grid[k*this.ways+w],x=x0+L.lab+w*(L.cell+L.gap);
+        if(id<0){g.fillStyle=empty;g.fillRect(x,y0,L.cell,L.cell);continue;}
+        g.globalAlpha=this.touched[k*this.ways+w]?1:.42;g.fillStyle=appColor(W.lineApp[id]);g.fillRect(x,y0,L.cell,L.cell);g.globalAlpha=1;}
+      if(this.ev&&this.ev.k===k){g.lineWidth=2;g.strokeStyle=this.ev.hit?hit:miss;const x=x0+L.lab+this.ev.way*(L.cell+L.gap);
+        g.strokeRect(x-1,y0-1,L.cell+2,L.cell+2);
+        g.fillStyle=this.ev.hit?hit:miss;g.font="bold 10px system-ui";g.textAlign="center";g.fillText(this.ev.hit?"H":"M",x+L.cell/2,y0+L.cell/2);g.font="10px system-ui";}
+    }}
+  hover(e){if(!this.W)return;const r=this.cv.getBoundingClientRect(),L=this.L,k_=L.w/r.width,x=(e.clientX-r.left)*k_,y=(e.clientY-r.top)*k_;
+    for(let k=0;k<this.n;k++){const col=Math.floor(k/L.rowsPer),rr=k%L.rowsPer,x0=L.pad+col*(L.bw+14)+L.lab,y0=L.pad+rr*(L.cell+L.gap);
+      if(y>=y0&&y<y0+L.cell&&x>=x0&&x<x0+this.ways*(L.cell+L.gap)){const w=Math.floor((x-x0)/(L.cell+L.gap)),id=this.grid[k*this.ways+w];
+        tip(e,id<0?"set "+this.W.shown_sets[k]+", way "+w+": empty":"set "+this.W.shown_sets[k]+", way "+w+": line "+this.W.lines[id]+" ("+APPNAME[APPS[this.W.lineApp[id]]]+")"+(this.touched[k*this.ways+w]?", touched in this window":", not touched yet"));return;}}
+    tip(null);}
+}
+function playbar(g,{showMissJump=true}={}){
+  const slider=h("input",{type:"range",min:0,max:1,value:0,"aria-label":"Position in the sample window"});
+  const pb=h("button",{class:"b pri"},"Play"),st=h("button",{class:"b"},"Step"),nm=h("button",{class:"b"},"Next miss"),rs=h("button",{class:"b"},"Restart");
+  const sp=select("Speed",[[5,"5 accesses/s"],[20,"20 accesses/s"],[100,"100 accesses/s"],[500,"500 accesses/s"]],20,v=>g.speed=+v);
+  pb.onclick=()=>{g.play(!g.playing);pb.textContent=g.playing?"Pause":"Play";};
+  st.onclick=()=>{g.play(false);pb.textContent="Play";g.stepTo(g.i+1);};
+  nm.onclick=()=>{g.play(false);pb.textContent="Play";g.nextMiss();};
+  rs.onclick=()=>{g.play(false);pb.textContent="Play";g.stepTo(0);};
+  slider.oninput=()=>{g.play(false);pb.textContent="Play";g.stepTo(+slider.value);};
+  const upd=()=>{slider.max=g.W?g.W.len:1;slider.value=g.i;if(!g.playing)pb.textContent="Play";};
+  return {el:h("div",{class:"ctl"},pb,st,nm,rs,slider,sp),upd};}
+
+/* ---------- OVERVIEW ---------- */
+function e2Mean(workload,key){const ts=Object.entries(M.e2).filter(([k,v])=>v.workload===workload);return ts.reduce((s,[k,v])=>s+(v.policies[key]?v.policies[key].gap_closed:NaN),0)/ts.length;}
+function bestSimple(workload){const simple=["lru","fifo","random","srrip","drrip","bip","mru"];let best=-9,nm="";
+  for(const s of simple){const v=e2Mean(workload,s);if(v>best){best=v;nm=s;}}return [best,nm];}
+function renderOverview(el){
+  el.append(h("h2",{},"Learning cache replacement from Belady"),
+   h("p",{class:"lede"},"A cache must evict one line when a set is full. Belady's rule (evict the line used furthest in the future) is optimal but needs the future. We train small models to imitate it from past behavior only, refresh their training data with DAgger, and test them on inputs they never saw: on one application, while switching between applications, and in a cache shared by four applications."));
+  // result bars: values come straight from the exported E2 summary table (best simple = best simple policy per test trace, then averaged)
+  const e2s=csvRows("e2_summary").slice(1);const E2={};e2s.forEach(r=>E2[r[0]]={best:parsePct(r[1]),ms:parsePct(r[2]),mg:parsePct(r[3])});
+  const bar=v=>h("span",{class:"bar",style:"width:"+Math.max(0,v*90)+"px"});
+  const t=table(["Application","Best simple policy","MLP specialized","MLP generic"],APPS.map(w=>[
+    h("span",{},h("i",{class:"sw",style:"background:var(--"+w+");margin-right:8px"}),APPNAME[w]),
+    h("span",{},pct(E2[w].best),h("span",{class:"bar",style:"width:"+Math.max(0,E2[w].best*90)+"px;background:var(--rule2)"})),
+    h("span",{},pct(E2[w].ms),bar(E2[w].ms)),h("span",{},pct(E2[w].mg),bar(E2[w].mg))]),{numFrom:1});
+  el.append(panel("Held-out inputs, single application",BF(),
+    h("p",{class:"note"},"Share of the LRU-to-Belady gap that each policy closes (100% = Belady). Mean over the 2 held-out test inputs of each application, 2 MB 16-way LLC. Best simple = the best of LRU, FIFO, Random, SRRIP, DRRIP, BIP and MRU on each trace."),t));
+  // app cards
+  const cards=h("div",{class:"cards"});
+  APPS.forEach(w=>{const m=M.e6["mlp:"+w+"_mlp_dag1"],gb=M.e6["gbdt:"+w+"_lgbm_dag1"],ls=M.e6["lstm:"+w+"_lstm"];
+    cards.append(h("div",{class:"card",style:"--c:var(--"+w+")"},h("h3",{},APPNAME[w]),h("p",{class:"note"},APPDESC[w]),
+      h("dl",{},h("dt",{},"MLP model"),h("dd",{},fmt(m.bytes)+" B, "+fmt(m.params)+" parameters"),
+        h("dt",{},"GBDT model"),h("dd",{},fmt(gb.bytes/1024)+" KB"),h("dt",{},"LSTM model"),h("dd",{},(ls.bytes/1024).toFixed(1)+" KB"),
+        h("dt",{},"MLP decision time"),h("dd",{},(m.lat_p50_ns/1000).toFixed(1)+" µs in software"))));});
+  el.append(panel("The four applications and the model each one carries",null,cards));
+  // pipeline
+  const svg=`<svg class="flow svgc" viewBox="0 0 900 118" width="100%" role="img" aria-label="Pipeline from programs to evaluation">
+   <g>${[["Four C programs","real runs, fixed inputs",10],["Memory trace","Valgrind, ASLR off",190],["L1 + L2 filter","what reaches the LLC",370],["Belady labels","oracle, offline only",550],["Train + DAgger","MLP, GBDT, LSTM",730]].map(([a,b,x])=>`<rect x="${x}" y="12" width="160" height="52" rx="6"/><text x="${x+80}" y="34" text-anchor="middle" font-weight="600">${a}</text><text x="${x+80}" y="52" text-anchor="middle" style="fill:var(--muted);font-size:11px">${b}</text>`).join("")}
+   ${[170,350,530,710].map(x=>`<path d="M${x} 38 h20 m-6 -5 l6 5 l-6 5"/>`).join("")}
+   <path d="M810 64 v14 h-720 v14"/><path d="M84 92 l6 -5 m-6 5 l-6 -5" style="stroke-width:0"/>
+   <rect x="10" y="92" width="270" height="22" rx="5"/><text x="145" y="107" text-anchor="middle">Single app: held-out inputs</text>
+   <rect x="300" y="92" width="270" height="22" rx="5"/><text x="435" y="107" text-anchor="middle">Switching between 4 apps</text>
+   <rect x="590" y="92" width="300" height="22" rx="5"/><text x="740" y="107" text-anchor="middle">Shared LLC, mixed-stream DAgger</text></svg>`;
+  el.append(panel("How the project flows",null,h("div",{html:svg}),h("p",{class:"note"},"The model sees only the current access, the set contents and the past. The future exists only in the offline labeling step.")));
+  // findings
+  const F=[];
+  F.push(["The MLP closes more of the gap than the best simple policy on all four applications on held-out inputs: hash "+pct(E2.hash.ms)+" vs "+pct(E2.hash.best)+", graph "+pct(E2.graph.ms)+" vs "+pct(E2.graph.best)+", matrix "+pct(E2.matrix.ms)+" vs "+pct(E2.matrix.best)+", conv "+pct(E2.conv.ms)+" vs "+pct(E2.conv.best)+". On matrix and conv a simple scan-resistant rule is already close to the optimum, so the win there is mostly an eviction rule the model finds easily.",0]);
+  F.push(["One generic model does as well as four specialized ones (0.2 to 0.9 points better on hash and graph in the 3-seed test). The per-application idea did not win on accuracy.",1]);
+  F.push(["Models trained on single applications lose to DRRIP and BIP once the cache is shared or the applications switch. Training on mixed streams with DAgger fixed that: 4 to 9% fewer misses than the best simple policy at 2 MB on a held-out mixture.",0]);
+  F.push(["The ownership rule (each application may only evict its own lines) stays at or below the best simple policy everywhere.",1]);
+  F.push(["A second mixed-stream round gives no consistent extra gain, and the ranking of versions changed between validation and test (one mixture, one seed).",1]);
+  F.push(["Software decisions take 8 to 134 µs per eviction; a hardware cache has about 100 ns. This is a simulation result, not a hardware design.",1]);
+  el.append(panel("What we found",null,h("ul",{class:"find"},F.map(([t,bad])=>h("li",{class:bad?"bad":""},t)))));
+}
+
+/* ---------- SINGLE ---------- */
+const S1={app:"hash",pol:"MLP specialized",cmp:"LRU",trace:0};
+function winKey(label,app){ // label of a window policy -> keys in e2/e6
+  const fam={MLP:"mlp",GBDT:"gbdt",LSTM:"lstm"},stem={mlp:"mlp_dag1",gbdt:"lgbm_dag1",lstm:"lstm"};
+  let m=/^(MLP|GBDT|LSTM) (specialized|generic)$/.exec(label);
+  if(m){const f=fam[m[1]];return f+":"+(m[2]==="generic"?"all":app)+"_"+stem[f];}
+  return {"LRU":"lru","DRRIP":"drrip","Belady (oracle)":"belady"}[label];}
+async function renderSingle(el){
+  el.innerHTML="";
+  el.append(h("h2",{},"Single application"),h("p",{class:"lede"},"Pick an application and a policy. The grid replays a short sample window of its held-out test trace; the tables show the full-run numbers on the complete trace and what the model costs."));
+  const ctl=h("div",{class:"row panel"});el.append(ctl);
+  const W=await loadWin("single_"+S1.app);
+  const labels=W?W.policies.map(p=>p.label):["LRU","DRRIP","Belady (oracle)","MLP specialized","MLP generic","GBDT specialized","GBDT generic","LSTM specialized","LSTM generic"];
+  if(!labels.includes(S1.pol))S1.pol=labels[3];if(!labels.includes(S1.cmp))S1.cmp="LRU";
+  const traces=Object.keys(M.e2).filter(k=>M.e2[k].workload===S1.app);
+  ctl.append(select("Application",APPS.map(a=>[a,APPNAME[a]]),S1.app,v=>{S1.app=v;S1.trace=0;renderSingle(el);}),
+    select("Policy",labels.map(l=>[l,l]),S1.pol,v=>{S1.pol=v;renderSingle(el);}),
+    select("Compare with",labels.map(l=>[l,l]),S1.cmp,v=>{S1.cmp=v;renderSingle(el);}),
+    select("Full-run trace",traces.map((t,i)=>[i,t.replace("test__","")+(i===0?" (window source)":"")]),S1.trace,v=>{S1.trace=+v;renderSingle(el);}));
+  const left=h("div"),right=h("div");el.append(h("div",{class:"grid2"},left,right));
+  if(!W){left.append(winHint("single_"+S1.app));}
+  else{
+    const die=h("div",{class:"die"}),cnt=h("div"),log=h("div",{class:"evlog"});
+    const g=new Grid(die,{onUpdate:()=>{pb.upd();updCounts();}});
+    const pb=playbar(g);
+    const pi=W.byLabel[S1.pol],ci=W.byLabel[S1.cmp];
+    left.append(panel("Cache sets and ways",BS(),h("p",{class:"note"},"The "+W.shown_sets.length+" busiest sets of the window, "+W.ways+" ways each. Bright cells were touched in this window; faded cells have not been yet. Outline: H = hit, M = miss. Hover a cell for details."),die,pb.el));
+    right.append(panel("Window counters",BS(),cnt,log));
+    const counts=(p,upto)=>{const o=W.policies[p].o;let hits=0;for(let j=0;j<upto;j++)hits+=o[j]&1;return [hits,upto-hits];};
+    function updCounts(){const n=g.i;const rows=[[S1.pol,pi],[S1.cmp,ci]];if(S1.cmp!=="LRU"&&S1.pol!=="LRU")rows.push(["LRU",W.byLabel["LRU"]]);if(S1.pol!=="Belady (oracle)"&&S1.cmp!=="Belady (oracle)")rows.push(["Belady (oracle)",W.byLabel["Belady (oracle)"]]);
+      const seen=new Set();const rr=rows.filter(r=>!seen.has(r[0])&&seen.add(r[0])).map(([l,p])=>{const [hh,mm]=counts(p,n);return [l,fmt(hh),fmt(mm),n?pct(hh/n):"-"];});
+      cnt.replaceChildren(h("p",{class:"num"},"Access "+fmt(n)+" of "+fmt(W.len)+"  (window starts at access "+fmt(W.start)+" of "+fmt(W.trace_len)+", after warm-up)"),table(["Policy","Hits","Misses","Hit rate"],rr,{hl:r=>r[0]===S1.pol}));
+      log.replaceChildren();const e=g.ev;if(e){const P=W.policies[pi];log.append(h("div",{},h("span",{class:"pill "+(e.hit?"":"m")},e.hit?"hit":"miss"),"set "+e.set+(e.shown?"":" (not drawn)")+", line "+W.lines[e.line]+(e.wr?", store":", load"),e.hit?"":", fills way "+e.way));}
+    }
+    g.set(W,pi);
+    // changing the policy in the select re-renders anyway
+  }
+  // full-run numbers
+  const tr=traces[S1.trace],E=M.e2[tr];
+  const keys=["lru","fifo","random","srrip","drrip","bip","mru","belady",winKey("MLP specialized",S1.app),winKey("MLP generic",S1.app),winKey("GBDT specialized",S1.app),winKey("GBDT generic",S1.app),winKey("LSTM specialized",S1.app),winKey("LSTM generic",S1.app)];
+  const nice=k=>{const m=/^(mlp|gbdt|lstm):(all|\w+?)_/.exec(k);return m?m[1].toUpperCase()+(m[2]==="all"?" generic":" specialized"):k==="belady"?"Belady (oracle)":k.toUpperCase();};
+  const simple=["lru","fifo","random","srrip","drrip","bip","mru"];const bs=simple.reduce((a,b)=>E.policies[b].misses<E.policies[a].misses?b:a);
+  left.append(panel("Full run on the whole test trace: "+tr.replace("test__",""),BF(),
+    h("p",{class:"note"},fmt(E.llc_accesses)+" LLC accesses, config hash "+E.config_hash+". Gap closed is measured against LRU and Belady. Best simple policy: "+bs.toUpperCase()+"."),
+    table(["Policy","Misses","MPKI","Gap closed"],keys.map(k=>{const p=E.policies[k];const gc=p.gap_closed;return [nice(k),fmt(p.misses),p.mpki.toFixed(2),h("span",{},pct(gc),h("span",{class:"bar"+(gc<0?" neg":""),style:"width:"+Math.min(100,Math.abs(gc)*70)+"px"}))];}),{hl:r=>r[0]===S1.pol})));
+  // overhead
+  const fam=/^(MLP|GBDT|LSTM)/.exec(S1.pol);const oh=[];
+  if(fam){const f=fam[1].toLowerCase();for(const sc of ["specialized","generic"]){const k=winKey(fam[1]+" "+sc,S1.app),m=M.e6[k];if(m)oh.push([sc,fmt(m.params),fmt(m.bytes)+" B",fmt(m.ops),(m.lat_p50_ns/1000).toFixed(1)+" µs",(m.lat_p99_ns/1000).toFixed(1)+" µs"]);}}
+  const ohKids=fam?[table(["Model","Params","Size","Ops","p50","p99"],oh,{cls:"tight"}),
+      h("p",{class:"note"},"Ops = operations per eviction, p50 = median time per eviction, p99 = 99th percentile. Time is software on one core of a laptop (WSL), not hardware. A real eviction path has about 100 ns."),
+      h("p",{class:"note"},"Storage of four specialized models vs one generic: "+(()=>{const r=csvRows("e6_storage").find(x=>x[0]===fam[1].toLowerCase());return r?fmt(+r[1])+" B vs "+fmt(+r[2])+" B ("+r[4]+")":"";})())]
+     :[h("p",{class:"note"},"Simple policies need a few bits per line and no model file.")];
+  right.append(panel("What the model costs: "+(fam?fam[1]:"simple policy"),BF(),...ohKids));
+}
+
+/* ---------- INSPECTOR ---------- */
+const S5={file:"single_hash",pol:null,k:0,feat:false};
+async function renderInspector(el){
+  el.innerHTML="";
+  el.append(h("h2",{},"Decision inspector"),h("p",{class:"lede"},"Every miss in a full set forces one eviction. Here is one such decision at a time: the 16 candidate lines, the model's score for each, and which line the model, LRU and Belady would evict. The highest score is evicted."));
+  const files=[["single_hash","hash table"],["single_graph","graph BFS"],["single_matrix","matrix multiply"],["single_conv","image convolution"],["shared_default","shared cache (4 apps)"]];
+  const W=await loadWin(S5.file);
+  const ctl=h("div",{class:"row panel"});el.append(ctl);
+  ctl.append(select("Sample window",files,S5.file,v=>{S5.file=v;S5.pol=null;S5.k=0;renderInspector(el);}));
+  if(!W){el.append(winHint(S5.file));return;}
+  const withDec=W.policies.filter(p=>p.decisions&&p.decisions.length);
+  if(!withDec.length){el.append(h("div",{class:"hint"},"This window has no recorded decisions."));return;}
+  if(!S5.pol||!withDec.find(p=>p.label===S5.pol))S5.pol=withDec[0].label;
+  const P=withDec.find(p=>p.label===S5.pol),D=P.decisions;S5.k=Math.min(S5.k,D.length-1);
+  ctl.append(select("Policy",withDec.map(p=>[p.label,p.label]),S5.pol,v=>{S5.pol=v;S5.k=0;renderInspector(el);}));
+  const dec=D[S5.k];
+  const nav=h("div",{class:"ctl"});
+  const prev=h("button",{class:"b",onclick:()=>{S5.k=Math.max(0,S5.k-1);renderInspector(el);}},"Previous"),next=h("button",{class:"b pri",onclick:()=>{S5.k=Math.min(D.length-1,S5.k+1);renderInspector(el);}},"Next");
+  const sl=h("input",{type:"range",min:0,max:D.length-1,value:S5.k,"aria-label":"Decision number"});sl.onchange=()=>{S5.k=+sl.value;renderInspector(el);};
+  const tg=h("button",{class:"b",onclick:()=>{S5.feat=!S5.feat;renderInspector(el);}},S5.feat?"Hide features":"Show features");
+  nav.append(prev,next,sl,h("span",{class:"num"},"decision "+(S5.k+1)+" of "+D.length),tg);
+  // agreement over all recorded decisions
+  let aMod=0,aLru=0,aBel=0;D.forEach(d=>{if(d.bel.includes(d.v))aBel++;if(d.v===d.lru)aLru++;});
+  let belLru=0;D.forEach(d=>{if(d.bel.includes(d.lru))belLru++;});
+  el.append(panel("Agreement over the "+D.length+" recorded decisions",BS(),
+    h("p",{},"The model picked a Belady victim in "+pct(aBel/D.length,0)+" of them and the LRU victim in "+pct(aLru/D.length,0)+". LRU itself picks a Belady victim in "+pct(belLru/D.length,0)+"."),
+    h("p",{class:"note"},"These are the first "+D.length+" decisions of one window, a sample, not a full-run statistic. Ties for Belady count as a match.")));
+  const names=["line","app","age","count","next","pc","score"];
+  const cands=dec.cand,has=cands[0].length>5;
+  const sc=has?cands.map(c=>c[6]):null;const smax=has?Math.max(...sc):0,smin=has?Math.min(...sc):0;
+  const fnames=W.feature_names||[];
+  const head=["Way","Application","Line","Since last access","Accesses"].concat(has?["Model score"]:[]).concat(["Next use (oracle)"]).concat(S5.feat&&has?fnames:[]);
+  const rows=cands.map((c,w)=>{
+    const flags=[];if(w===dec.v)flags.push(h("span",{class:"vic mod"},"model"));if(w===dec.lru)flags.push(h("span",{class:"vic lru"},"LRU"));if(dec.bel.includes(w))flags.push(h("span",{class:"vic bel"},"Belady"));
+    const app=W.lineApp[c[0]];
+    const r=[h("span",{},String(w),"  ",...flags),h("span",{},h("i",{class:"sw",style:"background:var(--"+APPS[app]+";margin-right:6px"}),APPNAME[APPS[app]]),W.lines[c[0]],fmt(c[2]),fmt(c[3])];
+    if(has){const frac=smax>smin?(c[6]-smin)/(smax-smin):0;r.push(h("span",{},c[6].toFixed(2),h("span",{class:"bar",style:"width:"+(8+frac*90)+"px"})));}
+    r.push(c[4]<0?"never":"in "+fmt(c[4])+" accesses");
+    if(S5.feat&&has)for(let q=0;q<9;q++)r.push(String(c[7+q]));
+    return r;});
+  const cur=W.lines[dec.c];
+  el.append(panel("Decision at access "+fmt(dec.i+W.start)+" of the trace",BS(),
+    h("p",{},"A miss on line "+cur+" in set "+dec.s+" needs a victim. The model chose way "+dec.v+(dec.bel.includes(dec.v)?", which Belady also would evict.":", Belady would evict way "+dec.bel.join(" or ")+".")+(dec.v===dec.lru?" That is also the LRU line.":"")),
+    nav,h("div",{style:"margin-top:10px"},table(head,rows,{numFrom:2,hl:(r,i)=>i===dec.v,cls:"cand"})),
+    h("p",{class:"note"},"“Next use” is oracle information that only the offline labeler knows. The model never sees it.")));
+}
+
+/* ---------- start ---------- */
+window.AC={APPS,APPNAME,APPDESC,M,X,$,h,esc,tip,select,seg,table,panel,fmt,pct,spct,css,appColor,BS,BF,loadWin,Grid,playbar,csvRows,parsePct,winHint,S1,S5,renderOverview,renderSingle,renderInspector,winKey};
+</script>
+<script src="screens.js"></script>
+</body>
+</html>

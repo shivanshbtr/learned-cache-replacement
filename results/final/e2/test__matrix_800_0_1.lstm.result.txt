@@ -1,0 +1,9 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__matrix_800_0_1.llc.trace
+LLC accesses=2505589 (warm-up 250558, measured 2255031), unique lines=86328 (5395.5 KB), config hash=aad10428c2aa096c
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru           2255031     0.0000    17.880        0.0%     12090486
+belady        1374912     0.3903    10.902      100.0%     13036707
+lstm:matrix_lstm      1374941     0.3903    10.902      100.0%         5995
+lstm:all_lstm      1374941     0.3903    10.902      100.0%        12061
+  model lstm:matrix_lstm: {"kind":"lstm","params":9359,"model_bytes":37516,"ops_per_decision":325632,"decisions":1517599,"lat_mean_ns":274645,"lat_p50_ns":284386,"lat_p99_ns":520169}
+  model lstm:all_lstm: {"kind":"lstm","params":9595,"model_bytes":38932,"ops_per_decision":325632,"decisions":1517599,"lat_mean_ns":136514,"lat_p50_ns":121484,"lat_p99_ns":370756}

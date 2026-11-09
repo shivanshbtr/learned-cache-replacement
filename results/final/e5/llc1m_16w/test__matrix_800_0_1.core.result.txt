@@ -1,0 +1,13 @@
+trace: /home/kiit/appcache_b/appcache/results/traces/test/test__matrix_800_0_1.llc.trace
+LLC accesses=2505589 (warm-up 250558, measured 2255031), unique lines=86328 (5395.5 KB), config hash=a4b69918085ec0b5
+policy         misses   hit_rate      MPKI  gap_closed        acc/s
+lru           2255031     0.0000    17.880        0.0%      7237473
+srrip         2255031     0.0000    17.880        0.0%     13581179
+drrip         1840686     0.1837    14.595       95.5%     12257532
+bip           1876281     0.1680    14.877       87.3%      5177042
+mru           1865587     0.1727    14.793       89.8%     11180297
+belady        1821245     0.1924    14.441      100.0%     12467672
+mlp:matrix_mlp_dag1      1821245     0.1924    14.441      100.0%        40062
+mlp:all_mlp_dag1      1821245     0.1924    14.441      100.0%        39094
+  model mlp:matrix_mlp_dag1: {"kind":"mlp","params":1731,"model_bytes":7004,"ops_per_decision":52528,"decisions":2013045,"lat_mean_ns":30782.1,"lat_p50_ns":34235,"lat_p99_ns":78751}
+  model mlp:all_mlp_dag1: {"kind":"mlp","params":2203,"model_bytes":9364,"ops_per_decision":52528,"decisions":2013045,"lat_mean_ns":31574,"lat_p50_ns":34511,"lat_p99_ns":80951}

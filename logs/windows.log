@@ -1,0 +1,7 @@
+winexport: trace=2196367 accesses, warm-up 219636, window [1098183,1102183), 32 shown sets, 6928 local lines, 9 policies (107 s)
+winexport: trace=2810621 accesses, warm-up 281062, window [1405310,1409310), 32 shown sets, 5497 local lines, 9 policies (80 s)
+winexport: trace=2506240 accesses, warm-up 250624, window [1253120,1257120), 32 shown sets, 7020 local lines, 9 policies (198 s)
+winexport: trace=518563 accesses, warm-up 51856, window [259281,263281), 32 shown sets, 7401 local lines, 9 policies (50 s)
+merged 4 apps -> 5725558 accesses, 15989 switches (1 s)
+winexport: trace=5725558 accesses, warm-up 572555, window [2862779,2866779), 32 shown sets, 8797 local lines, 14 policies (768 s)
+done: results/web/windows

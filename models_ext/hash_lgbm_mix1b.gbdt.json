@@ -1,0 +1,53 @@
+{
+ "kind": "gbdt",
+ "workload": "hash",
+ "drivers": [
+  "lru",
+  "belady",
+  "dag1lgbm",
+  "mixreq1lgbm",
+  "mixown1lgbm",
+  "mixlru1lgbm",
+  "mixbel1lgbm"
+ ],
+ "leaves": 31,
+ "trees": 145,
+ "vocab": 6,
+ "seed": 1,
+ "train_files": [
+  "train__hash_18_100000_1500000_1_1.belady.npz",
+  "train__hash_18_100000_1500000_1_1.dag1lgbm.npz",
+  "train__hash_18_100000_1500000_1_1.lru.npz",
+  "train__hash_18_100000_1500000_1_2.belady.npz",
+  "train__hash_18_100000_1500000_1_2.dag1lgbm.npz",
+  "train__hash_18_100000_1500000_1_2.lru.npz",
+  "train__hash_18_100000_1500000_1_3.belady.npz",
+  "train__hash_18_100000_1500000_1_3.dag1lgbm.npz",
+  "train__hash_18_100000_1500000_1_3.lru.npz",
+  "train__mix0s10000.mixbel1lgbm.npz",
+  "train__mix0s10000.mixlru1lgbm.npz",
+  "train__mix0s10000.mixown1lgbm.npz",
+  "train__mix0s10000.mixreq1lgbm.npz",
+  "train__mix1s10000.mixbel1lgbm.npz",
+  "train__mix1s10000.mixlru1lgbm.npz",
+  "train__mix1s10000.mixown1lgbm.npz",
+  "train__mix1s10000.mixreq1lgbm.npz",
+  "train__mix2s10000.mixbel1lgbm.npz",
+  "train__mix2s10000.mixlru1lgbm.npz",
+  "train__mix2s10000.mixown1lgbm.npz",
+  "train__mix2s10000.mixreq1lgbm.npz"
+ ],
+ "val_files": [
+  "val__hash_18_100000_1500000_1_4.belady.npz",
+  "val__hash_18_100000_1500000_1_4.dag1lgbm.npz",
+  "val__hash_18_100000_1500000_1_4.lru.npz",
+  "val__mix0s10000.mixbel1lgbm.npz",
+  "val__mix0s10000.mixlru1lgbm.npz",
+  "val__mix0s10000.mixown1lgbm.npz",
+  "val__mix0s10000.mixreq1lgbm.npz"
+ ],
+ "train_top1": 0.3857261904761905,
+ "val_top1": 0.39352857142857145,
+ "seconds": 572.2,
+ "bytes": 527991
+}
