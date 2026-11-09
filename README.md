@@ -103,3 +103,6 @@ Multi-application engine and cost model: `docs/multi_app.md`. Tests: `tests/test
 ## Extension: mixed-stream DAgger and LSTM DAgger
 `scripts/mixed_dagger.sh mlp` (merge, label with the shared-cache driver, train `models_ext/*_mix1.*`), `scripts/mixed_eval.sh val|test`; see docs/mixed_dagger.md.
 Tests: `python3 tests/test_mixed.py`, `python3 tests/test_mixed_pipeline.py`.
+
+## Licence
+MIT, see `LICENSE`.
